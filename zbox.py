@@ -11,14 +11,29 @@ def test_string_matching():
     P1 = "ES"
     P2 = "HOLA"
 
-    print(string_matching_naive(T, P1))
-    print(string_matching_naive(T, P2))
+    print(string_matching_zcajas(T, P1))
+    print(string_matching_zcajas(T, P2))
 
+
+
+def string_matching_zcajas(texto, patron, caracter_reservado='$'):
+    """Devuelve una lista con las posiciones en texto
+	donde aparece patron completo utilizando el algoritmo z."""
+
+    texto_patron = patron+caracter_reservado+texto
+    zcajas = computar_zcajas(texto_patron)
+
+    matches = []
+
+    for x in range(len(zcajas)):
+        if zcajas[x] == len(patron):
+            matches.append(x-len(patron))
+
+    return matches
 
 
 def computar_zcajas(texto):
-    """Devuelve una lista con las posiciones en texto
-    donde aparece patron completo."""
+    """Devuelve una lista donde lista[i] contiene el tamanio de la caja zi"""
 
     Zs = [0]
     r = 0
@@ -35,20 +50,28 @@ def computar_zcajas(texto):
                     r = k + act
                     match_len += 1
                 else:
-                    Zs.append[match_len]
+                    Zs.append(match_len)
                     break
-            Zs.append[match_len]
+            Zs.append(match_len)
 
         else:
             # Estoy dentro de una Zcaja
             Zprima = Zs[k - l]
-            
+
             if (k + Zprima - 1) < r:
-                Zs.append[Zprima]
+                # La caja nueva queda contenida en la vieja.
+                Zs.append(Zprima)
             else:
-                for act in range(
-
-
+                match_len = Zprima
+                for act in range(k-l, len(texto)-k):
+                    if texto[k + act] == texto[act]:
+                        l = k
+                        r = k + act
+                        match_len += 1
+                    else:
+                        Zs.append(match_len)
+                        break
+                Zs.append(match_len)
 
     return Zs
 

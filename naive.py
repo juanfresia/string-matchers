@@ -18,7 +18,7 @@ def test_string_matching():
 
 def string_matching_naive(texto, patron):
 	"""Devuelve una lista con las posiciones en texto
-	donde aparece patron completo."""
+	donde aparece patron completo utilizando el algoritmo naive."""
 
 	matches = []
 
