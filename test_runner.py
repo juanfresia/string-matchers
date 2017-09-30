@@ -34,7 +34,7 @@ TEST_RESULTS = "test_results"
 
 def main():
     with open("{}.md".format(TEST_RESULTS), 'w') as output:
-        header = "| |"
+        header = "# Results \n\n | |"
         for tag in sorted(MATCHERS.keys()):
             header += "{}|".format(tag)
 
@@ -43,6 +43,8 @@ def main():
         output.write(div + "\n")
         for test_class in ENABLED_TESTS:
             output.write(test_class().run_all() + "\n")
+
+            output.write("# Descriptions \n\n")
 
         for test_class in ENABLED_TESTS:
             _actual_class = test_class()

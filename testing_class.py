@@ -7,7 +7,7 @@ from zbox import string_matching_zcajas
 MATCHERS = {'Naive': string_matching_naive,
             'Karp Rabin': karpRabin,
             'Z Box': string_matching_zcajas,
-            'Nothing <Test Only>': lambda x, y: None}
+            'Nothing _Test Only_': lambda x, y: None}
 
 
 class Test:
