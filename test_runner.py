@@ -29,10 +29,11 @@ Hay 3 posibles candidatos de n-1 elementos, con n={} el largo del patron.
 
 
 ENABLED_TESTS = [TestNM1]
+TEST_RESULTS = "test_results"
 
 
 def main():
-    with open("output.md", 'w') as output:
+    with open("{}.md".format(TEST_RESULTS), 'w') as output:
         header = "| |"
         for tag in sorted(MATCHERS.keys()):
             header += "{}|".format(tag)
