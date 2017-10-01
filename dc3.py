@@ -53,14 +53,14 @@ def generate_lookup(_list):
     return lookup
 
 
-def DC3():
-    pass
+def dcm(secuence):
+    base_secuence = secuence
+    if type(secuence) == type(""):
+        base_secuence = tuple([ord(c) if c != "$" else 0 for c in "yabbadabbado"])
 
+    base_secuence += (0,)
 
-def dcm():
-    base_str = tuple([ord(c) if c != "$" else 0 for c in "yabbadabbado$"])
-
-    a0, a1, a2 = sample_suffixes_create(base_str)
+    a0, a1, a2 = sample_suffixes_create(base_secuence)
     a12 = a1 + a2
     sorted_a12 = radix_sort(a12)
     d = generate_lookup(sorted_a12)
@@ -83,7 +83,7 @@ def dcm():
     merge = merge_step(rank, sorted_e0, sorted_e12, step_1)
 
     print(a12)
-    rank = [d[base_str[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_str) - 2)] + [0, 0, 0]
+    rank = [d[base_secuence[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_secuence) - 2)] + [0, 0, 0]
 
     print(rank)
     for i in range(1, len(merge)):
@@ -99,9 +99,8 @@ def dcm():
 
     sorted_a0 = radix_sort(to_sort)
 
-    merge = merge_step(rank, sorted_a0, sorted_a12, base_str)
+    merge = merge_step(rank, sorted_a0, sorted_a12, base_secuence)
     print(merge)
-    print(a0)
 
 def merge_step(ranks, sorted_b0, sorted_b12, original_secuence):
     i = 0
@@ -164,4 +163,4 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_secuence):
 
 
 if __name__ == '__main__':
-    dcm()
+    dcm("yabbadabbado")
