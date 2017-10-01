@@ -86,7 +86,7 @@ Hay 3 posibles candidatos de n-1 elementos, con n={} el largo del patron (patron
 
 class TestNM4(Test):
     _string = "c" * 4 + "b" * 555 + "c" * 4 + "b" * 1437 + "c" * 4
-    _pattern = "a" * 500
+    _pattern = "a" * 5
     _iterations = 1000
 
     def run(self, f):
