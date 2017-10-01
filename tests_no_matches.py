@@ -1,3 +1,5 @@
+import string
+
 from testing_class import Test
 
 
@@ -109,4 +111,32 @@ No hay ningun posible candidato porque no hay caracteres en comun entre el patro
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
 
-ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4]
+class TestNM5(Test):
+    _pattern = "".join([string.ascii_lowercase[i % (len(string.ascii_lowercase))] for i in range(499)] + ["3"])
+    _string = _pattern[:499] + _pattern[:499] + _pattern[:499] + _pattern[:499] + "1111"
+    _iterations = 1000
+
+    def run(self, f):
+        for _ in range(self._iterations - 1):
+            f(self._string, self._pattern)
+        return f(self._string, self._pattern)
+
+    def get_expected_result(self):
+        return []
+
+    def get_test_name(self):
+        return "NM-5"
+
+    def get_long_test_name(self):
+        return "No Matches Test 5"
+
+    def get_test_description(self):
+        return """
+Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
+
+La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El patron es periodico asi que hay varios matches parciales. 
+El patron es de largo n, con n={}.
+                """.format(self._iterations, len(self._string), len(self._pattern))
+
+
+ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5]
