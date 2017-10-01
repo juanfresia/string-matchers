@@ -2,13 +2,13 @@
 
  | |Karp Rabin|Naive|Nothing _Test Only_|Z Box|
 |:---|:---|:---|:---|:---|
-|[NM-1](#No-Matches-Test-1)| 13.6288 - (OK)| 32.8937 - (OK)| 0.000173092 - (ERROR)| 88.0794 - (ERROR)|
-|[NM-2](#No-Matches-Test-2)| 13.4054 - (OK)| 0.926558 - (OK)| 0.000178337 - (ERROR)| 30.9628 - (OK)|
-|[NM-3](#No-Matches-Test-3)| 1.9871 - (OK)| 1.09069 - (OK)| 0.000179291 - (ERROR)| 2.20032 - (ERROR)|
-|[NM-4](#No-Matches-Test-4)| 13.5212 - (OK)| 0.925315 - (OK)| 0.00019455 - (ERROR)| 30.7301 - (OK)|
+|[NM-1](#No-Matches-Test-1)|14.086246 - (OK)|32.826846 - (OK)|0.000184 - (ERROR)|89.550775 - (ERROR)|
+|[NM-2](#No-Matches-Test-2)|13.801737 - (OK)|0.934633 - (OK)|0.000181 - (ERROR)|30.848899 - (OK)|
+|[NM-3](#No-Matches-Test-3)|1.971440 - (OK)|1.111735 - (OK)|0.000185 - (ERROR)|2.208672 - (ERROR)|
+|[NM-4](#No-Matches-Test-4)|13.785489 - (OK)|0.924609 - (OK)|0.000187 - (ERROR)|31.019382 - (OK)|
 # Descriptions 
 
-## No Matches Test 1
+## No Matches Test 1 
 
  
 Corre 1000 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.

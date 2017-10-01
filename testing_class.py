@@ -42,6 +42,6 @@ class Test:
             result, run_time = self.cron_test(MATCHERS[tag])
             status = "OK" if result == self.get_expected_result() else "ERROR"
 
-            result_string += "{: 7.6} - ({})|".format(run_time, status)
+            result_string += "{:03.6f} - ({})|".format(run_time, status)
 
         return result_string
