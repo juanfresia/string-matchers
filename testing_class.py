@@ -1,12 +1,13 @@
 import time
 
+from dc3 import dcm
 from karpRabin import karpRabin
 from naive import string_matching_naive
-from zbox import string_matching_zcajas
 
 MATCHERS = {'Naive': string_matching_naive,
-            'Karp Rabin': karpRabin,
+            'Karp Rabin': karpRabin, Estt
             'Z Box': string_matching_zcajas,
+                     'DC3': lambda x, y: dcm(x + y),
             'Nothing _Test Only_': lambda x, y: None}
 
 

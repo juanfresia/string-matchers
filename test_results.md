@@ -1,9 +1,9 @@
 # Results 
 
- | |Karp Rabin|Naive|Nothing _Test Only_|Z Box|
-|:---|:---|:---|:---|:---|
-|[NM-1](#No-Matches-Test-1)| 10.0898 - (OK)| 29.1376 - (OK)| 0.000165224 - (ERROR)| 86.9478 - (ERROR)|
-|[NM-2](#No-Matches-Test-2)| 10.3575 - (OK)| 0.624578 - (OK)| 0.00016284 - (ERROR)| 29.3248 - (OK)|
+ | |DC3|Karp Rabin|Naive|Nothing _Test Only_|Z Box|
+|:---|:---|:---|:---|:---|:---|
+|[NM-1](#No-Matches-Test-1)| 21.2446 - (ERROR)| 10.1559 - (OK)| 29.8035 - (OK)| 0.000154734 - (ERROR)| 88.8623 - (ERROR)|
+|[NM-2](#No-Matches-Test-2)| 18.6412 - (ERROR)| 10.3398 - (OK)| 0.589119 - (OK)| 0.000184059 - (ERROR)| 30.2588 - (OK)|
 # Descriptions 
 
 ## No Matches Test 1 
