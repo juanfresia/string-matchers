@@ -11,11 +11,9 @@ def sample_suffixes_create(text):
         if len(item) < 3:
             item += (0,) * (3 - len(item))
 
-        print(item)
 
         result[i % 3].append((item, i))
 
-    print(result)
     return result
 
 
@@ -54,6 +52,7 @@ def generate_lookup(_list):
 
 
 def dcm(secuence):
+    print("Sed", secuence)
     base_secuence = secuence
     if type(secuence) == type(""):
         base_secuence = tuple([ord(c) if c != "$" else 0 for c in "yabbadabbado"])
@@ -65,42 +64,27 @@ def dcm(secuence):
     sorted_a12 = radix_sort(a12)
     d = generate_lookup(sorted_a12)
 
-    step_1 = tuple([d[i[0]] for i in a12]) + (0,)
+    step_1 = tuple([d[i[0]] for i in a12])
 
-    e0, e1, e2 = sample_suffixes_create(step_1)
-    sorted_e12 = radix_sort(e1 + e2)
-    n = generate_lookup(tuple(sorted_e12))
+    out = [sorted_a12]
+    if len(d) != len(sorted_a12):
+        out = dcm(step_1)
 
-    rank = [n[step_1[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(step_1) - 2)] + [0, 0]
-
-    # Non sample
-    to_sort = []
-    for i in range(len(e0)):
-        to_sort.append(((e0[i][0][0], rank[i * 3 + 1]), e0[i][1]))
-
-    sorted_e0 = radix_sort(to_sort)
-
-    merge = merge_step(rank, sorted_e0, sorted_e12, step_1)
-
-    print(a12)
     rank = [d[base_secuence[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_secuence) - 2)] + [0, 0, 0]
 
-    print(rank)
-    for i in range(1, len(merge)):
-        rank_index = a12[merge[i]]
+    for i in range(1, len(out)):
+        rank_index = a12[out[i]]
         rank[rank_index[1]] = i
-    print(rank)
 
     to_sort = []
     for i in range(len(a0)):
-        print(i * 3 + 1, rank)
         rank_value = rank[i * 3 + 1]
         to_sort.append(((a0[i][0][0], rank_value), a0[i][1]))
 
     sorted_a0 = radix_sort(to_sort)
 
     merge = merge_step(rank, sorted_a0, sorted_a12, base_secuence)
-    print(merge)
+    return merge
 
 def merge_step(ranks, sorted_b0, sorted_b12, original_secuence):
     i = 0
@@ -163,4 +147,4 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_secuence):
 
 
 if __name__ == '__main__':
-    dcm("yabbadabbado")
+    print(dcm("yabbadabbado"))
