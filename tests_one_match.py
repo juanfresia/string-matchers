@@ -99,10 +99,10 @@ class TestOM4(Test):
         return [500]
 
     def get_test_name(self):
-        return "OM-2"
+        return "OM-4"
 
     def get_long_test_name(self):
-        return "One Match Test 2"
+        return "One Match Test 4"
 
     def get_test_description(self):
         return """
