@@ -36,7 +36,7 @@ class Test:
         return result, run_time
 
     def run_all(self):
-        result_string = "|[{}](#{})|".format(self.get_test_name(), self.get_long_test_name().replace(" ", "-"))
+        result_string = "|[{}](#{})|".format(self.get_test_name(), self.get_long_test_name().replace(" ", "-").lower())
 
         for tag in sorted(MATCHERS.keys()):
             result, run_time = self.cron_test(MATCHERS[tag])
