@@ -5,8 +5,17 @@ def string_matching_dc3(text, pattern):
 def sample_suffixes_create(text):
     text = tuple(text)
     result = [[], [], []]
-    for i in range(len(text) - 2):
-        result[i % 3].append((text[i:i + 3], i))
+    for i in range(len(text)):
+        item = text[i:i + 3]
+
+        if len(item) < 3:
+            item += (0,) * (3 - len(item))
+
+        print(item)
+
+        result[i % 3].append((item, i))
+
+    print(result)
     return result
 
 
@@ -49,20 +58,18 @@ def DC3():
 
 
 def dcm():
-    base_str = tuple([c for c in "yabbadabbado$$"])
+    base_str = tuple([ord(c) if c != "$" else 0 for c in "yabbadabbado$"])
 
     a0, a1, a2 = sample_suffixes_create(base_str)
     a12 = a1 + a2
     sorted_a12 = radix_sort(a12)
     d = generate_lookup(sorted_a12)
 
-    step_1 = tuple([d[i[0]] for i in a12]) + (0, 0, 0)
+    step_1 = tuple([d[i[0]] for i in a12]) + (0,)
 
     e0, e1, e2 = sample_suffixes_create(step_1)
     sorted_e12 = radix_sort(e1 + e2)
     n = generate_lookup(tuple(sorted_e12))
-
-    step_2 = tuple([n[i[0]] for i in e1 + e2]) + (0, 0, 0)
 
     rank = [n[step_1[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(step_1) - 2)] + [0, 0]
 
@@ -76,7 +83,7 @@ def dcm():
     merge = merge_step(rank, sorted_e0, sorted_e12, step_1)
 
     print(a12)
-    rank = [d[base_str[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_str) - 2)] + ["|", 0, 0]
+    rank = [d[base_str[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_str) - 2)] + [0, 0, 0]
 
     print(rank)
     for i in range(1, len(merge)):
@@ -86,13 +93,15 @@ def dcm():
 
     to_sort = []
     for i in range(len(a0)):
-        to_sort.append(((a0[i][0][0], rank[i * 3 + 1]), a0[i][1]))
+        print(i * 3 + 1, rank)
+        rank_value = rank[i * 3 + 1]
+        to_sort.append(((a0[i][0][0], rank_value), a0[i][1]))
 
     sorted_a0 = radix_sort(to_sort)
 
     merge = merge_step(rank, sorted_a0, sorted_a12, base_str)
     print(merge)
-
+    print(a0)
 
 def merge_step(ranks, sorted_b0, sorted_b12, original_secuence):
     i = 0
