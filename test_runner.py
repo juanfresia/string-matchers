@@ -1,9 +1,9 @@
 from testing_class import MATCHERS
 
 TEST_RESULTS = "test_results"
-import tests_no_matches, tests_one_match
+import tests_no_matches, tests_one_match, test_pattern_pattern
 
-TEST_MODULES = [tests_no_matches, tests_one_match]
+TEST_MODULES = [tests_no_matches, tests_one_match, test_pattern_pattern]
 ENABLED_TESTS = []
 
 for _module in TEST_MODULES:
