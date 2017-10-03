@@ -134,9 +134,35 @@ class TestNM5(Test):
         return """
 Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
 
-La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El patron es periodico asi que hay varios matches parciales. 
+La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El patron es periodico asi que hay varios matches parciales.
 El patron es de largo n, con n={}.
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
+class TestNM6(Test):
+    _string = "abcd" * 500
+    _pattern = "abca" * 25
+    _iterations = 1000
 
-ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5]
+    def run(self, f):
+        for _ in range(self._iterations - 1):
+            f(self._string, self._pattern)
+        return f(self._string, self._pattern)
+
+    def get_expected_result(self):
+        return []
+
+    def get_test_name(self):
+        return "NM-6"
+
+    def get_long_test_name(self):
+        return "No Matches Test 6"
+
+    def get_test_description(self):
+        return """
+Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
+
+No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
+en el string, con n={} el largo del patron.
+                """.format(self._iterations, len(self._string), len(self._pattern))
+
+ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5, TestNM6]
