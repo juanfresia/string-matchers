@@ -21,9 +21,11 @@ def test_string_matching():
 
 
 def ascii(letra):
-    if (not (letra in asciiConv)):
-        asciiConv[letra] = ord(letra)
-    return asciiConv[letra]
+    conv = asciiConv.get(letra, None)
+    if (not conv):
+        conv = ord(letra)
+        asciiConv[letra] = conv
+    return conv
 
 def cadenaAAscii(cadena):
     asciis = []
@@ -31,29 +33,35 @@ def cadenaAAscii(cadena):
         asciis.append(ascii(letra))
     return asciis
 
-def hash(texto, ini, fin, hash_ant):
+def hash(texto, ini, fin, hash_ant, base, mod):
     if (ini == 0):
         h = 0
         for x in range(fin):
-            h += (texto[x]) * BASE ** (fin - 1 - x)
+            h = (base*h+texto[x]) % mod
         #print("hola")
-        return h
+        return h % mod
     #print("chau")
-    return (BASE * (hash_ant - ((texto[ini - 1]) * BASE ** (fin - ini - 1))) + (texto[fin - 1]))
+    viejaLetra = ((texto[ini - 1]) * base ** (fin - ini - 1)) % mod
+    return (base * (hash_ant - viejaLetra) + (texto[fin - 1])) % mod
 
 
 def karpRabin(texto, patron):
     matches = []
     patron = cadenaAAscii(patron)
     texto = cadenaAAscii(texto)
-    hash_patron = hash(patron, 0, len(patron), 0)
+    hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
     hash_tent = 0
 
-    for x in range(len(texto) - (len(patron) - 1)):
-        hash_tent = hash(texto, x, x + len(patron), hash_tent)
-        if ((hash_tent == hash_patron) and (patron == texto[x:x + len(patron)])):
-            matches.append(x)
+    colisiones = 0
 
+    for x in range(len(texto) - (len(patron) - 1)):
+        hash_tent = hash(texto, x, x + len(patron), hash_tent, BASE, 1000)
+        if (hash_tent == hash_patron):
+            if (patron == texto[x:x + len(patron)]):
+                matches.append(x)
+            else:
+                colisiones += 1
+    print("malditas colisiones!!: ", colisiones)
     return matches
 
 
