@@ -1,5 +1,6 @@
 BASE = 101
 
+asciiConv = {}
 
 def test_string_matching():
     # 0         1         2         3
@@ -19,17 +20,32 @@ def test_string_matching():
     print(karpRabin(T3, P4))
 
 
+def ascii(letra):
+    if (not (letra in asciiConv)):
+        asciiConv[letra] = ord(letra)
+    return asciiConv[letra]
+
+def cadenaAAscii(cadena):
+    asciis = []
+    for letra in cadena:
+        asciis.append(ascii(letra))
+    return asciis
+
 def hash(texto, ini, fin, hash_ant):
     if (ini == 0):
         h = 0
         for x in range(fin):
-            h += ord(texto[x]) * BASE ** (fin - 1 - x)
+            h += (texto[x]) * BASE ** (fin - 1 - x)
+        #print("hola")
         return h
-    return (BASE * (hash_ant - (ord(texto[ini - 1]) * BASE ** (fin - ini - 1))) + ord(texto[fin - 1]))
+    #print("chau")
+    return (BASE * (hash_ant - ((texto[ini - 1]) * BASE ** (fin - ini - 1))) + (texto[fin - 1]))
 
 
 def karpRabin(texto, patron):
     matches = []
+    patron = cadenaAAscii(patron)
+    texto = cadenaAAscii(texto)
     hash_patron = hash(patron, 0, len(patron), 0)
     hash_tent = 0
 
