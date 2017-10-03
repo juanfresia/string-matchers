@@ -165,4 +165,4 @@ No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del p
 en el string, con n={} el largo del patron.
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
-ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5, TestsNM6]
+ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5, TestNM6]
