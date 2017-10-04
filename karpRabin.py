@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 BASE = 3
+=======
+from string_encoder import encode_string
+
+BASE = 101
+>>>>>>> 0482353419fd82ea4057d8224aa23da9482b379a
 
 asciiConv = {}
+
 
 def test_string_matching():
     # 0         1         2         3
@@ -27,11 +34,13 @@ def ascii(letra):
         asciiConv[letra] = conv
     return conv
 
+
 def cadenaAAscii(cadena):
     asciis = []
     for letra in cadena:
         asciis.append(ascii(letra))
     return asciis
+
 
 def hash(texto, ini, fin, hash_ant, base, mod):
     if (ini == 0):
@@ -50,8 +59,8 @@ def cmpSubLista(patron, lista, inicio):
 
 def karpRabin(texto, patron):
     matches = []
-    patron = cadenaAAscii(patron)
-    texto = cadenaAAscii(texto)
+    patron = encode_string(patron)
+    texto = encode_string(texto)
     hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
     hash_tent = 0
 
