@@ -2,6 +2,7 @@ BASE = 101
 
 asciiConv = {}
 
+
 def test_string_matching():
     # 0         1         2         3
     # 012345678901234567890123456789012345678
@@ -27,20 +28,22 @@ def ascii(letra):
         asciiConv[letra] = conv
     return conv
 
+
 def cadenaAAscii(cadena):
     asciis = []
     for letra in cadena:
         asciis.append(ascii(letra))
     return asciis
 
+
 def hash(texto, ini, fin, hash_ant, base, mod):
     if (ini == 0):
         h = 0
         for x in range(fin):
-            h = (base*h+texto[x]) % mod
-        #print("hola")
+            h = (base * h + texto[x]) % mod
+        # print("hola")
         return h % mod
-    #print("chau")
+    # print("chau")
     viejaLetra = ((texto[ini - 1]) * base ** (fin - ini - 1)) % mod
     return (base * (hash_ant - viejaLetra) + (texto[fin - 1])) % mod
 
