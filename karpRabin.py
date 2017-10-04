@@ -1,3 +1,5 @@
+from string_encoder import encode_string
+
 BASE = 101
 
 asciiConv = {}
@@ -50,8 +52,8 @@ def hash(texto, ini, fin, hash_ant, base, mod):
 
 def karpRabin(texto, patron):
     matches = []
-    patron = cadenaAAscii(patron)
-    texto = cadenaAAscii(texto)
+    patron = encode_string(patron)
+    texto = encode_string(texto)
     hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
     hash_tent = 0
 
@@ -64,7 +66,7 @@ def karpRabin(texto, patron):
                 matches.append(x)
             else:
                 colisiones += 1
-    print("malditas colisiones!!: ", colisiones)
+    # print("malditas colisiones!!: ", colisiones)
     return matches
 
 
