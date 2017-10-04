@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 BASE = 3
-=======
-from string_encoder import encode_string
 
-BASE = 101
->>>>>>> 0482353419fd82ea4057d8224aa23da9482b379a
+from string_encoder import encode_string
 
 asciiConv = {}
 
