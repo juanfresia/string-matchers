@@ -2,7 +2,15 @@ import time
 
 from karpRabin import karpRabin
 from naive import string_matching_naive
+from string_encoder import encode_string
 from zbox import string_matching_zcajas
+
+
+def do_nothing(text, pattern):
+    text = encode_string(text)
+    pattern = encode_string(pattern)
+    return None
+
 
 MATCHERS = {'Naive': string_matching_naive,
             'Karp Rabin': karpRabin,
