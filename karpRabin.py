@@ -1,4 +1,4 @@
-BASE = 101
+BASE = 3
 
 asciiConv = {}
 
@@ -38,12 +38,15 @@ def hash(texto, ini, fin, hash_ant, base, mod):
         h = 0
         for x in range(fin):
             h = (base*h+texto[x]) % mod
-        #print("hola")
         return h % mod
-    #print("chau")
     viejaLetra = ((texto[ini - 1]) * base ** (fin - ini - 1)) % mod
     return (base * (hash_ant - viejaLetra) + (texto[fin - 1])) % mod
 
+def cmpSubLista(patron, lista, inicio):
+    for x in range(len(patron)):
+        if patron[x] != lista[inicio+x]:
+            return False
+    return True
 
 def karpRabin(texto, patron):
     matches = []
@@ -57,11 +60,13 @@ def karpRabin(texto, patron):
     for x in range(len(texto) - (len(patron) - 1)):
         hash_tent = hash(texto, x, x + len(patron), hash_tent, BASE, 1000)
         if (hash_tent == hash_patron):
-            if (patron == texto[x:x + len(patron)]):
+            if (cmpSubLista(patron, texto, x)):
                 matches.append(x)
             else:
                 colisiones += 1
-    print("malditas colisiones!!: ", colisiones)
+    if colisiones > 0:
+        print("malditas colisiones!!: ", colisiones)
+        print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
     return matches
 
 
