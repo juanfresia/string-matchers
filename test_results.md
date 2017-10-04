@@ -1,20 +1,20 @@
 # Results 
 
- | |Karp Rabin|Naive|Nothing _Test Only_|Z Box|
+ | |Baseline|Karp Rabin|Naive|Z Box|
 |:---|:---|:---|:---|:---|
-|[NM-1](#no-matches-test-1)|5.028254 - (OK)|21.052159 - (OK)|0.000257 - (ERROR)|19.076937 - (OK)|
-|[NM-2](#no-matches-test-2)|4.677829 - (OK)|4.763910 - (OK)|0.000306 - (ERROR)|23.157431 - (OK)|
-|[NM-3](#no-matches-test-3)|1.670249 - (OK)|1.254417 - (OK)|0.000258 - (ERROR)|15.575812 - (OK)|
-|[NM-4](#no-matches-test-4)|1.569478 - (OK)|1.217247 - (OK)|0.000301 - (ERROR)|16.199581 - (OK)|
-|[NM-5](#no-matches-test-5)|4.529851 - (OK)|5.775233 - (OK)|0.000277 - (ERROR)|2.904460 - (OK)|
-|[NM-6](#no-matches-test-6)|4.534778 - (OK)|2.099046 - (OK)|0.000272 - (ERROR)|9.161657 - (OK)|
-|[OM-1](#one-match-test-1)|4.546615 - (OK)|4.843360 - (OK)|0.000258 - (ERROR)|19.977975 - (OK)|
-|[OM-2](#one-match-test-2)|4.609749 - (OK)|13.222513 - (OK)|0.000254 - (ERROR)|18.323535 - (OK)|
-|[OM-3](#one-match-test-3)|4.644990 - (OK)|4.840212 - (OK)|0.000268 - (ERROR)|19.978075 - (OK)|
-|[OM-4](#one-match-test-4)|4.585012 - (OK)|13.143845 - (OK)|0.000277 - (ERROR)|18.525110 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|1.071860 - (OK)|0.003327 - (ERROR)|0.001004 - (ERROR)|12.415299 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|1.071881 - (OK)|0.003339 - (ERROR)|0.001013 - (ERROR)|7.053412 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|1.058699 - (OK)|0.001646 - (ERROR)|0.000503 - (ERROR)|21.051285 - (OK)|
+|[NM-1](#no-matches-test-1)|0.000303 - (ERROR)|3.996503 - (OK)|30.225734 - (OK)|3.270897 - (OK)|
+|[NM-2](#no-matches-test-2)|0.000192 - (ERROR)|3.803708 - (OK)|0.890976 - (OK)|2.580684 - (OK)|
+|[NM-3](#no-matches-test-3)|0.000173 - (ERROR)|2.076096 - (OK)|1.030035 - (OK)|1.774460 - (OK)|
+|[NM-4](#no-matches-test-4)|0.000171 - (ERROR)|2.096450 - (OK)|1.055992 - (OK)|1.800100 - (OK)|
+|[NM-5](#no-matches-test-5)|0.000193 - (ERROR)|3.770415 - (OK)|2.726038 - (OK)|2.017990 - (OK)|
+|[NM-6](#no-matches-test-6)|0.000183 - (ERROR)|2.742361 - (OK)|1.160470 - (OK)|1.917397 - (OK)|
+|[OM-1](#one-match-test-1)|0.000170 - (ERROR)|3.834253 - (OK)|0.958225 - (OK)|2.169194 - (OK)|
+|[OM-2](#one-match-test-2)|0.000174 - (ERROR)|3.965164 - (OK)|15.499788 - (OK)|2.548659 - (OK)|
+|[OM-3](#one-match-test-3)|0.000197 - (ERROR)|3.890470 - (OK)|0.942412 - (OK)|2.152935 - (OK)|
+|[OM-4](#one-match-test-4)|0.000173 - (ERROR)|3.935453 - (OK)|15.498734 - (OK)|2.506811 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.000757 - (ERROR)|1.157773 - (OK)|0.002416 - (ERROR)|3.109731 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.000701 - (ERROR)|1.159713 - (OK)|0.003363 - (ERROR)|4.631591 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.000388 - (ERROR)|1.173210 - (OK)|0.001334 - (ERROR)|4.363117 - (OK)|
 # Descriptions 
 
 ## No Matches Test 1 
