@@ -69,9 +69,9 @@ def karpRabin(texto, patron):
                 matches.append(x)
             else:
                 colisiones += 1
-    if colisiones > 0:
-        print("malditas colisiones!!: ", colisiones)
-        print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
+                # if colisiones > 0:
+                # print("malditas colisiones!!: ", colisiones)
+                # print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
     return matches
 
 
