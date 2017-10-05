@@ -2,19 +2,19 @@
 
  | |Baseline|Karp Rabin|Naive|Z Box|
 |:---|:---|:---|:---|:---|
-|[NM-1](#no-matches-test-1)|0.000284 - (ERROR)|4.065619 - (OK)|28.121059 - (OK)|3.287112 - (OK)|
-|[NM-2](#no-matches-test-2)|0.000195 - (ERROR)|3.832353 - (OK)|1.043260 - (OK)|2.567424 - (OK)|
-|[NM-3](#no-matches-test-3)|0.000206 - (ERROR)|2.177399 - (OK)|1.290075 - (OK)|1.783878 - (OK)|
-|[NM-4](#no-matches-test-4)|0.000184 - (ERROR)|2.163374 - (OK)|1.141080 - (OK)|1.746892 - (OK)|
-|[NM-5](#no-matches-test-5)|0.000185 - (ERROR)|3.801541 - (OK)|2.774083 - (OK)|2.054825 - (OK)|
-|[NM-6](#no-matches-test-6)|0.000211 - (ERROR)|2.751896 - (OK)|1.233610 - (OK)|1.920269 - (OK)|
-|[OM-1](#one-match-test-1)|0.000201 - (ERROR)|3.843536 - (OK)|1.071899 - (OK)|2.151427 - (OK)|
-|[OM-2](#one-match-test-2)|0.000185 - (ERROR)|3.971433 - (OK)|14.385470 - (OK)|2.470239 - (OK)|
-|[OM-3](#one-match-test-3)|0.000180 - (ERROR)|3.834003 - (OK)|1.078352 - (OK)|2.150358 - (OK)|
-|[OM-4](#one-match-test-4)|0.000175 - (ERROR)|3.936775 - (OK)|14.386969 - (OK)|2.447863 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.000751 - (ERROR)|1.192665 - (OK)|0.295625 - (ERROR)|3.100002 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.000726 - (ERROR)|1.196710 - (OK)|0.303112 - (ERROR)|4.548844 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.000403 - (ERROR)|1.203310 - (OK)|0.289854 - (ERROR)|4.293066 - (OK)|
+|[NM-1](#no-matches-test-1)|0.195811 - (ERROR)|4.080252 - (OK)|29.500526 - (OK)|3.304590 - (OK)|
+|[NM-2](#no-matches-test-2)|0.182704 - (ERROR)|3.725812 - (OK)|1.048712 - (OK)|2.562906 - (OK)|
+|[NM-3](#no-matches-test-3)|0.146924 - (ERROR)|2.035925 - (OK)|1.108910 - (OK)|1.783287 - (OK)|
+|[NM-4](#no-matches-test-4)|0.155195 - (ERROR)|2.070202 - (OK)|1.126415 - (OK)|1.846639 - (OK)|
+|[NM-5](#no-matches-test-5)|0.192988 - (ERROR)|3.796156 - (OK)|2.830462 - (OK)|2.083017 - (OK)|
+|[NM-6](#no-matches-test-6)|0.151598 - (ERROR)|2.652500 - (OK)|1.233678 - (OK)|1.929517 - (OK)|
+|[OM-1](#one-match-test-1)|0.181474 - (ERROR)|3.757486 - (OK)|1.092495 - (OK)|2.224791 - (OK)|
+|[OM-2](#one-match-test-2)|0.186437 - (ERROR)|4.196075 - (OK)|15.530255 - (OK)|2.515311 - (OK)|
+|[OM-3](#one-match-test-3)|0.243156 - (ERROR)|3.852976 - (OK)|1.117123 - (OK)|2.229032 - (OK)|
+|[OM-4](#one-match-test-4)|0.184331 - (ERROR)|3.880824 - (OK)|15.324606 - (OK)|2.580379 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.305499 - (ERROR)|1.192457 - (OK)|0.320200 - (ERROR)|3.094045 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.309514 - (ERROR)|1.188688 - (OK)|0.305151 - (ERROR)|4.811255 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.295664 - (ERROR)|1.194318 - (OK)|0.300240 - (ERROR)|4.422860 - (OK)|
 # Descriptions 
 
 ## No Matches Test 1 
