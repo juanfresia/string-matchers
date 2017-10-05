@@ -1,6 +1,6 @@
 import time
 
-from dc3 import dcm
+from dc3 import string_matching_dc3
 from karpRabin import karpRabin
 from naive import string_matching_naive
 from string_encoder import encode_string
@@ -17,7 +17,7 @@ MATCHERS = {'Naive': string_matching_naive,
             'Karp Rabin': karpRabin,
             'Z Box': string_matching_zcajas,
             'Baseline': do_nothing,
-            'DC3': lambda x, y: dcm(x + y),
+            'DC3': string_matching_dc3,
             'Nothing _Test Only_': lambda x, y: None}
 
 
@@ -52,6 +52,9 @@ class Test:
         for tag in sorted(MATCHERS.keys()):
             result, run_time = self.cron_test(MATCHERS[tag])
             status = "OK" if result == self.get_expected_result() else "ERROR"
+
+            if status != "OK":
+                print("Error: <{2}> expected:{1}, got:{0}".format(result, self.get_expected_result(), tag))
 
             result_string += "{:03.6f} - ({})|".format(run_time, status)
 
