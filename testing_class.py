@@ -17,8 +17,7 @@ MATCHERS = {'Naive': string_matching_naive,
             'Karp Rabin': karpRabin,
             'Z Box': string_matching_zcajas,
             'Baseline': do_nothing,
-            'DC3': string_matching_dc3,
-            'Nothing _Test Only_': lambda x, y: None}
+            'DC3': string_matching_dc3}
 
 
 class Test:
