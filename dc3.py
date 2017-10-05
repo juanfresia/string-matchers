@@ -29,10 +29,10 @@ def string_matching_dc3(text, pattern):
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
-        print("{} {} {}".format(initial, mid, end))
-        print("{}".format(text[sufix_array[mid]:]))
+        # print("{} {} {}".format(initial, mid, end))
+        # print("{}".format(text[sufix_array[mid]:]))
         comparation = matches(text, sufix_array[mid], pattern)
-        print(">{}<".format(comparation))
+        #print(">{}<".format(comparation))
         if comparation == EQUAL:
             return [sufix_array[mid]]
 
@@ -189,4 +189,4 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 if __name__ == '__main__':
     print(dcm("yabbadabbado"))
-    print(string_matching_dc3("yabbadabbado", "yab"))
+    print(string_matching_dc3("banana", "ana"))
