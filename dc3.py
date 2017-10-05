@@ -1,4 +1,45 @@
+GREATER = 1
+LESSER = -1
+EQUAL = 0
+
+
+def matches(text, index, patter):
+    for i in range(len(patter)):
+        if i + index >= len(text):
+            return GREATER
+
+        pattern_char = patter[i]
+        text_char = text[i + index]
+
+        if pattern_char == text_char:
+            continue
+
+        if pattern_char < text_char:
+            return LESSER
+        return GREATER
+
+    return EQUAL
+
+
 def string_matching_dc3(text, pattern):
+    sufix_array = dcm(text)
+
+    initial = 0
+    end = len(sufix_array) - 1
+
+    while initial < end:
+        mid = initial + ((end - initial) // 2)
+
+        comparation = matches(text, sufix_array[mid], pattern)
+
+        if comparation == EQUAL:
+            return [sufix_array[mid]]
+
+        if comparation == GREATER:
+            initial = mid + 1
+        else:
+            end = mid - 1
+
     return []
 
 
