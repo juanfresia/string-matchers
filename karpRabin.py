@@ -42,14 +42,15 @@ def hash(texto, ini, fin, hash_ant, base, mod):
     if (ini == 0):
         h = 0
         for x in range(fin):
-            h = (base*h+texto[x]) % mod
+            h = (base * h + texto[x]) % mod
         return h % mod
     viejaLetra = ((texto[ini - 1]) * base ** (fin - ini - 1)) % mod
     return (base * (hash_ant - viejaLetra) + (texto[fin - 1])) % mod
 
+
 def cmpSubLista(patron, lista, inicio):
     for x in range(len(patron)):
-        if patron[x] != lista[inicio+x]:
+        if patron[x] != lista[inicio + x]:
             return False
     return True
 

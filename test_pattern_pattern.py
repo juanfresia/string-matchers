@@ -28,8 +28,9 @@ No hay mas de un solo posible candidato, solo hay 2 caracteres en la cadena, y u
 patron de largo n={}..
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
+
 class TestPP2(Test):
-    _pattern = "a" *499 + "b" * 1
+    _pattern = "a" * 499 + "b" * 1
     _string = _pattern
     _iterations = 4000
 
@@ -55,8 +56,9 @@ Hay varios posibles candidatos, solo hay 2 caracteres en la cadena, y uno solo s
 patron de largo n={} repetido n-1 veces.
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
+
 class TestPP3(Test):
-    _pattern = "a" *499 + "b" * 1 + "a" *250 + "b" * 250
+    _pattern = "a" * 499 + "b" * 1 + "a" * 250 + "b" * 250
     _string = _pattern
     _iterations = 2000
 
@@ -81,5 +83,6 @@ Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay sol
 Hay varios posibles candidatos, solo hay 2 caracteres en la cadena, y se presentan de forma intercalada
 en el patron de largo n={}.
                 """.format(self._iterations, len(self._string), len(self._pattern))
+
 
 ENABLED_TESTS = [TestPP1, TestPP2, TestPP3]

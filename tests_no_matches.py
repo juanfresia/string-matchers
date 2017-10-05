@@ -138,6 +138,7 @@ La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El
 El patron es de largo n, con n={}.
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
+
 class TestNM6(Test):
     _string = "abcd" * 500
     _pattern = "abca" * 25
@@ -164,5 +165,6 @@ Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay 
 No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
 en el string, con n={} el largo del patron.
                 """.format(self._iterations, len(self._string), len(self._pattern))
+
 
 ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5, TestNM6]

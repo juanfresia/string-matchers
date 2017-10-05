@@ -8,7 +8,6 @@ def test_string_matching():
     T2 = "AAZAAAA"
     P3 = "AA"
 
-
     T3 = "c" * 499 + "b" * 50 + "c" * 499 + "b" * 453 + "c" * 499
     P4 = "a" * 500
     print(string_matching_zcajas(T, P1))
@@ -23,10 +22,10 @@ def string_matching_zcajas(texto, patron, caracter_reservado='$'):
 
     texto_patron = patron + caracter_reservado + texto
     zcajas = computar_zcajas(texto_patron)
-    #print(texto)
-    #print(patron)
-    #print(texto_patron)
-    #print("zcajas: ", zcajas)
+    # print(texto)
+    # print(patron)
+    # print(texto_patron)
+    # print("zcajas: ", zcajas)
     matches = []
     # print("largo zcajas: ", len(zcajas))
     # print("largo texto_patron: ", len(texto_patron))
@@ -34,7 +33,7 @@ def string_matching_zcajas(texto, patron, caracter_reservado='$'):
         if zcajas[x] == len(patron):
             matches.append(x - len(patron) - 1)
 
-    #print(matches)
+    # print(matches)
     return matches
 
 
@@ -69,7 +68,7 @@ def computar_zcajas(texto):
             # print("k' =", k-l, " Z' = ", Zprima)
 
             if Zprima + k >= len(texto):
-                #print("Caso 1: ", k)
+                # print("Caso 1: ", k)
                 Zprimareal = len(texto) - k
                 Zs.append(Zprimareal)
 
@@ -91,7 +90,7 @@ def computar_zcajas(texto):
                     else:
                         # Zs.append(match_len)
                         break
-                #if match_len == len(texto) - k:
+                # if match_len == len(texto) - k:
                 Zs.append(match_len)
                     # print("Zs: ", match_len)
                     # print("Zs: ", Zs)
