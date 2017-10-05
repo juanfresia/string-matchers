@@ -15,7 +15,7 @@ def do_nothing(text, pattern):
 MATCHERS = {'Naive': string_matching_naive,
             'Karp Rabin': karpRabin,
             'Z Box': string_matching_zcajas,
-            'Baseline': lambda x, y: None}
+            'Baseline': do_nothing}
 
 
 class Test:
