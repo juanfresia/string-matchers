@@ -3,10 +3,20 @@ import time
 from dc3 import dcm
 from karpRabin import karpRabin
 from naive import string_matching_naive
+from string_encoder import encode_string
+from zbox import string_matching_zcajas
+
+
+def do_nothing(text, pattern):
+    text = encode_string(text)
+    pattern = encode_string(pattern)
+    return None
+
 
 MATCHERS = {'Naive': string_matching_naive,
-            'Karp Rabin': karpRabin, Estt
+            'Karp Rabin': karpRabin,
             'Z Box': string_matching_zcajas,
+            'Baseline': do_nothing}
                      'DC3': lambda x, y: dcm(x + y),
             'Nothing _Test Only_': lambda x, y: None}
 
@@ -37,12 +47,12 @@ class Test:
         return result, run_time
 
     def run_all(self):
-        result_string = "|[{}](#{})|".format(self.get_test_name(), self.get_long_test_name().replace(" ", "-"))
+        result_string = "|[{}](#{})|".format(self.get_test_name(), self.get_long_test_name().replace(" ", "-").lower())
 
         for tag in sorted(MATCHERS.keys()):
             result, run_time = self.cron_test(MATCHERS[tag])
             status = "OK" if result == self.get_expected_result() else "ERROR"
 
-            result_string += "{: 7.6} - ({})|".format(run_time, status)
+            result_string += "{:03.6f} - ({})|".format(run_time, status)
 
         return result_string
