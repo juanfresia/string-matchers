@@ -5,6 +5,9 @@ class TestOM1(Test):
     _pattern = "a" + "b" * 499
     _string = "b" * 500 + _pattern + "b" * 1000
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -32,6 +35,9 @@ class TestOM2(Test):
     _pattern = "a" * 499 + "b"
     _string = "b" * 500 + _pattern + "b" * 1000
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -58,7 +64,9 @@ patron de largo n={} de forma repetida..
 class TestOM3(Test):
     _pattern = "a" + "b" * 499
     _string = "c" * 500 + _pattern + "c" * 1000
-    _iterations = 1000
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -86,7 +94,9 @@ patron de largo n={}.
 class TestOM4(Test):
     _pattern = "a" * 499 + "b"
     _string = "c" * 500 + _pattern + "c" * 1000
-    _iterations = 1000
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):

@@ -7,6 +7,9 @@ class TestNM1(Test):
     _string = "a" * 499 + "b" * 50 + "a" * 499 + "b" * 453 + "a" * 499
     _pattern = "a" * 500
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -32,6 +35,9 @@ Hay 3 posibles candidatos de n-1 elementos, con n={} el largo del patron.
 class TestNM2(Test):
     _string = "c" * 499 + "b" * 50 + "c" * 499 + "b" * 453 + "c" * 499
     _pattern = "a" * 500
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -59,6 +65,9 @@ class TestNM3(Test):
     _string = "a" * 4 + "b" * 555 + "a" * 4 + "b" * 1437 + "a" * 4
     _pattern = "a" * 5
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -84,6 +93,9 @@ Hay 3 posibles candidatos de n-1 elementos, con n={} el largo del patron (patron
 class TestNM4(Test):
     _string = "c" * 4 + "b" * 555 + "c" * 4 + "b" * 1437 + "c" * 4
     _pattern = "a" * 5
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -111,6 +123,9 @@ class TestNM5(Test):
     _pattern = "".join([string.ascii_lowercase[i % (len(string.ascii_lowercase))] for i in range(499)] + ["3"])
     _string = _pattern[:499] + _pattern[:499] + _pattern[:499] + _pattern[:499] + "1111"
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -137,6 +152,9 @@ El patron es de largo n, con n={}.
 class TestNM6(Test):
     _string = "abcd" * 500
     _pattern = "abca" * 25
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):

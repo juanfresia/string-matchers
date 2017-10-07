@@ -5,6 +5,9 @@ class TestOC1(Test):
     _pattern = "a" * 500
     _string = "a" * 2000
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
@@ -30,6 +33,9 @@ Hay largo de la cadena menos n matches, siendo n={} el largo del patron.
 class TestOC2(Test):
     _pattern = "a"
     _string = "a" * 2000
+
+    def __init__(self):
+        super().__init__()
 
     def run(self, f):
         for _ in range(self._iterations - 1):

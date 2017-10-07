@@ -5,6 +5,9 @@ class TestMM1(Test):
     _pattern = "a" + "b" * 498 + "c"
     _string = _pattern * 4
 
+    def __init__(self):
+        super().__init__()
+
     def run(self, f):
         for _ in range(self._iterations - 1):
             f(self._string, self._pattern)
