@@ -21,7 +21,7 @@ def string_matching_naive(texto, patron):
 
     matches = []
 
-    for inicio in range(len(texto) - len(patron)):
+    for inicio in range(len(texto) - len(patron) + 1):
         match = True
         for act in range(len(patron)):
             if texto[inicio + act] != patron[act]:
