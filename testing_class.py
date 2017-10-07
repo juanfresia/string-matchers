@@ -23,6 +23,8 @@ VERBOSE = False
 
 
 class Test:
+    _iterations = 1000
+
     def run(self, f):
         raise NotImplementedError
 
