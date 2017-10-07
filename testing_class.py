@@ -23,7 +23,7 @@ VERBOSE = False
 
 
 class Test:
-    _iterations = 1000
+    _iterations = 100
 
     def run(self, f):
         raise NotImplementedError
@@ -54,6 +54,8 @@ class Test:
 
         for tag in sorted(MATCHERS.keys()):
             result, run_time = self.cron_test(MATCHERS[tag])
+            if result:
+                result.sort()
             status = "OK" if result == self.get_expected_result() else "ERROR"
 
             if status != "OK" and VERBOSE:
