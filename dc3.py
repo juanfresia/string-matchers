@@ -27,8 +27,12 @@ def string_matching_dc3(text, pattern):
 
     sufix_array = dcm(text)
 
+    #    print(sufix_array)
+
     initial = 0
     end = len(sufix_array) - 1
+
+    result = []
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
@@ -36,14 +40,20 @@ def string_matching_dc3(text, pattern):
         comparation = matches(text, sufix_array[mid], pattern)
 
         if comparation == PATTERN_EQUAL:
-            return [sufix_array[mid]]
+            if mid == 0 or matches(text, sufix_array[mid - 1], pattern) != PATTERN_EQUAL:
+                while mid < len(sufix_array) and matches(text, sufix_array[mid], pattern) == PATTERN_EQUAL:
+                    result.append(sufix_array[mid])
+                    mid += 1
+                break
+
+            comparation = PATTERN_LESSER
 
         if comparation == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
 
-    return []
+    return result
 
 
 def sample_suffixes_create(text):
@@ -83,7 +93,7 @@ def radix_sort(list_to_sort):
 
 
 def radix_sort2(list_to_sort, text):
-    sorted_list = list_to_sort
+    sorted_list = sorted(list_to_sort)
 
     if len(sorted_list) == 0:
         return sorted_list[:]
@@ -150,10 +160,10 @@ def dcm(sequence):
                 r_sequence.append(rank[i])
         r_sequence.append(0)
         out = dcm(r_sequence)
-
+        #        print(out)
         for i in range(1, len(out)):
-            rank_index = a12[out[i]]
-            rank[rank_index[1]] = i
+            rank_index = a12[out[i]][1]
+            rank[rank_index] = i
 
     to_sort = []
     for i in range(len(a0)):
@@ -227,6 +237,7 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 
 if __name__ == '__main__':
+    print(string_matching_dc3("aaaaaa", "ana"), "==", "")
     print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
     print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
     print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
