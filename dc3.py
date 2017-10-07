@@ -1,12 +1,12 @@
-GREATER = 1
-LESSER = -1
-EQUAL = 0
+PATTERN_GREATER = 1
+PATTERN_LESSER = -1
+PATTERN_EQUAL = 0
 
 
 def matches(text, index, patter):
     for i in range(len(patter)):
         if i + index >= len(text):
-            return GREATER
+            return PATTERN_GREATER
 
         pattern_char = patter[i]
         text_char = text[i + index]
@@ -15,10 +15,10 @@ def matches(text, index, patter):
             continue
 
         if pattern_char < text_char:
-            return LESSER
-        return GREATER
+            return PATTERN_LESSER
+        return PATTERN_GREATER
 
-    return EQUAL
+    return PATTERN_EQUAL
 
 
 def string_matching_dc3(text, pattern):
