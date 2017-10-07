@@ -1,9 +1,11 @@
+import tests_multiple_matches
+import tests_one_character
 from testing_class import MATCHERS
 
 TEST_RESULTS = "test_results"
 import tests_no_matches, tests_one_match, test_pattern_pattern
 
-TEST_MODULES = [tests_no_matches, tests_one_match, test_pattern_pattern]
+TEST_MODULES = [tests_no_matches, tests_one_match, test_pattern_pattern, tests_multiple_matches, tests_one_character]
 ENABLED_TESTS = []
 
 for _module in TEST_MODULES:
@@ -17,7 +19,7 @@ def main():
         for tag in sorted(MATCHERS.keys()):
             header += "{}|".format(tag)
 
-        div = "|" + ":---|" * (len(MATCHERS) + 1)
+        div = "|:---|" + "---:|" * (len(MATCHERS))
         output.write(header + "\n")
         output.write(div + "\n")
         for test_class in ENABLED_TESTS:
