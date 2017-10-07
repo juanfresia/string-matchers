@@ -2,22 +2,22 @@
 
  | |Baseline|DC3|Karp Rabin|Naive|Z Box|
 |:---|---:|---:|---:|---:|---:|
-|[NM-1](#no-matches-test-1)|0.186758 - (ERROR)|21.335707 - (OK)|4.192286 - (OK)|32.165430 - (OK)|3.487413 - (OK)|
-|[NM-2](#no-matches-test-2)|0.180476 - (ERROR)|19.449736 - (OK)|4.019456 - (OK)|1.144743 - (OK)|2.772528 - (OK)|
-|[NM-3](#no-matches-test-3)|0.148340 - (ERROR)|19.352339 - (OK)|2.179705 - (OK)|1.219693 - (OK)|1.884732 - (OK)|
-|[NM-4](#no-matches-test-4)|0.147566 - (ERROR)|21.794151 - (OK)|2.204312 - (OK)|1.241128 - (OK)|1.963224 - (OK)|
-|[NM-5](#no-matches-test-5)|0.191466 - (ERROR)|21.279387 - (OK)|4.079462 - (OK)|3.111675 - (OK)|2.162703 - (OK)|
-|[NM-6](#no-matches-test-6)|0.152863 - (ERROR)|20.182384 - (OK)|2.823645 - (OK)|1.355848 - (OK)|2.061800 - (OK)|
-|[OM-1](#one-match-test-1)|0.186683 - (ERROR)|19.590036 - (ERROR)|4.118247 - (OK)|1.170717 - (OK)|2.295819 - (OK)|
-|[OM-2](#one-match-test-2)|0.189534 - (ERROR)|21.009670 - (ERROR)|4.262489 - (OK)|16.259317 - (OK)|2.650312 - (OK)|
-|[OM-3](#one-match-test-3)|0.187086 - (ERROR)|20.475556 - (ERROR)|4.101038 - (OK)|1.179379 - (OK)|2.298370 - (OK)|
-|[OM-4](#one-match-test-4)|0.190192 - (ERROR)|20.847707 - (ERROR)|4.212768 - (OK)|16.635023 - (OK)|2.647501 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.310714 - (ERROR)|19.288125 - (ERROR)|1.305704 - (OK)|0.319772 - (ERROR)|3.426662 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.314328 - (ERROR)|24.395285 - (ERROR)|1.325728 - (OK)|0.350959 - (ERROR)|4.935707 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.306575 - (ERROR)|23.330256 - (ERROR)|1.320236 - (OK)|0.314899 - (ERROR)|4.615034 - (OK)|
-|[MM-1](#multiple-matches-test-1)|0.189382 - (ERROR)|23.197783 - (ERROR)|4.296269 - (OK)|1.281807 - (ERROR)|2.135392 - (OK)|
-|[OC-1](#one-character-test-1)|0.191620 - (ERROR)|23.684088 - (ERROR)|92.217431 - (OK)|98.165796 - (ERROR)|4.016784 - (ERROR)|
-|[OC-2](#one-character-test-2)|0.154102 - (ERROR)|21.505645 - (ERROR)|3.079695 - (OK)|1.300821 - (ERROR)|2.650254 - (OK)|
+|[NM-1](#no-matches-test-1)|0.171151 - (ERROR)|21.640188 - (OK)|4.310440 - (OK)|28.771114 - (OK)|3.459670 - (OK)|
+|[NM-2](#no-matches-test-2)|0.180706 - (ERROR)|19.360498 - (OK)|3.927241 - (OK)|1.048827 - (OK)|2.687769 - (OK)|
+|[NM-3](#no-matches-test-3)|0.143208 - (ERROR)|19.194017 - (OK)|2.211963 - (OK)|1.134796 - (OK)|1.839131 - (OK)|
+|[NM-4](#no-matches-test-4)|0.139074 - (ERROR)|21.494204 - (OK)|2.215020 - (OK)|1.126212 - (OK)|1.823552 - (OK)|
+|[NM-5](#no-matches-test-5)|0.178341 - (ERROR)|21.465367 - (OK)|3.938446 - (OK)|2.803443 - (OK)|2.100056 - (OK)|
+|[NM-6](#no-matches-test-6)|0.147482 - (ERROR)|19.973395 - (OK)|2.783521 - (OK)|1.265248 - (OK)|2.020246 - (OK)|
+|[OM-1](#one-match-test-1)|0.176192 - (ERROR)|19.437621 - (OK)|4.041516 - (OK)|1.100546 - (OK)|2.229324 - (OK)|
+|[OM-2](#one-match-test-2)|0.174858 - (ERROR)|21.058702 - (OK)|4.174372 - (OK)|14.612443 - (OK)|2.554902 - (OK)|
+|[OM-3](#one-match-test-3)|0.175897 - (ERROR)|20.190707 - (OK)|4.036645 - (OK)|1.118924 - (OK)|2.246230 - (OK)|
+|[OM-4](#one-match-test-4)|0.175056 - (ERROR)|21.076318 - (OK)|4.145706 - (OK)|14.820179 - (OK)|2.599741 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.287342 - (ERROR)|19.313957 - (OK)|1.212006 - (OK)|0.308746 - (ERROR)|3.218728 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.292502 - (ERROR)|24.585692 - (OK)|1.230538 - (OK)|0.301590 - (ERROR)|4.790393 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.291560 - (ERROR)|23.451054 - (OK)|1.223487 - (OK)|0.300987 - (ERROR)|4.460674 - (OK)|
+|[MM-1](#multiple-matches-test-1)|0.180862 - (ERROR)|22.791822 - (ERROR)|4.192650 - (OK)|1.188481 - (ERROR)|1.994562 - (OK)|
+|[OC-1](#one-character-test-1)|0.176645 - (ERROR)|24.723565 - (ERROR)|90.214034 - (OK)|87.179937 - (ERROR)|3.892204 - (ERROR)|
+|[OC-2](#one-character-test-2)|0.141661 - (ERROR)|21.485090 - (ERROR)|3.129281 - (OK)|1.250883 - (ERROR)|2.623100 - (OK)|
 # Descriptions 
 
 ## No Matches Test 1 
