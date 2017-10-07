@@ -2,29 +2,35 @@
 
  | |Baseline|DC3|Karp Rabin|Naive|Z Box|
 |:---|---:|---:|---:|---:|---:|
-|[NM-1](#no-matches-test-1)|0.016456 - (ERROR)|2.129789 - (OK)|0.434065 - (OK)|2.876832 - (OK)|0.347248 - (OK)|
-|[NM-2](#no-matches-test-2)|0.016541 - (ERROR)|1.929683 - (OK)|0.418871 - (OK)|0.108562 - (OK)|0.269542 - (OK)|
-|[NM-3](#no-matches-test-3)|0.013430 - (ERROR)|1.914481 - (OK)|0.232381 - (OK)|0.122749 - (OK)|0.188201 - (OK)|
-|[NM-4](#no-matches-test-4)|0.013343 - (ERROR)|2.154105 - (OK)|0.232962 - (OK)|0.119063 - (OK)|0.188928 - (OK)|
-|[NM-5](#no-matches-test-5)|0.017118 - (ERROR)|2.140459 - (OK)|0.420220 - (OK)|0.279786 - (OK)|0.214850 - (OK)|
-|[NM-6](#no-matches-test-6)|0.014161 - (ERROR)|2.001456 - (OK)|0.298859 - (OK)|0.138058 - (OK)|0.207552 - (OK)|
-|[OM-1](#one-match-test-1)|0.017016 - (ERROR)|1.936703 - (OK)|0.424397 - (OK)|0.117867 - (OK)|0.232321 - (OK)|
-|[OM-2](#one-match-test-2)|0.017259 - (ERROR)|2.106913 - (OK)|0.436343 - (OK)|1.491656 - (OK)|0.259428 - (OK)|
-|[OM-3](#one-match-test-3)|0.016730 - (ERROR)|2.017195 - (OK)|0.419436 - (OK)|0.116758 - (OK)|0.228740 - (OK)|
-|[OM-4](#one-match-test-4)|0.016991 - (ERROR)|2.122989 - (OK)|0.428649 - (OK)|1.485783 - (OK)|0.257669 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.028356 - (ERROR)|1.927103 - (OK)|0.123628 - (OK)|0.049309 - (OK)|0.328978 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.028327 - (ERROR)|2.492405 - (OK)|0.125662 - (OK)|0.049818 - (OK)|0.490412 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.027652 - (ERROR)|2.344944 - (OK)|0.132168 - (OK)|0.051090 - (OK)|0.463182 - (OK)|
-|[MM-1](#multiple-matches-test-1)|0.017139 - (ERROR)|2.280765 - (OK)|0.448121 - (OK)|0.131713 - (OK)|0.220735 - (OK)|
-|[MM-2](#multiple-matches-test-1)|0.017476 - (ERROR)|2.040534 - (OK)|0.444634 - (OK)|0.133241 - (OK)|0.215398 - (OK)|
-|[MM-3](#multiple-matches-test-3)|0.015532 - (ERROR)|2.233530 - (ERROR)|0.346415 - (OK)|0.131043 - (OK)|0.184008 - (OK)|
-|[MM-4](#multiple-matches-test-4)|0.015543 - (ERROR)|2.222516 - (ERROR)|0.345968 - (OK)|0.132099 - (OK)|0.180376 - (OK)|
-|[OC-1](#one-character-test-1)|0.017298 - (ERROR)|2.498204 - (ERROR)|9.744886 - (OK)|8.970904 - (OK)|0.403840 - (ERROR)|
-|[OC-2](#one-character-test-2)|0.013664 - (ERROR)|2.134173 - (OK)|0.298437 - (OK)|0.127826 - (OK)|0.264582 - (OK)|
-|[OC-3](#one-character-test-3)|0.013373 - (ERROR)|2.203474 - (OK)|0.414106 - (OK)|0.156026 - (OK)|0.368488 - (OK)|
-|[OC-4](#one-character-test-4)|0.013473 - (ERROR)|2.267330 - (OK)|0.451810 - (OK)|0.176918 - (OK)|0.370282 - (ERROR)|
-|[OC-5](#one-character-test-5)|0.013427 - (ERROR)|2.273291 - (OK)|0.456627 - (OK)|0.180976 - (OK)|0.373647 - (ERROR)|
-|[OC-6](#one-character-test-6)|0.014055 - (ERROR)|2.346628 - (OK)|0.477325 - (OK)|0.198744 - (OK)|0.368680 - (ERROR)|
+|[NM-1](#no-matches-test-1)|0.020010 - (ERROR)|2.138648 - (OK)|0.430606 - (OK)|2.857470 - (OK)|0.357549 - (OK)|
+|[NM-2](#no-matches-test-2)|0.020532 - (ERROR)|1.961005 - (OK)|0.425238 - (OK)|0.120893 - (OK)|0.290270 - (OK)|
+|[NM-3](#no-matches-test-3)|0.017258 - (ERROR)|2.004683 - (OK)|0.227165 - (OK)|0.127362 - (OK)|0.189746 - (OK)|
+|[NM-4](#no-matches-test-4)|0.015552 - (ERROR)|2.156485 - (OK)|0.225138 - (OK)|0.131414 - (OK)|0.195797 - (OK)|
+|[NM-5](#no-matches-test-5)|0.020038 - (ERROR)|2.154016 - (OK)|0.413804 - (OK)|0.293855 - (OK)|0.220554 - (OK)|
+|[NM-6](#no-matches-test-6)|0.016536 - (ERROR)|2.000564 - (OK)|0.287415 - (OK)|0.142367 - (OK)|0.210569 - (OK)|
+|[OM-1](#one-match-test-1)|0.019849 - (ERROR)|1.952039 - (OK)|0.417889 - (OK)|0.125091 - (OK)|0.233109 - (OK)|
+|[OM-2](#one-match-test-2)|0.020042 - (ERROR)|2.117404 - (OK)|0.425167 - (OK)|1.530876 - (OK)|0.275647 - (OK)|
+|[OM-3](#one-match-test-3)|0.020285 - (ERROR)|2.037482 - (OK)|0.419996 - (OK)|0.123487 - (OK)|0.237840 - (OK)|
+|[OM-4](#one-match-test-4)|0.020568 - (ERROR)|2.132070 - (OK)|0.431753 - (OK)|1.600938 - (OK)|0.268111 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.032569 - (ERROR)|1.953012 - (OK)|0.125146 - (OK)|0.053978 - (OK)|0.336104 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.033305 - (ERROR)|2.471364 - (OK)|0.129729 - (OK)|0.057738 - (OK)|0.492201 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.034879 - (ERROR)|2.358911 - (OK)|0.132908 - (OK)|0.058514 - (OK)|0.463973 - (OK)|
+|[MM-1](#multiple-matches-test-1)|0.020206 - (ERROR)|2.296535 - (OK)|0.432462 - (OK)|0.134051 - (OK)|0.222378 - (OK)|
+|[MM-2](#multiple-matches-test-1)|0.019608 - (ERROR)|2.048163 - (OK)|0.438325 - (OK)|0.138398 - (OK)|0.215965 - (OK)|
+|[MM-3](#multiple-matches-test-3)|0.018220 - (ERROR)|2.285376 - (ERROR)|0.351407 - (OK)|0.139450 - (OK)|0.186974 - (OK)|
+|[MM-4](#multiple-matches-test-4)|0.018060 - (ERROR)|2.226560 - (ERROR)|0.338356 - (OK)|0.138575 - (OK)|0.186306 - (OK)|
+|[OC-1](#one-character-test-1)|0.020153 - (ERROR)|2.501601 - (ERROR)|9.435830 - (OK)|8.904728 - (OK)|0.405780 - (ERROR)|
+|[OC-2](#one-character-test-2)|0.016165 - (ERROR)|2.145621 - (OK)|0.305543 - (OK)|0.135063 - (OK)|0.270649 - (OK)|
+|[OC-3](#one-character-test-3)|0.016181 - (ERROR)|2.202274 - (OK)|0.397910 - (OK)|0.165541 - (OK)|0.365495 - (OK)|
+|[OC-4](#one-character-test-4)|0.016258 - (ERROR)|2.277241 - (OK)|0.444322 - (OK)|0.186591 - (OK)|0.367978 - (ERROR)|
+|[OC-5](#one-character-test-5)|0.015922 - (ERROR)|2.259384 - (OK)|0.447060 - (OK)|0.183813 - (OK)|0.365252 - (ERROR)|
+|[OC-6](#one-character-test-6)|0.015933 - (ERROR)|2.306003 - (OK)|0.460413 - (OK)|0.206890 - (OK)|0.371021 - (ERROR)|
+|[CT-1](#classic-test-1)|0.034899 - (ERROR)|1.065556 - (OK)|0.187372 - (OK)|0.098036 - (OK)|0.186555 - (OK)|
+|[CT-2](#classic-test-2)|0.038633 - (ERROR)|0.896876 - (OK)|0.138176 - (OK)|0.077756 - (OK)|0.164971 - (OK)|
+|[CT-3](#classic-test-3)|0.025628 - (ERROR)|1.166041 - (OK)|0.131936 - (OK)|0.073032 - (OK)|0.137353 - (OK)|
+|[CT-4](#classic-test-4)|0.024542 - (ERROR)|1.170143 - (OK)|0.165872 - (OK)|0.082057 - (OK)|0.129606 - (OK)|
+|[CT-5](#classic-test-5)|0.026980 - (ERROR)|1.156468 - (OK)|0.130872 - (OK)|0.071770 - (OK)|0.136758 - (OK)|
+|[CT-6](#classic-test-6)|0.024355 - (ERROR)|1.132212 - (OK)|0.125436 - (OK)|0.076418 - (OK)|0.129711 - (OK)|
 # Descriptions 
 
 ## No Matches Test 1 
@@ -200,4 +206,34 @@ Hay largo de la cadena menos n matches, siendo n=3 el largo del patron (patron c
 Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
 
 Hay largo de la cadena menos n matches, siendo n=4 el largo del patron (patron limite+1 ventana DC3).
+                
+## Classic Test 1 
+
+ 
+Corre 16666 veces el string matcher sobre "banana" buscando el patron "ana". Ejemplo de DC3
+                
+## Classic Test 2 
+
+ 
+Corre 16666 veces el string matcher sobre "banana" buscando el patron "yaba". Ejemplo de DC3
+                
+## Classic Test 3 
+
+ 
+Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "yabba". Ejemplo de DC3
+                
+## Classic Test 4 
+
+ 
+Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "bba". Ejemplo de DC3
+                
+## Classic Test 5 
+
+ 
+Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "dabba". Ejemplo de DC3
+                
+## Classic Test 6 
+
+ 
+Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "ana". Ejemplo de DC3
                 
