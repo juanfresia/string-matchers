@@ -1,3 +1,5 @@
+from string_encoder import encode_string
+
 PATTERN_GREATER = 1
 PATTERN_LESSER = -1
 PATTERN_EQUAL = 0
@@ -22,8 +24,9 @@ def matches(text, index, patter):
 
 
 def string_matching_dc3(text, pattern):
-    text = tuple([ord(c) - ord("a") + 1 if c != "$" else 0 for c in text] + [0])
-    pattern = tuple([ord(c) - ord("a") + 1 if c != "$" else 0 for c in pattern])
+    text = encode_string(text)
+    text.append(0)
+    pattern = encode_string(pattern)
 
     sufix_array = dcm(text)
 
@@ -57,7 +60,7 @@ def string_matching_dc3(text, pattern):
 
 
 def sample_suffixes_create(text):
-    text = tuple(text)
+    text = text
     result = [[], [], []]
     for i in range(len(text)):
         item = text[i:i + 3]
