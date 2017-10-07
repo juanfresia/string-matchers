@@ -28,30 +28,28 @@ def string_matching_dc3(text, pattern):
     text.append(0)
     pattern = encode_string(pattern)
 
-    sufix_array = dcm(text)
-
-    #    print(sufix_array)
+    suffix_array = dcm(text)
 
     initial = 0
-    end = len(sufix_array) - 1
+    end = len(suffix_array) - 1
 
     result = []
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
 
-        comparation = matches(text, sufix_array[mid], pattern)
+        comparator = matches(text, suffix_array[mid], pattern)
 
-        if comparation == PATTERN_EQUAL:
-            if mid == 0 or matches(text, sufix_array[mid - 1], pattern) != PATTERN_EQUAL:
-                while mid < len(sufix_array) and matches(text, sufix_array[mid], pattern) == PATTERN_EQUAL:
-                    result.append(sufix_array[mid])
+        if comparator == PATTERN_EQUAL:
+            if mid == 0 or matches(text, suffix_array[mid - 1], pattern) != PATTERN_EQUAL:
+                while mid < len(suffix_array) and matches(text, suffix_array[mid], pattern) == PATTERN_EQUAL:
+                    result.append(suffix_array[mid])
                     mid += 1
                 break
 
-            comparation = PATTERN_LESSER
+            comparator = PATTERN_LESSER
 
-        if comparation == PATTERN_GREATER:
+        if comparator == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
@@ -144,7 +142,6 @@ def dcm(sequence):
     rank[-1] = 0
     rank[-2] = 0
 
-    temp = []
     pos_rank = 1
     compare_base = base_sequence[sorted_a12[0]:sorted_a12[0] + 3]
     for i, index in enumerate(sorted_a12):
@@ -153,8 +150,6 @@ def dcm(sequence):
             compare_base = actual_base
             pos_rank += 1
         rank[index] = pos_rank
-
-    out = sorted_a12
 
     if pos_rank < len(sorted_a12):
         r_sequence = []
