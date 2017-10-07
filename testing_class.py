@@ -19,6 +19,7 @@ MATCHERS = {'Naive': string_matching_naive,
             'Baseline': do_nothing,
             'DC3': string_matching_dc3}
 
+VERBOSE = False
 
 class Test:
     def run(self, f):
@@ -52,7 +53,7 @@ class Test:
             result, run_time = self.cron_test(MATCHERS[tag])
             status = "OK" if result == self.get_expected_result() else "ERROR"
 
-            if status != "OK":
+            if status != "OK" and VERBOSE:
                 print("Error: <{2}> expected:{1}, got:{0}".format(result, self.get_expected_result(), tag))
 
             result_string += "{:03.6f} - ({})|".format(run_time, status)
