@@ -35,10 +35,10 @@ def string_matching_dc3(text, pattern):
 
         comparation = matches(text, sufix_array[mid], pattern)
 
-        if comparation == EQUAL:
+        if comparation == PATTERN_EQUAL:
             return [sufix_array[mid]]
 
-        if comparation == GREATER:
+        if comparation == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
