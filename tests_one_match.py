@@ -4,7 +4,6 @@ from testing_class import Test
 class TestOM1(Test):
     _pattern = "a" + "b" * 499
     _string = "b" * 500 + _pattern + "b" * 1000
-    _iterations = 1000
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -32,7 +31,6 @@ patron de largo n={}.
 class TestOM2(Test):
     _pattern = "a" * 499 + "b"
     _string = "b" * 500 + _pattern + "b" * 1000
-    _iterations = 1000
 
     def run(self, f):
         for _ in range(self._iterations - 1):

@@ -4,7 +4,6 @@ from testing_class import Test
 class TestMM1(Test):
     _pattern = "a" + "b" * 498 + "c"
     _string = _pattern * 4
-    _iterations = 1000
 
     def run(self, f):
         for _ in range(self._iterations - 1):
