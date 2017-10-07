@@ -4,7 +4,7 @@ from testing_class import Test
 class TestPP1(Test):
     _pattern = "a" + "b" * 499
     _string = _pattern
-    _iterations = 4000
+    _iterations = super()._iterations * 4
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -32,7 +32,7 @@ patron de largo n={}..
 class TestPP2(Test):
     _pattern = "a" * 499 + "b" * 1
     _string = _pattern
-    _iterations = 4000
+    _iterations = super()._iterations * 4
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -60,7 +60,7 @@ patron de largo n={} repetido n-1 veces.
 class TestPP3(Test):
     _pattern = "a" * 499 + "b" * 1 + "a" * 250 + "b" * 250
     _string = _pattern
-    _iterations = 2000
+    _iterations = super()._iterations * 2
 
     def run(self, f):
         for _ in range(self._iterations - 1):
