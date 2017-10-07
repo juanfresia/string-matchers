@@ -30,11 +30,15 @@ def string_matching_dc3(text, pattern):
 
     suffix_array = dcm(text)
 
+    result = binary_search_pattern(pattern, suffix_array, text)
+
+    return result
+
+
+def binary_search_pattern(pattern, suffix_array, text):
     initial = 0
     end = len(suffix_array) - 1
-
     result = []
-
     while initial <= end:
         mid = initial + ((end - initial) // 2)
 
@@ -53,6 +57,20 @@ def string_matching_dc3(text, pattern):
             initial = mid + 1
         else:
             end = mid - 1
+    return result
+
+
+def multiple_string_matching_dc3(text, patterns):
+    text = encode_string(text)
+    text.append(0)
+
+    suffix_array = dcm(text)
+
+    result = []
+
+    for pattern in patterns:
+        pattern = encode_string(pattern)
+        result.append(binary_search_pattern(pattern, suffix_array, text))
 
     return result
 
@@ -117,62 +135,50 @@ def radix_sort2(list_to_sort, text):
     return sorted_list
 
 
-def generate_lookup(_list):
-    lookup = {}
-
-    i = 1
-    for substring, _ in _list:
-        if substring not in lookup:
-            lookup[substring] = i
-            i += 1
-
-    return lookup
-
-
 def dcm(sequence):
     base_sequence = sequence
 
     base_sequence += (0, 0)
 
-    a0, a1, a2 = sample_suffixes_create(base_sequence)
-    a12 = a1 + a2
-    sorted_a12 = radix_sort2([m[1] for m in a12], base_sequence)
+    b0, b1, b2 = sample_suffixes_create(base_sequence)
+    b12 = b1 + b2
+    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence)
 
     rank = ["|" for _ in range(len(base_sequence))]
     rank[-1] = 0
     rank[-2] = 0
 
     pos_rank = 1
-    compare_base = base_sequence[sorted_a12[0]:sorted_a12[0] + 3]
-    for i, index in enumerate(sorted_a12):
-        actual_base = base_sequence[sorted_a12[i]:sorted_a12[i] + 3]
+    compare_base = base_sequence[sorted_b12[0]:sorted_b12[0] + 3]
+    for i, index in enumerate(sorted_b12):
+        actual_base = base_sequence[sorted_b12[i]:sorted_b12[i] + 3]
         if compare_base != actual_base:
             compare_base = actual_base
             pos_rank += 1
         rank[index] = pos_rank
 
-    if pos_rank < len(sorted_a12):
+    if pos_rank < len(sorted_b12):
         r_sequence = []
         for a in range(1, 3):
             for i in range(a, len(rank) - 2, 3):
                 r_sequence.append(rank[i])
         r_sequence.append(0)
         out = dcm(r_sequence)
-        #        print(out)
-        sorted_a12 = []
+
+        sorted_b12 = []
         for i in range(1, len(out)):
-            rank_index = a12[out[i]][1]
+            rank_index = b12[out[i]][1]
             rank[rank_index] = i
-            sorted_a12.append(rank_index)
+            sorted_b12.append(rank_index)
 
     to_sort = []
-    for i in range(len(a0)):
+    for i in range(len(b0)):
         rank_value = rank[i * 3 + 1]
-        to_sort.append(((a0[i][0][0], rank_value), a0[i][1]))
+        to_sort.append(((b0[i][0][0], rank_value), b0[i][1]))
 
     sorted_a0 = radix_sort(to_sort)
 
-    merge = merge_step(rank, sorted_a0, sorted_a12, base_sequence)
+    merge = merge_step(rank, sorted_a0, sorted_b12, base_sequence)
     return merge
 
 
