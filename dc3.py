@@ -22,6 +22,9 @@ def matches(text, index, patter):
 
 
 def string_matching_dc3(text, pattern):
+    text = tuple([ord(c) if c != "$" else 0 for c in text])
+    pattern = tuple([ord(c) if c != "$" else 0 for c in pattern])
+
     sufix_array = dcm(text)
 
     initial = 0
@@ -32,7 +35,7 @@ def string_matching_dc3(text, pattern):
         # print("{} {} {}".format(initial, mid, end))
         # print("{}".format(text[sufix_array[mid]:]))
         comparation = matches(text, sufix_array[mid], pattern)
-        #print(">{}<".format(comparation))
+        # print(">{}<".format(comparation))
         if comparation == EQUAL:
             return [sufix_array[mid]]
 
@@ -85,7 +88,7 @@ def generate_lookup(_list):
 
     i = 1
     for substring, _ in _list:
-        if not substring in lookup:
+        if substring not in lookup:
             lookup[substring] = i
             i += 1
 
@@ -94,8 +97,6 @@ def generate_lookup(_list):
 
 def dcm(sequence):
     base_sequence = sequence
-    if isinstance(sequence, str):
-        base_sequence = tuple([ord(c) if c != "$" else 0 for c in sequence])
 
     base_sequence += (0,)
 
@@ -188,5 +189,6 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 
 if __name__ == '__main__':
-    print(dcm("yabbadabbado"))
-    print(string_matching_dc3("banana", "ana"))
+    print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
+    print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
+    print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
