@@ -21,6 +21,7 @@ MATCHERS = {'Naive': string_matching_naive,
 
 VERBOSE = False
 
+
 class Test:
     def run(self, f):
         raise NotImplementedError
