@@ -93,7 +93,7 @@ def radix_sort(list_to_sort):
 
 
 def radix_sort2(list_to_sort, text):
-    sorted_list = sorted(list_to_sort)
+    sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
         return sorted_list[:]
@@ -161,9 +161,11 @@ def dcm(sequence):
         r_sequence.append(0)
         out = dcm(r_sequence)
         #        print(out)
+        sorted_a12 = []
         for i in range(1, len(out)):
             rank_index = a12[out[i]][1]
             rank[rank_index] = i
+            sorted_a12.append(rank_index)
 
     to_sort = []
     for i in range(len(a0)):
@@ -237,6 +239,7 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 
 if __name__ == '__main__':
+    print(dcm((1, 1, 1, 1, 1, 0)), "==", ["aa"])
     print(string_matching_dc3("aaaaaa", "ana"), "==", "")
     print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
     print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
