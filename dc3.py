@@ -22,8 +22,8 @@ def matches(text, index, patter):
 
 
 def string_matching_dc3(text, pattern):
-    text = tuple([ord(c) if c != "$" else 0 for c in text])
-    pattern = tuple([ord(c) if c != "$" else 0 for c in pattern])
+    text = tuple([ord(c) - ord("a") + 1 if c != "$" else 0 for c in text] + [0])
+    pattern = tuple([ord(c) - ord("a") + 1 if c != "$" else 0 for c in pattern])
 
     sufix_array = dcm(text)
 
@@ -32,10 +32,9 @@ def string_matching_dc3(text, pattern):
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
-        # print("{} {} {}".format(initial, mid, end))
-        # print("{}".format(text[sufix_array[mid]:]))
+
         comparation = matches(text, sufix_array[mid], pattern)
-        # print(">{}<".format(comparation))
+
         if comparation == EQUAL:
             return [sufix_array[mid]]
 
@@ -54,7 +53,7 @@ def sample_suffixes_create(text):
         item = text[i:i + 3]
 
         if len(item) < 3:
-            item += (0,) * (3 - len(item))
+            continue
 
         result[i % 3].append((item, i))
 
@@ -83,6 +82,30 @@ def radix_sort(list_to_sort):
     return sorted_list
 
 
+def radix_sort2(list_to_sort, text):
+    sorted_list = list_to_sort
+
+    if len(sorted_list) == 0:
+        return sorted_list[:]
+
+    for i in range(3):
+        buckets = {}
+
+        for index in sorted_list:
+            _index = index + 2 - i
+            bucket = buckets.get(text[_index], [])
+            bucket.append(index)
+            buckets[text[_index]] = bucket
+
+        sorted_list = []
+
+        for k in sorted(buckets.keys()):
+            for triplet in buckets[k]:
+                sorted_list.append(triplet)
+
+    return sorted_list
+
+
 def generate_lookup(_list):
     lookup = {}
 
@@ -98,24 +121,39 @@ def generate_lookup(_list):
 def dcm(sequence):
     base_sequence = sequence
 
-    base_sequence += (0,)
+    base_sequence += (0, 0)
 
     a0, a1, a2 = sample_suffixes_create(base_sequence)
     a12 = a1 + a2
-    sorted_a12 = radix_sort(a12)
-    d = generate_lookup(sorted_a12)
+    sorted_a12 = radix_sort2([m[1] for m in a12], base_sequence)
 
-    r_sequence = tuple([d[i[0]] for i in a12])
-    out = [sorted_a12]
+    rank = ["|" for _ in range(len(base_sequence))]
+    rank[-1] = 0
+    rank[-2] = 0
 
-    if len(d) != len(sorted_a12):
+    temp = []
+    pos_rank = 1
+    compare_base = base_sequence[sorted_a12[0]:sorted_a12[0] + 3]
+    for i, index in enumerate(sorted_a12):
+        actual_base = base_sequence[sorted_a12[i]:sorted_a12[i] + 3]
+        if compare_base != actual_base:
+            compare_base = actual_base
+            pos_rank += 1
+        rank[index] = pos_rank
+
+    out = sorted_a12
+
+    if pos_rank < len(sorted_a12):
+        r_sequence = []
+        for a in range(1, 3):
+            for i in range(a, len(rank) - 2, 3):
+                r_sequence.append(rank[i])
+        r_sequence.append(0)
         out = dcm(r_sequence)
 
-    rank = [d[base_sequence[i:i + 3]] if i % 3 != 0 else "|" for i in range(len(base_sequence) - 2)] + [0, 0, 0]
-
-    for i in range(1, len(out)):
-        rank_index = a12[out[i]]
-        rank[rank_index[1]] = i
+        for i in range(1, len(out)):
+            rank_index = a12[out[i]]
+            rank[rank_index[1]] = i
 
     to_sort = []
     for i in range(len(a0)):
@@ -134,7 +172,7 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
     merge = []
 
     while i < len(sorted_b12) and j < len(sorted_b0):
-        sample_index = sorted_b12[i][1]
+        sample_index = sorted_b12[i]
         nsample_index = sorted_b0[j][1]
 
         if original_sequence[sample_index] < original_sequence[nsample_index]:
@@ -176,7 +214,7 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
             j += 1
 
     while i < len(sorted_b12):
-        sample_index = sorted_b12[i][1]
+        sample_index = sorted_b12[i]
         merge.append(sample_index)
         i += 1
 
@@ -189,6 +227,6 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 
 if __name__ == '__main__':
-    print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
     print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
+    print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
     print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
