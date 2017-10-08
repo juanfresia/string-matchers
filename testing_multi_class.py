@@ -1,4 +1,5 @@
 from dc3 import multiple_string_matching_dc3
+from naive import multi_string_matching_naive
 from string_encoder import encode_string
 from testing_class import Test
 
@@ -10,7 +11,10 @@ def do_nothing(text, patterns):
     return None
 
 
-MATCHERS = {'Baseline': do_nothing,
+MATCHERS = {'Naive': multi_string_matching_naive,
+            'Karp Rabin': do_nothing,
+            'Z Box': do_nothing,
+            'Baseline': do_nothing,
             'DC3': multiple_string_matching_dc3}
 
 VERBOSE = False
