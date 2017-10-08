@@ -26,7 +26,7 @@ class TestIL1(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -53,7 +53,7 @@ class TestIL2(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -80,7 +80,7 @@ class TestIL3(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -107,7 +107,7 @@ class TestIL4(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -134,7 +134,7 @@ class TestIL5(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -164,7 +164,7 @@ class TestIL6(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -191,7 +191,7 @@ class TestIL7(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -218,7 +218,7 @@ class TestIL8(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -245,7 +245,7 @@ class TestIL9(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
@@ -272,7 +272,7 @@ class TestILA(Test):
 
     def get_test_description(self):
         return """
-        Match en el principio de la cadena de largo {}
+Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
