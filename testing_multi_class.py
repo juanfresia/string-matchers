@@ -1,4 +1,4 @@
-from dc3 import string_matching_dc3
+from dc3 import multiple_string_matching_dc3
 from string_encoder import encode_string
 from testing_class import Test
 
@@ -11,7 +11,7 @@ def do_nothing(text, patterns):
 
 
 MATCHERS = {'Baseline': do_nothing,
-            'DC3': string_matching_dc3}
+            'DC3': multiple_string_matching_dc3}
 
 VERBOSE = False
 
