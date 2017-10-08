@@ -4,12 +4,11 @@ from testing_class import Test
 
 
 class TestIL1(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "ab" * 250
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "bb" * 250
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -32,12 +31,11 @@ class TestIL1(Test):
 
 
 class TestIL2(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "aa" * (99000 // 2) + "ab" * 250
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "bb" * (9000 // 2) + "bb" * 250
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -60,12 +58,11 @@ class TestIL2(Test):
 
 
 class TestIL3(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "ab" * (9999000 // 2) + "ab" * 250
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "bb" * (99000 // 2) + "bb" * 250
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -88,12 +85,11 @@ class TestIL3(Test):
 
 
 class TestIL4(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "ab" * (999999000 // 2) + "ab" * 250
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "bb" * (999000 // 2) + "bb" * 250
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -116,12 +112,11 @@ class TestIL4(Test):
 
 
 class TestIL5(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "ab" * (99999999000 // 2) + "ab" * 250
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "bb" * (9999000 // 2) + "bb" * 250
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -147,12 +142,11 @@ ALPHABET = "bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$123456789|#&()?"
 
 
 class TestIL6(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "".join([random.choice(ALPHABET) for _ in range(500)])
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -175,12 +169,11 @@ class TestIL6(Test):
 
 
 class TestIL7(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "".join([random.choice(ALPHABET) for _ in range(99500)])
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(9500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -203,12 +196,11 @@ class TestIL7(Test):
 
 
 class TestIL8(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "".join([random.choice(ALPHABET) for _ in range(9999500)])
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(99500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -231,12 +223,11 @@ class TestIL8(Test):
 
 
 class TestIL9(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "".join([random.choice(ALPHABET) for _ in range(999999500)])
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(999500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -259,12 +250,11 @@ class TestIL9(Test):
 
 
 class TestILA(Test):
-    _pattern = "a" + "b" * 499
-    _string = _pattern + "".join([random.choice(ALPHABET) for _ in range(99999999500)])
-
     def __init__(self):
         super().__init__()
         self._iterations = 1
+        self._pattern = "b" * 499 + "a"
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(9999500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -284,3 +274,6 @@ class TestILA(Test):
         return """
         Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
+
+
+ENABLED_TESTS = [TestIL1, TestIL2, TestIL3, TestIL4, TestIL6, TestIL7, TestIL8, TestIL9]
