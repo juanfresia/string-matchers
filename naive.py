@@ -12,6 +12,15 @@ def test_string_matching():
     print(string_matching_naive(T, P2))
 
 
+def multi_string_matching_naive(texto, patrones):
+    texto = encode_string(texto)
+    resultado = []
+    for patron in patrones:
+        patron = encode_string(patron)
+        resultado.append(naive_matching(patron, texto))
+    return resultado
+
+
 def string_matching_naive(texto, patron):
     """Devuelve una lista con las posiciones en texto
     donde aparece patron completo utilizando el algoritmo naive."""
@@ -19,8 +28,11 @@ def string_matching_naive(texto, patron):
     texto = encode_string(texto)
     patron = encode_string(patron)
 
-    matches = []
+    return naive_matching(patron, texto)
 
+
+def naive_matching(patron, texto):
+    matches = []
     for inicio in range(len(texto) - len(patron) + 1):
         match = True
         for act in range(len(patron)):
@@ -29,7 +41,6 @@ def string_matching_naive(texto, patron):
                 break
         if match:
             matches.append(inicio)
-
     return matches
 
 
