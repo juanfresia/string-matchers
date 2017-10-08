@@ -2,42 +2,50 @@
 
  | |Baseline|DC3|Karp Rabin|Naive|Z Box|
 |:---|---:|---:|---:|---:|---:|
-|[NM-1](#no-matches-test-1)|0.016055 - (ERROR)|2.259456 - (OK)|0.406395 - (OK)|2.740025 - (OK)|0.332461 - (OK)|
-|[NM-2](#no-matches-test-2)|0.016007 - (ERROR)|2.147279 - (OK)|0.393836 - (OK)|0.102810 - (OK)|0.257469 - (OK)|
-|[NM-3](#no-matches-test-3)|0.012965 - (ERROR)|2.193918 - (OK)|0.213548 - (OK)|0.114566 - (OK)|0.184079 - (OK)|
-|[NM-4](#no-matches-test-4)|0.013020 - (ERROR)|2.210327 - (OK)|0.213231 - (OK)|0.113736 - (OK)|0.184710 - (OK)|
-|[NM-5](#no-matches-test-5)|0.016912 - (ERROR)|2.334816 - (OK)|0.401304 - (OK)|0.266469 - (OK)|0.210641 - (OK)|
-|[NM-6](#no-matches-test-6)|0.013979 - (ERROR)|2.216919 - (OK)|0.277534 - (OK)|0.126782 - (OK)|0.196183 - (OK)|
-|[OM-1](#one-match-test-1)|0.016894 - (ERROR)|2.264272 - (OK)|0.399086 - (OK)|0.112542 - (OK)|0.225809 - (OK)|
-|[OM-2](#one-match-test-2)|0.016589 - (ERROR)|2.336178 - (OK)|0.396296 - (OK)|1.406282 - (OK)|0.249996 - (OK)|
-|[OM-3](#one-match-test-3)|0.016479 - (ERROR)|2.235417 - (OK)|0.383443 - (OK)|0.104027 - (OK)|0.203951 - (OK)|
-|[OM-4](#one-match-test-4)|0.016866 - (ERROR)|2.344177 - (OK)|0.392485 - (OK)|1.415784 - (OK)|0.252624 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.028093 - (ERROR)|2.202275 - (OK)|0.126579 - (OK)|0.050575 - (OK)|0.328377 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.028094 - (ERROR)|2.553954 - (OK)|0.122654 - (OK)|0.049293 - (OK)|0.464999 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.027402 - (ERROR)|2.441325 - (OK)|0.132535 - (OK)|0.051178 - (OK)|0.438407 - (OK)|
-|[MM-1](#multiple-matches-test-1)|0.017044 - (ERROR)|2.322953 - (OK)|0.412452 - (OK)|0.125005 - (OK)|0.214405 - (OK)|
-|[MM-2](#multiple-matches-test-1)|0.016650 - (ERROR)|2.324307 - (OK)|0.417427 - (OK)|0.126875 - (OK)|0.212284 - (OK)|
-|[MM-3](#multiple-matches-test-3)|0.015317 - (ERROR)|2.304753 - (OK)|0.331781 - (OK)|0.129080 - (OK)|0.181611 - (OK)|
-|[MM-4](#multiple-matches-test-4)|0.015300 - (ERROR)|2.293514 - (OK)|0.336639 - (OK)|0.126540 - (OK)|0.181647 - (OK)|
-|[OC-1](#one-character-test-1)|0.016908 - (ERROR)|22.582564 - (OK)|8.925043 - (OK)|8.517207 - (OK)|0.376124 - (ERROR)|
-|[OC-2](#one-character-test-2)|0.013435 - (ERROR)|2.449436 - (OK)|0.294119 - (OK)|0.129516 - (OK)|0.260484 - (OK)|
-|[OC-3](#one-character-test-3)|0.013449 - (ERROR)|2.504413 - (OK)|0.365336 - (OK)|0.154977 - (OK)|0.354161 - (OK)|
-|[OC-4](#one-character-test-4)|0.013772 - (ERROR)|2.568078 - (OK)|0.420723 - (OK)|0.174183 - (OK)|0.349336 - (ERROR)|
-|[OC-5](#one-character-test-5)|0.013374 - (ERROR)|2.653102 - (OK)|0.438452 - (OK)|0.182667 - (OK)|0.355269 - (ERROR)|
-|[OC-6](#one-character-test-6)|0.013583 - (ERROR)|2.641336 - (OK)|0.443069 - (OK)|0.191971 - (OK)|0.348196 - (ERROR)|
-|[CT-1](#classic-test-1)|0.033601 - (ERROR)|0.980125 - (OK)|0.174484 - (OK)|0.093735 - (OK)|0.169012 - (OK)|
-|[CT-2](#classic-test-2)|0.034066 - (ERROR)|0.837814 - (OK)|0.128499 - (OK)|0.071867 - (OK)|0.155444 - (OK)|
-|[CT-3](#classic-test-3)|0.022561 - (ERROR)|1.106796 - (OK)|0.124869 - (OK)|0.066353 - (OK)|0.126960 - (OK)|
-|[CT-4](#classic-test-4)|0.020901 - (ERROR)|1.116572 - (OK)|0.154409 - (OK)|0.077575 - (OK)|0.122118 - (OK)|
-|[CT-5](#classic-test-5)|0.023653 - (ERROR)|1.091251 - (OK)|0.123543 - (OK)|0.068025 - (OK)|0.128828 - (OK)|
-|[CT-6](#classic-test-6)|0.020776 - (ERROR)|1.065155 - (OK)|0.120215 - (OK)|0.072886 - (OK)|0.120653 - (OK)|
-|[MN-1](#multiple-no-matches-1)|0.049623 - (ERROR)|3.386312 - (OK)|0.050991 - (ERROR)|26.873182 - (OK)|0.048811 - (ERROR)|
-|[MN-2](#multiple-no-matches-2)|0.048915 - (ERROR)|2.203360 - (OK)|0.049070 - (ERROR)|0.834667 - (OK)|0.051818 - (ERROR)|
-|[MN-3](#multiple-no-matches-3)|0.014436 - (ERROR)|2.229924 - (OK)|0.014783 - (ERROR)|0.954051 - (OK)|0.014307 - (ERROR)|
-|[MN-4](#multiple-no-matches-4)|0.014216 - (ERROR)|2.226112 - (OK)|0.014241 - (ERROR)|0.948669 - (OK)|0.014443 - (ERROR)|
-|[MN-5](#multiple-no-matches-5)|0.053256 - (ERROR)|3.063484 - (OK)|0.051420 - (ERROR)|2.530986 - (OK)|0.052589 - (ERROR)|
-|[MN-6](#multiple-no-matches-6)|0.021067 - (ERROR)|2.238752 - (OK)|0.020775 - (ERROR)|1.151078 - (OK)|0.020900 - (ERROR)|
-|[MP-1](#multiple-pattern-matches-test-1)|0.049104 - (ERROR)|3.135731 - (OK)|0.049729 - (ERROR)|1.068260 - (OK)|0.049703 - (ERROR)|
+|[NM-1](#no-matches-test-1)|0.016329 - (ERROR)|2.249355 - (OK)|0.392772 - (OK)|2.932715 - (OK)|0.344847 - (OK)|
+|[NM-2](#no-matches-test-2)|0.016647 - (ERROR)|2.148274 - (OK)|0.388065 - (OK)|0.103325 - (OK)|0.262739 - (OK)|
+|[NM-3](#no-matches-test-3)|0.013533 - (ERROR)|2.199522 - (OK)|0.209300 - (OK)|0.115689 - (OK)|0.174908 - (OK)|
+|[NM-4](#no-matches-test-4)|0.013823 - (ERROR)|2.211145 - (OK)|0.205482 - (OK)|0.114202 - (OK)|0.182399 - (OK)|
+|[NM-5](#no-matches-test-5)|0.019198 - (ERROR)|2.329828 - (OK)|0.389208 - (OK)|0.276601 - (OK)|0.198445 - (OK)|
+|[NM-6](#no-matches-test-6)|0.014127 - (ERROR)|2.217344 - (OK)|0.279829 - (OK)|0.125910 - (OK)|0.195044 - (OK)|
+|[OM-1](#one-match-test-1)|0.017295 - (ERROR)|2.246014 - (OK)|0.392290 - (OK)|0.111469 - (OK)|0.208822 - (OK)|
+|[OM-2](#one-match-test-2)|0.017469 - (ERROR)|2.350575 - (OK)|0.416911 - (OK)|1.404790 - (OK)|0.255296 - (OK)|
+|[OM-3](#one-match-test-3)|0.017305 - (ERROR)|2.247157 - (OK)|0.378970 - (OK)|0.106606 - (OK)|0.201113 - (OK)|
+|[OM-4](#one-match-test-4)|0.017830 - (ERROR)|2.348169 - (OK)|0.401268 - (OK)|1.447603 - (OK)|0.246964 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.028709 - (ERROR)|2.202684 - (OK)|0.116702 - (OK)|0.051433 - (OK)|0.301707 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.032571 - (ERROR)|2.541546 - (OK)|0.115638 - (OK)|0.050410 - (OK)|0.464548 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.028978 - (ERROR)|2.424791 - (OK)|0.119500 - (OK)|0.054120 - (OK)|0.428105 - (OK)|
+|[MM-1](#multiple-matches-test-1)|0.017752 - (ERROR)|2.319228 - (OK)|0.408632 - (OK)|0.127274 - (OK)|0.190848 - (OK)|
+|[MM-2](#multiple-matches-test-1)|0.017232 - (ERROR)|2.327538 - (OK)|0.413391 - (OK)|0.125530 - (OK)|0.190489 - (OK)|
+|[MM-3](#multiple-matches-test-3)|0.016143 - (ERROR)|2.288630 - (OK)|0.323367 - (OK)|0.126325 - (OK)|0.172085 - (OK)|
+|[MM-4](#multiple-matches-test-4)|0.015719 - (ERROR)|2.283611 - (OK)|0.328098 - (OK)|0.129694 - (OK)|0.173810 - (OK)|
+|[OC-1](#one-character-test-1)|0.017765 - (ERROR)|20.647431 - (OK)|8.667886 - (OK)|9.293518 - (OK)|0.383533 - (ERROR)|
+|[OC-2](#one-character-test-2)|0.013764 - (ERROR)|2.478822 - (OK)|0.286568 - (OK)|0.121149 - (OK)|0.245060 - (OK)|
+|[OC-3](#one-character-test-3)|0.013872 - (ERROR)|2.498660 - (OK)|0.368317 - (OK)|0.149509 - (OK)|0.335389 - (OK)|
+|[OC-4](#one-character-test-4)|0.013706 - (ERROR)|2.553406 - (OK)|0.416021 - (OK)|0.168177 - (OK)|0.342106 - (ERROR)|
+|[OC-5](#one-character-test-5)|0.013679 - (ERROR)|2.567803 - (OK)|0.415205 - (OK)|0.167202 - (OK)|0.339449 - (ERROR)|
+|[OC-6](#one-character-test-6)|0.013487 - (ERROR)|2.613067 - (OK)|0.424847 - (OK)|0.184699 - (OK)|0.343724 - (ERROR)|
+|[CT-1](#classic-test-1)|0.031334 - (ERROR)|0.979904 - (OK)|0.171100 - (OK)|0.090831 - (OK)|0.167593 - (OK)|
+|[CT-2](#classic-test-2)|0.033014 - (ERROR)|0.838557 - (OK)|0.126281 - (OK)|0.072445 - (OK)|0.152088 - (OK)|
+|[CT-3](#classic-test-3)|0.023652 - (ERROR)|1.103240 - (OK)|0.121771 - (OK)|0.065944 - (OK)|0.127667 - (OK)|
+|[CT-4](#classic-test-4)|0.022070 - (ERROR)|1.120599 - (OK)|0.152963 - (OK)|0.074866 - (OK)|0.116880 - (OK)|
+|[CT-5](#classic-test-5)|0.022605 - (ERROR)|1.094590 - (OK)|0.121749 - (OK)|0.065406 - (OK)|0.126492 - (OK)|
+|[CT-6](#classic-test-6)|0.021303 - (ERROR)|1.072307 - (OK)|0.117811 - (OK)|0.069729 - (OK)|0.119869 - (OK)|
+|[IL-1](#increasing-length-test-1)|0.000121 - (ERROR)|0.011879 - (OK)|0.001692 - (OK)|0.014684 - (OK)|0.001827 - (OK)|
+|[IL-2](#increasing-length-test-2)|0.000708 - (ERROR)|0.125888 - (OK)|0.023071 - (OK)|0.507816 - (OK)|0.016600 - (OK)|
+|[IL-3](#increasing-length-test-3)|0.006966 - (ERROR)|1.552604 - (OK)|0.225581 - (OK)|5.441551 - (OK)|0.161452 - (OK)|
+|[IL-4](#increasing-length-test-4)|0.077066 - (ERROR)|18.108842 - (OK)|2.262099 - (OK)|54.962172 - (OK)|1.643270 - (OK)|
+|[IL-6](#increasing-length-test-6)|0.000130 - (ERROR)|0.012142 - (OK)|0.001497 - (OK)|0.013611 - (OK)|0.001758 - (OK)|
+|[IL-7](#increasing-length-test-7)|0.000778 - (ERROR)|0.127897 - (OK)|0.023351 - (OK)|0.020713 - (OK)|0.010785 - (OK)|
+|[IL-8](#increasing-length-test-8)|0.007077 - (ERROR)|1.952498 - (OK)|0.231545 - (OK)|0.074924 - (OK)|0.089074 - (OK)|
+|[IL-9](#increasing-length-test-9)|0.070358 - (ERROR)|28.466336 - (OK)|2.394242 - (OK)|0.655363 - (OK)|0.897050 - (OK)|
+|[MN-1](#multiple-no-matches-1)|0.050343 - (ERROR)|3.293061 - (OK)|0.050325 - (ERROR)|29.333693 - (OK)|0.051306 - (ERROR)|
+|[MN-2](#multiple-no-matches-2)|0.050011 - (ERROR)|2.190709 - (OK)|0.049911 - (ERROR)|0.899687 - (OK)|0.050492 - (ERROR)|
+|[MN-3](#multiple-no-matches-3)|0.014622 - (ERROR)|2.211087 - (OK)|0.014666 - (ERROR)|1.029203 - (OK)|0.014460 - (ERROR)|
+|[MN-4](#multiple-no-matches-4)|0.014537 - (ERROR)|2.216443 - (OK)|0.014409 - (ERROR)|1.019996 - (OK)|0.014461 - (ERROR)|
+|[MN-5](#multiple-no-matches-5)|0.052547 - (ERROR)|3.021547 - (OK)|0.053389 - (ERROR)|2.630501 - (OK)|0.052493 - (ERROR)|
+|[MN-6](#multiple-no-matches-6)|0.021339 - (ERROR)|2.237830 - (OK)|0.021505 - (ERROR)|1.157544 - (OK)|0.021411 - (ERROR)|
+|[MP-1](#multiple-pattern-matches-test-1)|0.050230 - (ERROR)|3.113309 - (OK)|0.054614 - (ERROR)|1.095171 - (OK)|0.050599 - (ERROR)|
 # Descriptions 
 
 ## No Matches Test 1 
@@ -244,6 +252,46 @@ Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "dabb
  
 Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "ana". Ejemplo de DC3
                 
+## Increasing Length Test 1 
+
+ 
+        Match en el principio de la cadena de largo 1000
+        
+## Increasing Length Test 2 
+
+ 
+        Match en el principio de la cadena de largo 10000
+        
+## Increasing Length Test 3 
+
+ 
+        Match en el principio de la cadena de largo 100000
+        
+## Increasing Length Test 4 
+
+ 
+        Match en el principio de la cadena de largo 1000000
+        
+## Increasing Length Test 6 
+
+ 
+        Match en el principio de la cadena de largo 1000
+        
+## Increasing Length Test 7 
+
+ 
+        Match en el principio de la cadena de largo 10000
+        
+## Increasing Length Test 8 
+
+ 
+        Match en el principio de la cadena de largo 100000
+        
+## Increasing Length Test 9 
+
+ 
+        Match en el principio de la cadena de largo 1000000
+        
 ## Multiple No-Matches 1 
 
  
