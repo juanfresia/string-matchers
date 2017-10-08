@@ -21,7 +21,7 @@ VERBOSE = False
 
 
 class TestMultimatch(Test):
-    _iterations = 10
+    _iterations = 100
 
     def run_all(self):
         result_string = "|[{}](#{})|".format(self.get_test_name(), self.get_long_test_name().replace(" ", "-").lower())
