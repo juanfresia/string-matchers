@@ -29,7 +29,6 @@ def string_matching_dc3(text, pattern):
     pattern = encode_string(pattern)
 
     suffix_array = dcm(text)
-
     result = binary_search_pattern(pattern, suffix_array, text)
 
     return result
@@ -38,27 +37,65 @@ def string_matching_dc3(text, pattern):
 def binary_search_pattern(pattern, suffix_array, text):
     initial = 0
     end = len(suffix_array) - 1
-    result = []
+
+    while initial <= end:
+        mid = initial + ((end - initial) // 2)
+        comparator = matches(text, suffix_array[mid], pattern)
+
+        if comparator == PATTERN_EQUAL:
+            left = binary_search_left(pattern,suffix_array,text,mid)
+            right = binary_search_right(pattern,suffix_array,text,mid)
+
+            return suffix_array[left:right+1]
+
+        if comparator == PATTERN_GREATER:
+            initial = mid + 1
+        else:
+            end = mid - 1
+
+    return []
+
+def binary_search_right(pattern, suffix_array, text,index):
+    initial = index
+    end = len(suffix_array)
+
     while initial <= end:
         mid = initial + ((end - initial) // 2)
 
         comparator = matches(text, suffix_array[mid], pattern)
 
         if comparator == PATTERN_EQUAL:
-            if mid == 0 or matches(text, suffix_array[mid - 1], pattern) != PATTERN_EQUAL:
-                while mid < len(suffix_array) and matches(text, suffix_array[mid], pattern) == PATTERN_EQUAL:
-                    result.append(suffix_array[mid])
-                    mid += 1
-                break
-
+            if mid == 0 or not matches(text,suffix_array[mid-1],pattern):
+                return mid
             comparator = PATTERN_LESSER
 
         if comparator == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
-    return result
 
+    return index
+
+def binary_search_left(pattern, suffix_array, text,index):
+    initial = 0
+    end = index
+
+    while initial <= end:
+        mid = initial + ((end - initial) // 2)
+
+        comparator = matches(text, suffix_array[mid], pattern)
+
+        if comparator == PATTERN_EQUAL:
+            if mid == len(suffix_array) or not matches(text,suffix_array[mid-1],pattern):
+                return mid
+            comparator = PATTERN_GREATER
+
+        if comparator == PATTERN_GREATER:
+            initial = mid + 1
+        else:
+            end = mid - 1
+
+    return index
 
 def multiple_string_matching_dc3(text, patterns):
     text = encode_string(text)
@@ -96,16 +133,14 @@ def radix_sort(list_to_sort):
         return sorted_list[:]
 
     for i in range(1, len(sorted_list[0][0]) + 1):
-        buckets = {}
+        buckets = [[] for _ in range( max(len(list_to_sort),256) )]
 
         for word in sorted_list:
-            bucket = buckets.get(word[0][-i], [])
-            bucket.append(word)
-            buckets[word[0][-i]] = bucket
+            buckets[word[0][-i]].append(word)
 
         sorted_list = []
-        for k in sorted(buckets.keys()):
-            for triplet in buckets[k]:
+        for i in range(len(buckets)):
+            for triplet in buckets[i]:
                 sorted_list.append(triplet)
 
     return sorted_list
