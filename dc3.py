@@ -126,16 +126,17 @@ def sample_suffixes_create(text):
     return result
 
 
-def radix_sort(list_to_sort):
+def radix_sort(list_to_sort,size=256):
     sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
         return sorted_list[:]
 
     for i in range(1, len(sorted_list[0][0]) + 1):
-        buckets = [[] for _ in range( max(len(list_to_sort),256) )]
+        buckets = [[] for _ in range(size)]
 
         for word in sorted_list:
+            #print(word[0][-i])
             buckets[word[0][-i]].append(word)
 
         sorted_list = []
@@ -146,38 +147,36 @@ def radix_sort(list_to_sort):
     return sorted_list
 
 
-def radix_sort2(list_to_sort, text):
+def radix_sort2(list_to_sort, text,size=256):
     sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
         return sorted_list[:]
 
     for i in range(3):
-        buckets = {}
+        buckets = [[] for _ in range( max(len(list_to_sort),size) )]
 
         for index in sorted_list:
             _index = index + 2 - i
-            bucket = buckets.get(text[_index], [])
-            bucket.append(index)
-            buckets[text[_index]] = bucket
+            buckets[text[_index]].append(index)
 
         sorted_list = []
 
-        for k in sorted(buckets.keys()):
-            for triplet in buckets[k]:
+        for i in range(len(buckets)):
+            for triplet in buckets[i]:
                 sorted_list.append(triplet)
 
     return sorted_list
 
 
-def dcm(sequence):
+def dcm(sequence,alphabet_size=256):
     base_sequence = sequence
 
     base_sequence += (0, 0)
 
     b0, b1, b2 = sample_suffixes_create(base_sequence)
     b12 = b1 + b2
-    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence)
+    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence,alphabet_size)
 
     rank = ["|" for _ in range(len(base_sequence))]
     rank[-1] = 0
@@ -198,7 +197,7 @@ def dcm(sequence):
             for i in range(a, len(rank) - 2, 3):
                 r_sequence.append(rank[i])
         r_sequence.append(0)
-        out = dcm(r_sequence)
+        out = dcm(r_sequence,pos_rank+1)
 
         sorted_b12 = []
         for i in range(1, len(out)):
@@ -211,7 +210,7 @@ def dcm(sequence):
         rank_value = rank[i * 3 + 1]
         to_sort.append(((b0[i][0][0], rank_value), b0[i][1]))
 
-    sorted_a0 = radix_sort(to_sort)
+    sorted_a0 = radix_sort(to_sort,alphabet_size)
 
     merge = merge_step(rank, sorted_a0, sorted_b12, base_sequence)
     return merge
