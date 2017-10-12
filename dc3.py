@@ -119,7 +119,7 @@ def sample_suffixes_create(text):
         if len(item) < 3:
             continue
 
-        result[i % 3].append((item, i))
+        result[i % 3].append(i)
     result[1].extend(result[2])
     return result[0], result[1]
 
@@ -173,7 +173,7 @@ def dcm(sequence, alphabet_size=256):
     base_sequence += (0, 0)
 
     b0, b12 = sample_suffixes_create(base_sequence)
-    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence, alphabet_size)
+    sorted_b12 = radix_sort2(b12, base_sequence, alphabet_size)
 
     rank = ["|" for _ in range(len(base_sequence))]
     rank[-1] = 0
@@ -198,18 +198,18 @@ def dcm(sequence, alphabet_size=256):
 
         sorted_b12 = []
         for i in range(1, len(out)):
-            rank_index = b12[out[i]][1]
+            rank_index = b12[out[i]]
             rank[rank_index] = i
             sorted_b12.append(rank_index)
 
     to_sort = []
     for i in range(len(b0)):
         rank_value = rank[i * 3 + 1]
-        to_sort.append(((b0[i][0][0], rank_value), b0[i][1]))
+        to_sort.append(((sequence[b0[i]], rank_value), b0[i]))
         if rank_value > alphabet_size:
             alphabet_size = rank_value
-        if b0[i][1] > alphabet_size:
-            alphabet_size = b0[i][1]
+        if b0[i] > alphabet_size:
+            alphabet_size = b0[i]
 
     sorted_a0 = radix_sort(to_sort, alphabet_size)
 
