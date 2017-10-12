@@ -27,7 +27,6 @@ def string_matching_dc3(text, pattern):
     text = encode_string(text)
     text.append(0)
     pattern = encode_string(pattern)
-
     suffix_array = dcm(text)
     result = binary_search_pattern(pattern, suffix_array, text)
 
@@ -43,10 +42,10 @@ def binary_search_pattern(pattern, suffix_array, text):
         comparator = matches(text, suffix_array[mid], pattern)
 
         if comparator == PATTERN_EQUAL:
-            left = binary_search_left(pattern,suffix_array,text,mid)
-            right = binary_search_right(pattern,suffix_array,text,mid)
+            left = binary_search_left(pattern, suffix_array, text, mid)
+            right = binary_search_right(pattern, suffix_array, text, mid)
 
-            return suffix_array[left:right+1]
+            return suffix_array[left:right + 1]
 
         if comparator == PATTERN_GREATER:
             initial = mid + 1
@@ -55,9 +54,10 @@ def binary_search_pattern(pattern, suffix_array, text):
 
     return []
 
-def binary_search_right(pattern, suffix_array, text,index):
+
+def binary_search_right(pattern, suffix_array, text, index):
     initial = index
-    end = len(suffix_array)
+    end = len(suffix_array) - 1
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
@@ -65,18 +65,17 @@ def binary_search_right(pattern, suffix_array, text,index):
         comparator = matches(text, suffix_array[mid], pattern)
 
         if comparator == PATTERN_EQUAL:
-            if mid == 0 or not matches(text,suffix_array[mid-1],pattern):
+            if mid == len(suffix_array) - 1 or matches(text, suffix_array[mid + 1], pattern) != PATTERN_EQUAL:
                 return mid
-            comparator = PATTERN_LESSER
+            comparator = PATTERN_GREATER
 
         if comparator == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
 
-    return index
 
-def binary_search_left(pattern, suffix_array, text,index):
+def binary_search_left(pattern, suffix_array, text, index):
     initial = 0
     end = index
 
@@ -86,16 +85,15 @@ def binary_search_left(pattern, suffix_array, text,index):
         comparator = matches(text, suffix_array[mid], pattern)
 
         if comparator == PATTERN_EQUAL:
-            if mid == len(suffix_array) or not matches(text,suffix_array[mid-1],pattern):
+            if mid == len(suffix_array) or matches(text, suffix_array[mid - 1], pattern) != PATTERN_EQUAL:
                 return mid
-            comparator = PATTERN_GREATER
+            comparator = PATTERN_LESSER
 
         if comparator == PATTERN_GREATER:
             initial = mid + 1
         else:
             end = mid - 1
 
-    return index
 
 def multiple_string_matching_dc3(text, patterns):
     text = encode_string(text)
@@ -122,11 +120,11 @@ def sample_suffixes_create(text):
             continue
 
         result[i % 3].append((item, i))
+    result[1].extend(result[2])
+    return result[0], result[1]
 
-    return result
 
-
-def radix_sort(list_to_sort,size=256):
+def radix_sort(list_to_sort, size=256):
     sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
@@ -136,7 +134,7 @@ def radix_sort(list_to_sort,size=256):
         buckets = [[] for _ in range(size)]
 
         for word in sorted_list:
-            #print(word[0][-i])
+            # print(word[0][-i])
             buckets[word[0][-i]].append(word)
 
         sorted_list = []
@@ -147,14 +145,14 @@ def radix_sort(list_to_sort,size=256):
     return sorted_list
 
 
-def radix_sort2(list_to_sort, text,size=256):
+def radix_sort2(list_to_sort, text, size=256):
     sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
         return sorted_list[:]
 
     for i in range(3):
-        buckets = [[] for _ in range( max(len(list_to_sort),size) )]
+        buckets = [[] for _ in range(max(len(list_to_sort), size))]
 
         for index in sorted_list:
             _index = index + 2 - i
@@ -169,14 +167,13 @@ def radix_sort2(list_to_sort, text,size=256):
     return sorted_list
 
 
-def dcm(sequence,alphabet_size=256):
+def dcm(sequence, alphabet_size=256):
     base_sequence = sequence
 
     base_sequence += (0, 0)
 
-    b0, b1, b2 = sample_suffixes_create(base_sequence)
-    b12 = b1 + b2
-    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence,alphabet_size)
+    b0, b12 = sample_suffixes_create(base_sequence)
+    sorted_b12 = radix_sort2([m[1] for m in b12], base_sequence, alphabet_size)
 
     rank = ["|" for _ in range(len(base_sequence))]
     rank[-1] = 0
@@ -197,7 +194,7 @@ def dcm(sequence,alphabet_size=256):
             for i in range(a, len(rank) - 2, 3):
                 r_sequence.append(rank[i])
         r_sequence.append(0)
-        out = dcm(r_sequence,pos_rank+1)
+        out = dcm(r_sequence, pos_rank + 1)
 
         sorted_b12 = []
         for i in range(1, len(out)):
@@ -209,8 +206,12 @@ def dcm(sequence,alphabet_size=256):
     for i in range(len(b0)):
         rank_value = rank[i * 3 + 1]
         to_sort.append(((b0[i][0][0], rank_value), b0[i][1]))
+        if rank_value > alphabet_size:
+            alphabet_size = rank_value
+        if b0[i][1] > alphabet_size:
+            alphabet_size = b0[i][1]
 
-    sorted_a0 = radix_sort(to_sort,alphabet_size)
+    sorted_a0 = radix_sort(to_sort, alphabet_size)
 
     merge = merge_step(rank, sorted_a0, sorted_b12, base_sequence)
     return merge
