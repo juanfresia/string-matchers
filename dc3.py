@@ -195,11 +195,10 @@ def dcm(sequence, alphabet_size=256):
         rank[index] = pos_rank
 
     if pos_rank < len(sorted_b12):
-        r_sequence = []
-        for a in range(1, 3):
-            for i in range(a, len(rank) - 2, 3):
-                r_sequence.append(rank[i])
-        r_sequence.append(0)
+        r_sequence = [rank[i] for i in range(1, len(rank) - 2, 3)]
+        r_2 = [rank[i] for i in range(2, len(rank) - 2, 3)]
+        r_2.append(0)
+        r_sequence.extend(r_2)
         out = dcm(r_sequence, pos_rank + 1)
 
         sorted_b12 = []
