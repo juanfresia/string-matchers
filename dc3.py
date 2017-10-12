@@ -112,7 +112,7 @@ def multiple_string_matching_dc3(text, patterns):
 
 def sample_suffixes_create(text):
     text = text
-    result = [[], [], []]
+    """result = [[], [], []]
     for i in range(len(text)):
         item = text[i:i + 3]
 
@@ -121,7 +121,13 @@ def sample_suffixes_create(text):
 
         result[i % 3].append(i)
     result[1].extend(result[2])
-    return result[0], result[1]
+    return result[0], result[1]"""
+    b0 = [i for i in range(0, len(text) - 2, 3)]
+    b1 = [i for i in range(1, len(text) - 2, 3)]
+    b2 = [i for i in range(2, len(text) - 2, 3)]
+
+    b1.extend(b2)
+    return b0, b1
 
 
 def radix_sort(list_to_sort, size=256):
