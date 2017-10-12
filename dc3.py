@@ -283,3 +283,5 @@ if __name__ == '__main__':
     print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
     print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
     print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
+    print(string_matching_dc3("banana", "ban"), "==", "0")
+    print(string_matching_dc3("banana", "ana"), "==", "1,3")
