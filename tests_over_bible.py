@@ -31,7 +31,7 @@ Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay 4 m
 
 No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
 patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
-                """.format(self._iterations, len(self._string), len(self._pattern))
+                """.format(self._iterations, len(self._string), len(self._patterns))
 
 
 class TestTB2(TestMultimatch):
@@ -52,10 +52,10 @@ class TestTB2(TestMultimatch):
         return result
 
     def get_test_name(self):
-        return "TB-1"
+        return "TB-2"
 
     def get_long_test_name(self):
-        return "Tests over the holly bible 1"
+        return "Tests over the holly bible 2"
 
     def get_test_description(self):
         return """
@@ -63,7 +63,7 @@ Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay 4 m
 
 No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
 patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
-                """.format(self._iterations, len(self._string), len(self._pattern))
+                """.format(self._iterations, len(self._string), len(self._patterns))
 
 
-ENABLED_TESTS = [TestTB1]
+ENABLED_TESTS = [TestTB1, TestTB2]
