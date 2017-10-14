@@ -269,58 +269,58 @@ def dcm(sequence, alphabet_size=256):
 def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
     i = 0
     j = 0
-    merge = []
+    merge = [None] * len(sorted_b0) + [None] * len(sorted_b12)
 
     while i < len(sorted_b12) and j < len(sorted_b0):
         sample_index = sorted_b12[i]
         nsample_index = sorted_b0[j][1]
 
         if original_sequence[sample_index] < original_sequence[nsample_index]:
-            merge.append(sample_index)
+            merge[i + j] = sample_index
             i += 1
             continue
 
         if original_sequence[sample_index] > original_sequence[nsample_index]:
-            merge.append(nsample_index)
+            merge[i + j] = nsample_index
             j += 1
             continue
 
         # B1 case
         if sample_index % 3 == 1:
             if ranks[sample_index + 1] < ranks[nsample_index + 1]:
-                merge.append(sample_index)
+                merge[i + j] = sample_index
                 i += 1
             else:
-                merge.append(nsample_index)
+                merge[i + j] = nsample_index
                 j += 1
             continue
 
         # B2 case
         if original_sequence[sample_index + 1] < original_sequence[nsample_index + 1]:
-            merge.append(sample_index)
+            merge[i + j] = sample_index
             i += 1
             continue
 
         if original_sequence[sample_index + 1] > original_sequence[nsample_index + 1]:
-            merge.append(nsample_index)
+            merge[i + j] = nsample_index
             j += 1
             continue
 
         if ranks[sample_index + 2] < ranks[nsample_index + 2]:
-            merge.append(sample_index)
+            merge[i + j] = sample_index
             i += 1
         else:
-            merge.append(nsample_index)
+            merge[i + j] = nsample_index
             j += 1
 
     while i < len(sorted_b12):
         sample_index = sorted_b12[i]
-        merge.append(sample_index)
+        merge[i + j] = sample_index
         i += 1
 
     while j < len(sorted_b0):
         nsample_index = sorted_b0[j][1]
-        merge.append(nsample_index)
+        merge[i + j] = nsample_index
         j += 1
 
     return merge
