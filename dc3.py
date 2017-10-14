@@ -246,11 +246,10 @@ def dcm(sequence, alphabet_size=256):
         r_sequence.extend(r_2)
         out = dcm(r_sequence, pos_rank + 1)
 
-        sorted_b12 = []
         for i in range(1, len(out)):
             rank_index = b12[out[i]]
             rank[rank_index] = i
-            sorted_b12.append(rank_index)
+            sorted_b12[i - 1] = rank_index
 
     to_sort = []
     for i in range(len(b0)):
