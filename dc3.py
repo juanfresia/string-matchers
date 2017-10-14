@@ -171,7 +171,10 @@ def radix_sort2(list_to_sort, text, size=8):
 
         new_sorted_list = [None] * len(sorted_list)
 
-        for index in reversed(sorted_list):
+        len_sorted_list = len(sorted_list)
+
+        for j in range(1, len_sorted_list + 1):
+            index = sorted_list[len_sorted_list - j]
             char_index = index + 2 - i
             char = text[char_index]
 
