@@ -122,12 +122,11 @@ def sample_suffixes_create(text):
         result[i % 3].append(i)
     result[1].extend(result[2])
     return result[0], result[1]"""
-    b0 = [i for i in range(0, len(text) - 2, 3)]
     b1 = [i for i in range(1, len(text) - 2, 3)]
     b2 = [i for i in range(2, len(text) - 2, 3)]
 
     b1.extend(b2)
-    return b0, b1
+    return b1
 
 
 def radix_sort(list_to_sort, size=256):
@@ -223,13 +222,52 @@ def dcm(sequence, alphabet_size=256):
 
     base_sequence += (0, 0)
 
-    b0, b12 = sample_suffixes_create(base_sequence)
+    b12 = sample_suffixes_create(base_sequence)
     sorted_b12 = radix_sort2(b12, base_sequence, alphabet_size)
 
     rank = ["|"] * len(base_sequence)
     rank[-1] = 0
     rank[-2] = 0
 
+    pos_rank = generate_ranks(base_sequence, rank, sorted_b12)
+
+    if pos_rank < len(sorted_b12):
+        recursive_rank_update(b12, pos_rank, rank, sorted_b12)
+
+    alphabet_size, to_sort = create_b0_sorting(alphabet_size, rank, base_sequence)
+
+    sorted_a0 = radix_sort(to_sort, alphabet_size)
+
+    merge = merge_step(rank, sorted_a0, sorted_b12, base_sequence)
+    return merge
+
+
+def recursive_rank_update(b12, pos_rank, rank, sorted_b12):
+    r_sequence = [rank[i] for i in range(1, len(rank) - 2, 3)]
+    r_2 = [rank[i] for i in range(2, len(rank) - 2, 3)]
+    r_2.append(0)
+    r_sequence.extend(r_2)
+    out = dcm(r_sequence, pos_rank + 1)
+    for i in range(1, len(out)):
+        rank_index = b12[out[i]]
+        rank[rank_index] = i
+        sorted_b12[i - 1] = rank_index
+
+
+def create_b0_sorting(alphabet_size, rank, sequence):
+    to_sort = [[[None, rank[i + 1]], i] for i in range(0, len(sequence) - 2, 3)]
+    # new_size = to_sort[-1][1]
+    # alphabet_size = new_size if alphabet_size>new_size else alphabet_size
+    # to_sort = [None] * len(b0)
+    for c in to_sort:
+        c[0][1] = rank[c[1] + 1]
+        c[0][0] = sequence[c[1]]
+        if c[1] > alphabet_size:
+            alphabet_size = c[1]
+    return alphabet_size, to_sort
+
+
+def generate_ranks(base_sequence, rank, sorted_b12):
     pos_rank = 1
     compare_base = sorted_b12[0]
     for i, index in enumerate(sorted_b12):
@@ -238,32 +276,7 @@ def dcm(sequence, alphabet_size=256):
             compare_base = actual_base
             pos_rank += 1
         rank[index] = pos_rank
-
-    if pos_rank < len(sorted_b12):
-        r_sequence = [rank[i] for i in range(1, len(rank) - 2, 3)]
-        r_2 = [rank[i] for i in range(2, len(rank) - 2, 3)]
-        r_2.append(0)
-        r_sequence.extend(r_2)
-        out = dcm(r_sequence, pos_rank + 1)
-
-        for i in range(1, len(out)):
-            rank_index = b12[out[i]]
-            rank[rank_index] = i
-            sorted_b12[i - 1] = rank_index
-
-    to_sort = []
-    for i in range(len(b0)):
-        rank_value = rank[i * 3 + 1]
-        to_sort.append(((sequence[b0[i]], rank_value), b0[i]))
-        if rank_value > alphabet_size:
-            alphabet_size = rank_value
-        if b0[i] > alphabet_size:
-            alphabet_size = b0[i]
-
-    sorted_a0 = radix_sort(to_sort, alphabet_size)
-
-    merge = merge_step(rank, sorted_a0, sorted_b12, base_sequence)
-    return merge
+    return pos_rank
 
 
 def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
