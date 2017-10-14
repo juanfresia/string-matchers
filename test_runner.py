@@ -6,6 +6,7 @@ import tests_multiple_patterns_matches
 import tests_no_matches
 import tests_one_character
 import tests_one_match
+import tests_over_bible
 import tests_pattern_pattern
 from testing_class import MATCHERS
 
@@ -13,7 +14,7 @@ TEST_RESULTS = "test_results"
 
 TEST_MODULES = [tests_no_matches, tests_one_match, tests_pattern_pattern, tests_multiple_matches, tests_one_character,
                 tests_classic_tests, tests_increasing_length, tests_multiple_no_matches,
-                tests_multiple_patterns_matches]
+                tests_multiple_patterns_matches, tests_over_bible]
 ENABLED_TESTS = []
 
 for _module in TEST_MODULES:
