@@ -181,8 +181,11 @@ def radix_sort2(list_to_sort, text, size=8):
     if len(sorted_list) == 0:
         return sorted_list[:]
 
+    buckets = [0] * (size + 1)
     for i in range(3):
-        buckets = [0] * (size + 1)
+        if i != 0:
+            for x in range(size + 1):
+                buckets[x] = 0
 
         for index in sorted_list:
             char_index = index + 2 - i
