@@ -2,50 +2,52 @@
 
  | |Baseline|DC3|Karp Rabin|Naive|Z Box|
 |:---|---:|---:|---:|---:|---:|
-|[NM-1](#no-matches-test-1)|0.016329 - (ERROR)|2.249355 - (OK)|0.392772 - (OK)|2.932715 - (OK)|0.344847 - (OK)|
-|[NM-2](#no-matches-test-2)|0.016647 - (ERROR)|2.148274 - (OK)|0.388065 - (OK)|0.103325 - (OK)|0.262739 - (OK)|
-|[NM-3](#no-matches-test-3)|0.013533 - (ERROR)|2.199522 - (OK)|0.209300 - (OK)|0.115689 - (OK)|0.174908 - (OK)|
-|[NM-4](#no-matches-test-4)|0.013823 - (ERROR)|2.211145 - (OK)|0.205482 - (OK)|0.114202 - (OK)|0.182399 - (OK)|
-|[NM-5](#no-matches-test-5)|0.019198 - (ERROR)|2.329828 - (OK)|0.389208 - (OK)|0.276601 - (OK)|0.198445 - (OK)|
-|[NM-6](#no-matches-test-6)|0.014127 - (ERROR)|2.217344 - (OK)|0.279829 - (OK)|0.125910 - (OK)|0.195044 - (OK)|
-|[OM-1](#one-match-test-1)|0.017295 - (ERROR)|2.246014 - (OK)|0.392290 - (OK)|0.111469 - (OK)|0.208822 - (OK)|
-|[OM-2](#one-match-test-2)|0.017469 - (ERROR)|2.350575 - (OK)|0.416911 - (OK)|1.404790 - (OK)|0.255296 - (OK)|
-|[OM-3](#one-match-test-3)|0.017305 - (ERROR)|2.247157 - (OK)|0.378970 - (OK)|0.106606 - (OK)|0.201113 - (OK)|
-|[OM-4](#one-match-test-4)|0.017830 - (ERROR)|2.348169 - (OK)|0.401268 - (OK)|1.447603 - (OK)|0.246964 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.028709 - (ERROR)|2.202684 - (OK)|0.116702 - (OK)|0.051433 - (OK)|0.301707 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.032571 - (ERROR)|2.541546 - (OK)|0.115638 - (OK)|0.050410 - (OK)|0.464548 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.028978 - (ERROR)|2.424791 - (OK)|0.119500 - (OK)|0.054120 - (OK)|0.428105 - (OK)|
-|[MM-1](#multiple-matches-test-1)|0.017752 - (ERROR)|2.319228 - (OK)|0.408632 - (OK)|0.127274 - (OK)|0.190848 - (OK)|
-|[MM-2](#multiple-matches-test-1)|0.017232 - (ERROR)|2.327538 - (OK)|0.413391 - (OK)|0.125530 - (OK)|0.190489 - (OK)|
-|[MM-3](#multiple-matches-test-3)|0.016143 - (ERROR)|2.288630 - (OK)|0.323367 - (OK)|0.126325 - (OK)|0.172085 - (OK)|
-|[MM-4](#multiple-matches-test-4)|0.015719 - (ERROR)|2.283611 - (OK)|0.328098 - (OK)|0.129694 - (OK)|0.173810 - (OK)|
-|[OC-1](#one-character-test-1)|0.017765 - (ERROR)|20.647431 - (OK)|8.667886 - (OK)|9.293518 - (OK)|0.383533 - (ERROR)|
-|[OC-2](#one-character-test-2)|0.013764 - (ERROR)|2.478822 - (OK)|0.286568 - (OK)|0.121149 - (OK)|0.245060 - (OK)|
-|[OC-3](#one-character-test-3)|0.013872 - (ERROR)|2.498660 - (OK)|0.368317 - (OK)|0.149509 - (OK)|0.335389 - (OK)|
-|[OC-4](#one-character-test-4)|0.013706 - (ERROR)|2.553406 - (OK)|0.416021 - (OK)|0.168177 - (OK)|0.342106 - (ERROR)|
-|[OC-5](#one-character-test-5)|0.013679 - (ERROR)|2.567803 - (OK)|0.415205 - (OK)|0.167202 - (OK)|0.339449 - (ERROR)|
-|[OC-6](#one-character-test-6)|0.013487 - (ERROR)|2.613067 - (OK)|0.424847 - (OK)|0.184699 - (OK)|0.343724 - (ERROR)|
-|[CT-1](#classic-test-1)|0.031334 - (ERROR)|0.979904 - (OK)|0.171100 - (OK)|0.090831 - (OK)|0.167593 - (OK)|
-|[CT-2](#classic-test-2)|0.033014 - (ERROR)|0.838557 - (OK)|0.126281 - (OK)|0.072445 - (OK)|0.152088 - (OK)|
-|[CT-3](#classic-test-3)|0.023652 - (ERROR)|1.103240 - (OK)|0.121771 - (OK)|0.065944 - (OK)|0.127667 - (OK)|
-|[CT-4](#classic-test-4)|0.022070 - (ERROR)|1.120599 - (OK)|0.152963 - (OK)|0.074866 - (OK)|0.116880 - (OK)|
-|[CT-5](#classic-test-5)|0.022605 - (ERROR)|1.094590 - (OK)|0.121749 - (OK)|0.065406 - (OK)|0.126492 - (OK)|
-|[CT-6](#classic-test-6)|0.021303 - (ERROR)|1.072307 - (OK)|0.117811 - (OK)|0.069729 - (OK)|0.119869 - (OK)|
-|[IL-1](#increasing-length-test-1)|0.000121 - (ERROR)|0.011879 - (OK)|0.001692 - (OK)|0.014684 - (OK)|0.001827 - (OK)|
-|[IL-2](#increasing-length-test-2)|0.000708 - (ERROR)|0.125888 - (OK)|0.023071 - (OK)|0.507816 - (OK)|0.016600 - (OK)|
-|[IL-3](#increasing-length-test-3)|0.006966 - (ERROR)|1.552604 - (OK)|0.225581 - (OK)|5.441551 - (OK)|0.161452 - (OK)|
-|[IL-4](#increasing-length-test-4)|0.077066 - (ERROR)|18.108842 - (OK)|2.262099 - (OK)|54.962172 - (OK)|1.643270 - (OK)|
-|[IL-6](#increasing-length-test-6)|0.000130 - (ERROR)|0.012142 - (OK)|0.001497 - (OK)|0.013611 - (OK)|0.001758 - (OK)|
-|[IL-7](#increasing-length-test-7)|0.000778 - (ERROR)|0.127897 - (OK)|0.023351 - (OK)|0.020713 - (OK)|0.010785 - (OK)|
-|[IL-8](#increasing-length-test-8)|0.007077 - (ERROR)|1.952498 - (OK)|0.231545 - (OK)|0.074924 - (OK)|0.089074 - (OK)|
-|[IL-9](#increasing-length-test-9)|0.070358 - (ERROR)|28.466336 - (OK)|2.394242 - (OK)|0.655363 - (OK)|0.897050 - (OK)|
-|[MN-1](#multiple-no-matches-1)|0.050343 - (ERROR)|3.293061 - (OK)|0.050325 - (ERROR)|29.333693 - (OK)|0.051306 - (ERROR)|
-|[MN-2](#multiple-no-matches-2)|0.050011 - (ERROR)|2.190709 - (OK)|0.049911 - (ERROR)|0.899687 - (OK)|0.050492 - (ERROR)|
-|[MN-3](#multiple-no-matches-3)|0.014622 - (ERROR)|2.211087 - (OK)|0.014666 - (ERROR)|1.029203 - (OK)|0.014460 - (ERROR)|
-|[MN-4](#multiple-no-matches-4)|0.014537 - (ERROR)|2.216443 - (OK)|0.014409 - (ERROR)|1.019996 - (OK)|0.014461 - (ERROR)|
-|[MN-5](#multiple-no-matches-5)|0.052547 - (ERROR)|3.021547 - (OK)|0.053389 - (ERROR)|2.630501 - (OK)|0.052493 - (ERROR)|
-|[MN-6](#multiple-no-matches-6)|0.021339 - (ERROR)|2.237830 - (OK)|0.021505 - (ERROR)|1.157544 - (OK)|0.021411 - (ERROR)|
-|[MP-1](#multiple-pattern-matches-test-1)|0.050230 - (ERROR)|3.113309 - (OK)|0.054614 - (ERROR)|1.095171 - (OK)|0.050599 - (ERROR)|
+|[NM-1](#no-matches-test-1)|0.019324 - (ERROR)|2.260654 - (OK)|0.398959 - (OK)|2.878127 - (OK)|0.340444 - (OK)|
+|[NM-2](#no-matches-test-2)|0.020139 - (ERROR)|2.200006 - (OK)|0.389506 - (OK)|0.103764 - (OK)|0.262017 - (OK)|
+|[NM-3](#no-matches-test-3)|0.014616 - (ERROR)|2.239988 - (OK)|0.211391 - (OK)|0.119142 - (OK)|0.169356 - (OK)|
+|[NM-4](#no-matches-test-4)|0.013542 - (ERROR)|2.179878 - (OK)|0.211052 - (OK)|0.119930 - (OK)|0.179748 - (OK)|
+|[NM-5](#no-matches-test-5)|0.019398 - (ERROR)|2.314370 - (OK)|0.385744 - (OK)|0.272769 - (OK)|0.200157 - (OK)|
+|[NM-6](#no-matches-test-6)|0.014774 - (ERROR)|2.221302 - (OK)|0.270907 - (OK)|0.140620 - (OK)|0.201959 - (OK)|
+|[OM-1](#one-match-test-1)|0.017521 - (ERROR)|2.292045 - (OK)|0.398457 - (OK)|0.115636 - (OK)|0.214813 - (OK)|
+|[OM-2](#one-match-test-2)|0.017977 - (ERROR)|2.431993 - (OK)|0.404936 - (OK)|1.522602 - (OK)|0.259292 - (OK)|
+|[OM-3](#one-match-test-3)|0.017468 - (ERROR)|2.258936 - (OK)|0.398392 - (OK)|0.113523 - (OK)|0.217990 - (OK)|
+|[OM-4](#one-match-test-4)|0.017981 - (ERROR)|2.439904 - (OK)|0.402333 - (OK)|1.512385 - (OK)|0.250645 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.030778 - (ERROR)|2.297818 - (OK)|0.116774 - (OK)|0.050960 - (OK)|0.314007 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.032032 - (ERROR)|2.906195 - (OK)|0.119237 - (OK)|0.054211 - (OK)|0.465799 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.029092 - (ERROR)|2.613291 - (OK)|0.121141 - (OK)|0.052363 - (OK)|0.426795 - (OK)|
+|[MM-1](#multiple-matches-test-1)|0.017340 - (ERROR)|2.230113 - (OK)|0.408862 - (OK)|0.127432 - (OK)|0.193498 - (OK)|
+|[MM-2](#multiple-matches-test-1)|0.018795 - (ERROR)|2.270305 - (OK)|0.409899 - (OK)|0.130922 - (OK)|0.190470 - (OK)|
+|[MM-3](#multiple-matches-test-3)|0.015977 - (ERROR)|2.263834 - (OK)|0.335003 - (OK)|0.131355 - (OK)|0.175976 - (OK)|
+|[MM-4](#multiple-matches-test-4)|0.016083 - (ERROR)|2.281621 - (OK)|0.321894 - (OK)|0.130469 - (OK)|0.174675 - (OK)|
+|[OC-1](#one-character-test-1)|0.017084 - (ERROR)|2.550501 - (OK)|9.504634 - (OK)|9.008258 - (OK)|0.380185 - (ERROR)|
+|[OC-2](#one-character-test-2)|0.014975 - (ERROR)|2.254308 - (OK)|0.294162 - (OK)|0.123260 - (OK)|0.253624 - (OK)|
+|[OC-3](#one-character-test-3)|0.013842 - (ERROR)|2.234772 - (OK)|0.383991 - (OK)|0.151377 - (OK)|0.342489 - (OK)|
+|[OC-4](#one-character-test-4)|0.013861 - (ERROR)|2.231197 - (OK)|0.451992 - (OK)|0.176592 - (OK)|0.348214 - (ERROR)|
+|[OC-5](#one-character-test-5)|0.014024 - (ERROR)|2.228570 - (OK)|0.437436 - (OK)|0.181048 - (OK)|0.353578 - (ERROR)|
+|[OC-6](#one-character-test-6)|0.014049 - (ERROR)|2.236998 - (OK)|0.453565 - (OK)|0.197664 - (OK)|0.362860 - (ERROR)|
+|[CT-1](#classic-test-1)|0.034044 - (ERROR)|3.877584 - (OK)|0.181656 - (OK)|0.092724 - (OK)|0.174785 - (OK)|
+|[CT-2](#classic-test-2)|0.034690 - (ERROR)|3.766814 - (OK)|0.132887 - (OK)|0.072963 - (OK)|0.159026 - (OK)|
+|[CT-3](#classic-test-3)|0.023653 - (ERROR)|2.572947 - (OK)|0.126233 - (OK)|0.069060 - (OK)|0.127806 - (OK)|
+|[CT-4](#classic-test-4)|0.021444 - (ERROR)|2.615724 - (OK)|0.158701 - (OK)|0.078800 - (OK)|0.122001 - (OK)|
+|[CT-5](#classic-test-5)|0.024242 - (ERROR)|2.580929 - (OK)|0.128934 - (OK)|0.069708 - (OK)|0.128889 - (OK)|
+|[CT-6](#classic-test-6)|0.021486 - (ERROR)|2.487902 - (OK)|0.123731 - (OK)|0.072616 - (OK)|0.122427 - (OK)|
+|[IL-1](#increasing-length-test-1)|0.000140 - (ERROR)|0.013092 - (OK)|0.001669 - (OK)|0.014750 - (OK)|0.001863 - (OK)|
+|[IL-2](#increasing-length-test-2)|0.000775 - (ERROR)|0.121306 - (OK)|0.022931 - (OK)|0.528805 - (OK)|0.017057 - (OK)|
+|[IL-3](#increasing-length-test-3)|0.007222 - (ERROR)|1.374510 - (OK)|0.239321 - (OK)|5.803016 - (OK)|0.164674 - (OK)|
+|[IL-4](#increasing-length-test-4)|0.071486 - (ERROR)|15.668754 - (OK)|2.349255 - (OK)|56.331320 - (OK)|1.660017 - (OK)|
+|[IL-6](#increasing-length-test-6)|0.000130 - (ERROR)|0.012158 - (OK)|0.001544 - (OK)|0.014221 - (OK)|0.001697 - (OK)|
+|[IL-7](#increasing-length-test-7)|0.000690 - (ERROR)|0.112339 - (OK)|0.023229 - (OK)|0.019672 - (OK)|0.009661 - (OK)|
+|[IL-8](#increasing-length-test-8)|0.006908 - (ERROR)|1.345108 - (OK)|0.238506 - (OK)|0.073642 - (OK)|0.092098 - (OK)|
+|[IL-9](#increasing-length-test-9)|0.070671 - (ERROR)|22.024938 - (OK)|2.370053 - (OK)|0.620172 - (OK)|0.916418 - (OK)|
+|[MN-1](#multiple-no-matches-1)|0.050709 - (ERROR)|3.279637 - (OK)|0.049527 - (ERROR)|28.419490 - (OK)|0.050908 - (ERROR)|
+|[MN-2](#multiple-no-matches-2)|0.052244 - (ERROR)|2.195272 - (OK)|0.049912 - (ERROR)|0.932021 - (OK)|0.050761 - (ERROR)|
+|[MN-3](#multiple-no-matches-3)|0.014616 - (ERROR)|2.239502 - (OK)|0.014528 - (ERROR)|1.070036 - (OK)|0.014240 - (ERROR)|
+|[MN-4](#multiple-no-matches-4)|0.014327 - (ERROR)|2.184951 - (OK)|0.015103 - (ERROR)|1.039706 - (OK)|0.015087 - (ERROR)|
+|[MN-5](#multiple-no-matches-5)|0.052906 - (ERROR)|2.983143 - (OK)|0.054021 - (ERROR)|2.687802 - (OK)|0.052137 - (ERROR)|
+|[MN-6](#multiple-no-matches-6)|0.022173 - (ERROR)|2.263129 - (OK)|0.022062 - (ERROR)|1.185918 - (OK)|0.022131 - (ERROR)|
+|[MP-1](#multiple-pattern-matches-test-1)|0.053823 - (ERROR)|3.029987 - (OK)|0.049775 - (ERROR)|1.102052 - (OK)|0.050551 - (ERROR)|
+|[TB-1](#tests-over-the-holly-bible-1)|0.295316 - (ERROR)|107.113453 - (OK)|0.295971 - (ERROR)|2.390665 - (OK)|0.295726 - (ERROR)|
+|[TB-2](#tests-over-the-holly-bible-2)|0.299045 - (ERROR)|107.028513 - (OK)|0.297377 - (ERROR)|105.617611 - (OK)|0.296900 - (ERROR)|
 # Descriptions 
 
 ## No Matches Test 1 
@@ -255,42 +257,42 @@ Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "ana"
 ## Increasing Length Test 1 
 
  
-        Match en el principio de la cadena de largo 1000
+Match en el principio de la cadena de largo 1000
         
 ## Increasing Length Test 2 
 
  
-        Match en el principio de la cadena de largo 10000
+Match en el principio de la cadena de largo 10000
         
 ## Increasing Length Test 3 
 
  
-        Match en el principio de la cadena de largo 100000
+Match en el principio de la cadena de largo 100000
         
 ## Increasing Length Test 4 
 
  
-        Match en el principio de la cadena de largo 1000000
+Match en el principio de la cadena de largo 1000000
         
 ## Increasing Length Test 6 
 
  
-        Match en el principio de la cadena de largo 1000
+Match en el principio de la cadena de largo 1000
         
 ## Increasing Length Test 7 
 
  
-        Match en el principio de la cadena de largo 10000
+Match en el principio de la cadena de largo 10000
         
 ## Increasing Length Test 8 
 
  
-        Match en el principio de la cadena de largo 100000
+Match en el principio de la cadena de largo 100000
         
 ## Increasing Length Test 9 
 
  
-        Match en el principio de la cadena de largo 1000000
+Match en el principio de la cadena de largo 1000000
         
 ## Multiple No-Matches 1 
 
@@ -343,4 +345,20 @@ Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 
 
 No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
 patron de largo n=500, siendo la cadena una concatenacion de 4 veces el patron.
+                
+## Tests over the holly bible 1 
+
+ 
+Corre 100 veces el string matcher sobre una cadena de largo 4351844 en la cual hay 4 matches un match.
+
+No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
+patron de largo n=1, siendo la cadena una concatenacion de 4 veces el patron.
+                
+## Tests over the holly bible 2 
+
+ 
+Corre 100 veces el string matcher sobre una cadena de largo 4351844 en la cual hay 4 matches un match.
+
+No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
+patron de largo n=50, siendo la cadena una concatenacion de 4 veces el patron.
                 
