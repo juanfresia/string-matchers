@@ -255,11 +255,11 @@ def recursive_rank_update(b12, pos_rank, rank, sorted_b12):
 
 
 def create_b0_sorting(alphabet_size, rank, sequence):
-    to_sort = [[[None, rank[i + 1]], i] for i in range(0, len(sequence) - 2, 3)]
-    # new_size = to_sort[-1][1]
-    # alphabet_size = new_size if alphabet_size>new_size else alphabet_size
-    # to_sort = [None] * len(b0)
-    for c in to_sort:
+    to_sort = [None] * (len(sequence) // 3)
+
+    for i in range(len(to_sort)):
+        to_sort[i] = [None, None], i * 3
+        c = to_sort[i]
         c[0][1] = rank[c[1] + 1]
         c[0][0] = sequence[c[1]]
         if c[1] > alphabet_size:
@@ -343,6 +343,17 @@ if __name__ == '__main__':
     print(dcm((1, 1, 1, 1, 1, 1, 1, 0)), "==", ["aa"])
     print(string_matching_dc3("aaaaaa", "ana"), "==", "")
     print(string_matching_dc3("aaaaaaa", "ana"), "==", "")
+    print(string_matching_dc3("ba", "b"), "==", "0")
+    print(string_matching_dc3("aba", "b"), "==", "1")
+    print(string_matching_dc3("aaba", "b"), "==", "2")
+    print(string_matching_dc3("aaaba", "b"), "==", "3")
+    print(string_matching_dc3("aaaaba", "b"), "==", "4")
+    print(string_matching_dc3("aaaaaba", "b"), "==", "5")
+    print(string_matching_dc3("aaaaaaba", "b"), "==", "6")
+    print(string_matching_dc3("aaaaaaaba", "b"), "==", "7")
+    print(string_matching_dc3("aaaaaaaaba", "b"), "==", "8")
+    print(string_matching_dc3("aaaaaaaaaba", "b"), "==", "9")
+    print(string_matching_dc3("aaaaaaaaaaba", "b"), "==", "10")
     print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
     print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
     print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
