@@ -151,26 +151,34 @@ def radix_sort(list_to_sort, size=256):
     return sorted_list
 
 
-def radix_sort2(list_to_sort, text, size=256):
+def radix_sort2(list_to_sort, text, size=8):
     sorted_list = list_to_sort
 
     if len(sorted_list) == 0:
         return sorted_list[:]
 
     for i in range(3):
-        buckets = [None] * (size + 1)
+        buckets = [0] * (size + 1)
 
         for index in sorted_list:
-            _index = index + 2 - i
-            if not buckets[text[_index]]:
-                buckets[text[_index]] = []
-            buckets[text[_index]].append(index)
+            char_index = index + 2 - i
+            char = text[char_index]
 
-        sorted_list = []
+            buckets[char] += 1
 
-        for bucket in buckets:
-            if bucket:
-                sorted_list.extend(bucket)
+        for m in range(1, len(buckets)):
+            buckets[m] += buckets[m - 1]
+
+        new_sorted_list = [None] * len(sorted_list)
+
+        for index in reversed(sorted_list):
+            char_index = index + 2 - i
+            char = text[char_index]
+
+            buckets[char] -= 1
+            new_sorted_list[buckets[char]] = index
+
+        sorted_list = new_sorted_list
 
     return sorted_list
 
@@ -285,11 +293,11 @@ def merge_step(ranks, sorted_b0, sorted_b12, original_sequence):
 
 
 if __name__ == '__main__':
-    # print(dcm((1, 1, 1, 1, 1, 1, 1, 0)), "==", ["aa"])
-    # print(string_matching_dc3("aaaaaa", "ana"), "==", "")
+    print(dcm((1, 1, 1, 1, 1, 1, 1, 0)), "==", ["aa"])
+    print(string_matching_dc3("aaaaaa", "ana"), "==", "")
     print(string_matching_dc3("aaaaaaa", "ana"), "==", "")
-    # print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
-    # print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
-    # print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
-    # print(string_matching_dc3("banana", "ban"), "==", "0")
-    # print(string_matching_dc3("banana", "ana"), "==", "1,3")
+    print(string_matching_dc3("yabbadabbado", "abbadab"), "==", "1")
+    print(string_matching_dc3("hola mundo", "mundo"), "==", "5")
+    print(string_matching_dc3("yabbadabbado", "yab"), "==", "0")
+    print(string_matching_dc3("banana", "ban"), "==", "0")
+    print(string_matching_dc3("banana", "ana"), "==", "1,3")
