@@ -211,6 +211,13 @@ def radix_sort2(list_to_sort, text, size=8):
     return sorted_list
 
 
+def are_equal_bases(base_a, base_b, secuence):
+    for i in range(3):
+        if secuence[base_a + i] != secuence[base_b + i]:
+            return False
+    return True
+
+
 def dcm(sequence, alphabet_size=256):
     base_sequence = sequence
 
@@ -224,10 +231,10 @@ def dcm(sequence, alphabet_size=256):
     rank[-2] = 0
 
     pos_rank = 1
-    compare_base = base_sequence[sorted_b12[0]:sorted_b12[0] + 3]
+    compare_base = sorted_b12[0]
     for i, index in enumerate(sorted_b12):
-        actual_base = base_sequence[sorted_b12[i]:sorted_b12[i] + 3]
-        if compare_base != actual_base:
+        actual_base = sorted_b12[i]
+        if not are_equal_bases(compare_base, actual_base, base_sequence):
             compare_base = actual_base
             pos_rank += 1
         rank[index] = pos_rank
