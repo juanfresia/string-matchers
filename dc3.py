@@ -136,8 +136,10 @@ def radix_sort(list_to_sort, size=256):
     if len(sorted_list) == 0:
         return sorted_list[:]
 
+    """
     for i in range(1, len(sorted_list[0][0]) + 1):
-        buckets = [None] * (size + 1)
+        buckets = [0] * (size + 1)
+
         for word in sorted_list:
             if not buckets[word[0][-i]]:
                 buckets[word[0][-i]] = []
@@ -147,6 +149,29 @@ def radix_sort(list_to_sort, size=256):
         for bucket in buckets:
             if bucket:
                 sorted_list.extend(bucket)
+
+    return sorted_list"""
+
+    for i in range(1, len(sorted_list[0][0]) + 1):
+        buckets = [0] * (size + 1)
+
+        for word in sorted_list:
+            buckets[word[0][-i]] += 1
+
+        for m in range(1, len(buckets)):
+            buckets[m] += buckets[m - 1]
+
+        new_sorted_list = [None] * len(sorted_list)
+
+        len_sorted_list = len(sorted_list)
+
+        for j in range(1, len_sorted_list + 1):
+            word = sorted_list[len_sorted_list - j]
+
+            buckets[word[0][-i]] -= 1
+            new_sorted_list[buckets[word[0][-i]]] = word
+
+        sorted_list = new_sorted_list
 
     return sorted_list
 
