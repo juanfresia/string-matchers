@@ -150,9 +150,12 @@ def radix_sort(list_to_sort, size=256):
                 sorted_list.extend(bucket)
 
     return sorted_list"""
+    buckets = [0] * (size + 1)
 
     for i in range(1, len(sorted_list[0][0]) + 1):
-        buckets = [0] * (size + 1)
+        if i != 0:
+            for x in range(size + 1):
+                buckets[x] = 0
 
         for word in sorted_list:
             buckets[word[0][-i]] += 1
