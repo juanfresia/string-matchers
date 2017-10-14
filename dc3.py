@@ -219,7 +219,7 @@ def dcm(sequence, alphabet_size=256):
     b0, b12 = sample_suffixes_create(base_sequence)
     sorted_b12 = radix_sort2(b12, base_sequence, alphabet_size)
 
-    rank = ["|" for _ in range(len(base_sequence))]
+    rank = ["|"] * len(base_sequence)
     rank[-1] = 0
     rank[-2] = 0
 
