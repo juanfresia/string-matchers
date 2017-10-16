@@ -179,4 +179,88 @@ en el string, con n={} el largo del patron.
                 """.format(self._iterations, len(self._string), len(self._pattern))
 
 
+class TestNM7(Test):
+    _pattern = "a" * 499 + "b"
+    _string = "a" * 10000
+
+    def __init__(self):
+        super().__init__()
+
+    def run(self, f):
+        return f(self._string, self._pattern)
+
+    def get_expected_result(self):
+        return [x for x in range(len(self._string) - len(self._pattern) + 1)]
+
+    def get_test_name(self):
+        return "NM-7"
+
+    def get_long_test_name(self):
+        return "No Matches Test 7"
+
+    def get_test_description(self):
+        return """
+Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
+
+No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
+en el string, con n={} el largo del patron.
+                """.format(1, len(self._string), len(self._pattern))
+
+
+class TestNM8(Test):
+    _pattern = "a" * 499 + "b"
+    _string = "a" * 100000
+
+    def __init__(self):
+        super().__init__()
+
+    def run(self, f):
+        return f(self._string, self._pattern)
+
+    def get_expected_result(self):
+        return [x for x in range(len(self._string) - len(self._pattern) + 1)]
+
+    def get_test_name(self):
+        return "NM-8"
+
+    def get_long_test_name(self):
+        return "No Matches Test 8"
+
+    def get_test_description(self):
+        return """
+Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
+
+No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
+en el string, con n={} el largo del patron.
+                """.format(1, len(self._string), len(self._pattern))
+
+
+class TestNM9(Test):
+    _pattern = "a" * 499 + "b"
+    _string = "a" * 1000000
+
+    def __init__(self):
+        super().__init__()
+
+    def run(self, f):
+        return f(self._string, self._pattern)
+
+    def get_expected_result(self):
+        return [x for x in range(len(self._string) - len(self._pattern) + 1)]
+
+    def get_test_name(self):
+        return "NM-9"
+
+    def get_long_test_name(self):
+        return "No Matches Test 9"
+
+    def get_test_description(self):
+        return """
+Corre {} veces el string matcher sobre una cadena de largo {} en la cual no hay matches.
+
+No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
+en el string, con n={} el largo del patron.
+                """.format(1, len(self._string), len(self._pattern))
+
+
 ENABLED_TESTS = [TestNM1, TestNM2, TestNM3, TestNM4, TestNM5, TestNM6]
