@@ -111,12 +111,15 @@ Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
+ALPHABET = "bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$123456789|#&()?"
+
+
 class TestIL5(Test):
     def __init__(self):
         super().__init__()
         self._iterations = 1
         self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "bb" * (9999000 // 2) + "bb" * 250
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -138,15 +141,12 @@ Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
-ALPHABET = "bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$123456789|#&()?"
-
-
 class TestIL6(Test):
     def __init__(self):
         super().__init__()
         self._iterations = 1
         self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(500)])
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(9500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -173,7 +173,7 @@ class TestIL7(Test):
         super().__init__()
         self._iterations = 1
         self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(9500)])
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(99500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -200,7 +200,7 @@ class TestIL8(Test):
         super().__init__()
         self._iterations = 1
         self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(99500)])
+        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(999500)])
 
     def run(self, f):
         for _ in range(self._iterations - 1):
@@ -222,58 +222,4 @@ Match en el principio de la cadena de largo {}
         """.format(len(self._string), len(self._pattern))
 
 
-class TestIL9(Test):
-    def __init__(self):
-        super().__init__()
-        self._iterations = 1
-        self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(999500)])
-
-    def run(self, f):
-        for _ in range(self._iterations - 1):
-            f(self._string, self._pattern)
-        return f(self._string, self._pattern)
-
-    def get_expected_result(self):
-        return [0]
-
-    def get_test_name(self):
-        return "IL-9"
-
-    def get_long_test_name(self):
-        return "Increasing Length Test 9"
-
-    def get_test_description(self):
-        return """
-Match en el principio de la cadena de largo {}
-        """.format(len(self._string), len(self._pattern))
-
-
-class TestILA(Test):
-    def __init__(self):
-        super().__init__()
-        self._iterations = 1
-        self._pattern = "b" * 499 + "a"
-        self._string = self._pattern + "".join([random.choice(ALPHABET) for _ in range(9999500)])
-
-    def run(self, f):
-        for _ in range(self._iterations - 1):
-            f(self._string, self._pattern)
-        return f(self._string, self._pattern)
-
-    def get_expected_result(self):
-        return [0]
-
-    def get_test_name(self):
-        return "IL-A"
-
-    def get_long_test_name(self):
-        return "Increasing Length Test A"
-
-    def get_test_description(self):
-        return """
-Match en el principio de la cadena de largo {}
-        """.format(len(self._string), len(self._pattern))
-
-
-ENABLED_TESTS = [TestIL1, TestIL2, TestIL3, TestIL4, TestIL6, TestIL7, TestIL8, TestIL9]
+ENABLED_TESTS = [TestIL1, TestIL2, TestIL3, TestIL4, TestIL5, TestIL6, TestIL7, TestIL8]
