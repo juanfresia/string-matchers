@@ -153,21 +153,24 @@ def radix_sort(list_to_sort, size=256):
     buckets = [0] * (size + 1)
 
     for i in range(1, len(sorted_list[0][0]) + 1):
-        sorted_list = counting_sort(buckets, i, size, sorted_list)
+        if i != 0:
+            for x in range(size + 1):
+                buckets[x] = 0
+
+        sorted_list = counting_sort(buckets, i, sorted_list)
 
     return sorted_list
 
 
-def counting_sort(buckets, i, size, sorted_list):
-    if i != 0:
-        for x in range(size + 1):
-            buckets[x] = 0
+def counting_sort(buckets, i, sorted_list):
     for word in sorted_list:
         buckets[word[0][-i]] += 1
     for m in range(1, len(buckets)):
         buckets[m] += buckets[m - 1]
-    new_sorted_list = [None] * len(sorted_list)
+
     len_sorted_list = len(sorted_list)
+    new_sorted_list = [None] * len_sorted_list
+
     for j in range(1, len_sorted_list + 1):
         word = sorted_list[len_sorted_list - j]
 
@@ -185,24 +188,28 @@ def radix_sort2(list_to_sort, text, size=8):
 
     buckets = [0] * (size + 1)
     for i in range(3):
-        sorted_list = counting_sort2(buckets, i, size, sorted_list, text)
+        if i != 0:
+            for x in range(size + 1):
+                buckets[x] = 0
+
+        sorted_list = counting_sort2(buckets, i, sorted_list, text)
 
     return sorted_list
 
 
-def counting_sort2(buckets, i, size, sorted_list, text):
-    if i != 0:
-        for x in range(size + 1):
-            buckets[x] = 0
+def counting_sort2(buckets, i, sorted_list, text):
     for index in sorted_list:
         char_index = index + 2 - i
         char = text[char_index]
 
         buckets[char] += 1
+
     for m in range(1, len(buckets)):
         buckets[m] += buckets[m - 1]
-    new_sorted_list = [None] * len(sorted_list)
+
     len_sorted_list = len(sorted_list)
+    new_sorted_list = [None] * len_sorted_list
+
     for j in range(1, len_sorted_list + 1):
         index = sorted_list[len_sorted_list - j]
         char_index = index + 2 - i
@@ -210,8 +217,8 @@ def counting_sort2(buckets, i, size, sorted_list, text):
 
         buckets[char] -= 1
         new_sorted_list[buckets[char]] = index
-    sorted_list = new_sorted_list
-    return sorted_list
+
+    return new_sorted_list
 
 
 def are_equal_bases(base_a, base_b, secuence):
