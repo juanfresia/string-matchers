@@ -6,8 +6,10 @@ PATTERN_EQUAL = 0
 
 
 def matches(text, index, patter):
-    for i in range(len(patter)):
-        if i + index >= len(text):
+    pattern_len = len(patter)
+    text_len = len(text)
+    for i in range(pattern_len):
+        if i + index >= text_len:
             return PATTERN_GREATER
 
         pattern_char = patter[i]
@@ -78,6 +80,7 @@ def binary_search_right(pattern, suffix_array, text, index):
 def binary_search_left(pattern, suffix_array, text, index):
     initial = 0
     end = index
+    suffix_array_len = len(suffix_array)
 
     while initial <= end:
         mid = initial + ((end - initial) // 2)
@@ -85,7 +88,7 @@ def binary_search_left(pattern, suffix_array, text, index):
         comparator = matches(text, suffix_array[mid], pattern)
 
         if comparator == PATTERN_EQUAL:
-            if mid == len(suffix_array) or matches(text, suffix_array[mid - 1], pattern) != PATTERN_EQUAL:
+            if mid == suffix_array_len or matches(text, suffix_array[mid - 1], pattern) != PATTERN_EQUAL:
                 return mid
             comparator = PATTERN_LESSER
 
