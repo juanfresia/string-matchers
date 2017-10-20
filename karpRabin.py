@@ -56,21 +56,27 @@ def cmpSubLista(patron, lista, inicio):
 
 
 def karpRabinUnitario(texto, patron, base, mod):
-    return karpRabin(texto, [patron], base, mod)[0]
+    matches = []
+    patron = encode_string(patron)
+    texto = encode_string(texto)
+    hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
+    hash_tent = 0
 
+    for x in range(len(texto) - (len(patron) - 1)):
+        hash_tent = hash(texto, x, x + len(patron), hash_tent, BASE, 1000)
+        if (hash_tent == hash_patron):
+            if (cmpSubLista(patron, texto, x)):
+                matches.append(x)
+
+    return matches
 
 def karpRabinMultiple(texto, patrones, base, mod):
-    return karpRabin(texto, patrones, base, mod)
-
-
-def karpRabin(texto, patrones, base, mod):
     matches = [[] for x in range(len(patrones))]
     patrones = [encode_string(patron) for patron in patrones]
     texto = encode_string(texto)
     hash_patrones = [kr_rolling_hash(patron, 0, len(patron), 0, base, 1000) for patron in patrones]
     hash_tent = [0 for x in range(len(patrones))]
 
-    colisiones = 0
     min_len = len(min(patrones, key=len))
 
     for x in range(len(texto) - (min_len - 1)):
@@ -80,11 +86,7 @@ def karpRabin(texto, patrones, base, mod):
             if hash_tent[y] == hash_patrones[y]:
                 if cmpSubLista(patrones[y], texto, x):
                     matches[y].append(x)
-                else:
-                    colisiones += 1
-                    # if colisiones > 0:
-                    # print("malditas colisiones!!: ", colisiones)
-                    # print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
+
     return matches
 
 
