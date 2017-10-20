@@ -3,7 +3,7 @@ from testing_multi_class import TestMultimatch
 
 
 class TestTEC1(TestMultimatch):
-    _patterns = ["traveler"]
+    _patterns = ["gata"]
 
     def __init__(self):
         super().__init__()
@@ -35,7 +35,7 @@ patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
 
 
 class TestTEC2(TestMultimatch):
-    _patterns = ["traveler", "whale", "God", "crew", "ship"] * 10
+    _patterns = ["gata", "cata", "agcttcagtgcacgtacgtatgc", "acgtcagtcgacgtagtc", "aaagcgacgactttgt"] * 10
 
     def __init__(self):
         super().__init__()
