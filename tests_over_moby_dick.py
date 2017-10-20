@@ -2,12 +2,12 @@ from naive import string_matching_naive
 from testing_multi_class import TestMultimatch
 
 
-class TestTBG1(TestMultimatch):
-    _patterns = ["God"]
+class TestTMD1(TestMultimatch):
+    _patterns = ["whale"]
 
     def __init__(self):
         super().__init__()
-        with open("bible.txt") as input_file:
+        with open("moby_dick.txt") as input_file:
             self._string = input_file.read()
 
     def run(self, f):
@@ -20,10 +20,10 @@ class TestTBG1(TestMultimatch):
         return result
 
     def get_test_name(self):
-        return "TBG-1"
+        return "TMD-1"
 
     def get_long_test_name(self):
-        return "Tests over the holly bible (Gutenberg) 1"
+        return "Tests over Moby Dick 1"
 
     def get_test_description(self):
         return """
@@ -34,12 +34,12 @@ patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
                 """.format(self._iterations, len(self._string), len(self._patterns))
 
 
-class TestTBG2(TestMultimatch):
-    _patterns = ["God", "journey", "him", "judges", "children"] * 10
+class TestTMD2(TestMultimatch):
+    _patterns = ["God", "whale", "sale", "sail", "ship"] * 10
 
     def __init__(self):
         super().__init__()
-        with open("bible.txt") as input_file:
+        with open("moby_dick.txt") as input_file:
             self._string = input_file.read()
 
     def run(self, f):
@@ -52,10 +52,10 @@ class TestTBG2(TestMultimatch):
         return result
 
     def get_test_name(self):
-        return "TB-2"
+        return "TMD-2"
 
     def get_long_test_name(self):
-        return "Tests over the holly bible (Gutenberg) 2"
+        return "Tests over Moby Dick 2"
 
     def get_test_description(self):
         return """
@@ -66,4 +66,4 @@ patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
                 """.format(self._iterations, len(self._string), len(self._patterns))
 
 
-ENABLED_TESTS = [TestTB1, TestTB2]
+ENABLED_TESTS = [TestTMD1, TestTMD2]
