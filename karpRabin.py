@@ -63,7 +63,7 @@ def karpRabinUnitario(texto, patron, base, mod):
     hash_tent = 0
 
     for x in range(len(texto) - (len(patron) - 1)):
-        hash_tent = hash(texto, x, x + len(patron), hash_tent, BASE, 1000)
+        hash_tent = hash(texto, x, x + len(patron), hash_tent, base, mod)
         if (hash_tent == hash_patron):
             if (cmpSubLista(patron, texto, x)):
                 matches.append(x)
