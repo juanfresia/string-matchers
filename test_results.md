@@ -1,484 +1,72 @@
 # Results 
 
- | |Baseline|DC3|Karp Rabin|Naive|Z Box|
-|:---|---:|---:|---:|---:|---:|
-|[NM-1](#no-matches-test-1)|0.017467 - (ERROR)|1.789993 - (OK)|0.500009 - (OK)|2.263118 - (OK)|0.278468 - (OK)|
-|[NM-2](#no-matches-test-2)|0.016926 - (ERROR)|1.693027 - (OK)|0.485413 - (OK)|0.102039 - (OK)|0.231800 - (OK)|
-|[NM-3](#no-matches-test-3)|0.017399 - (ERROR)|1.740452 - (OK)|0.446531 - (OK)|0.102465 - (OK)|0.153208 - (OK)|
-|[NM-4](#no-matches-test-4)|0.013544 - (ERROR)|1.772379 - (OK)|0.444391 - (OK)|0.107869 - (OK)|0.155778 - (OK)|
-|[NM-5](#no-matches-test-5)|0.016939 - (ERROR)|1.790164 - (OK)|0.499560 - (OK)|0.232425 - (OK)|0.167086 - (OK)|
-|[NM-6](#no-matches-test-6)|0.014135 - (ERROR)|1.731122 - (OK)|0.497799 - (OK)|0.113214 - (OK)|0.165496 - (OK)|
-|[OM-1](#one-match-test-1)|0.016981 - (ERROR)|1.779073 - (OK)|0.504543 - (OK)|0.101162 - (OK)|0.188684 - (OK)|
-|[OM-2](#one-match-test-2)|0.016872 - (ERROR)|1.912624 - (OK)|0.508151 - (OK)|1.205881 - (OK)|0.216478 - (OK)|
-|[OM-3](#one-match-test-3)|0.017404 - (ERROR)|1.755647 - (OK)|0.497275 - (OK)|0.098743 - (OK)|0.181503 - (OK)|
-|[OM-4](#one-match-test-4)|0.017407 - (ERROR)|1.938260 - (OK)|0.502690 - (OK)|1.192902 - (OK)|0.217377 - (OK)|
-|[PP-1](#pattern-to-pattern-1)|0.030575 - (ERROR)|1.756127 - (OK)|0.096935 - (OK)|0.045360 - (OK)|0.271278 - (OK)|
-|[PP-2](#pattern-to-pattern-2)|0.032755 - (ERROR)|2.352278 - (OK)|0.102069 - (OK)|0.045583 - (OK)|0.393028 - (OK)|
-|[PP-3](#pattern-to-pattern-3)|0.027744 - (ERROR)|2.108356 - (OK)|0.104377 - (OK)|0.046899 - (OK)|0.369663 - (OK)|
-|[MM-1](#multiple-matches-test-1)|0.016986 - (ERROR)|1.746957 - (OK)|0.502690 - (OK)|0.111239 - (OK)|0.167962 - (OK)|
-|[MM-2](#multiple-matches-test-1)|0.017000 - (ERROR)|1.759173 - (OK)|0.505115 - (OK)|0.112718 - (OK)|0.183039 - (OK)|
-|[MM-3](#multiple-matches-test-3)|0.015219 - (ERROR)|1.741855 - (OK)|0.494319 - (OK)|0.114869 - (OK)|0.147799 - (OK)|
-|[MM-4](#multiple-matches-test-4)|0.015244 - (ERROR)|1.751310 - (OK)|0.497075 - (OK)|0.110745 - (OK)|0.162729 - (OK)|
-|[OC-1](#one-character-test-1)|0.016911 - (ERROR)|2.025294 - (OK)|8.141254 - (OK)|7.126951 - (OK)|0.343026 - (ERROR)|
-|[OC-2](#one-character-test-2)|0.013931 - (ERROR)|1.984937 - (OK)|0.605523 - (OK)|0.139567 - (OK)|0.224640 - (OK)|
-|[OC-3](#one-character-test-3)|0.014796 - (ERROR)|1.788056 - (OK)|0.613249 - (OK)|0.133749 - (OK)|0.307526 - (OK)|
-|[OC-4](#one-character-test-4)|0.013871 - (ERROR)|1.770859 - (OK)|0.679676 - (OK)|0.182473 - (OK)|0.343249 - (ERROR)|
-|[OC-5](#one-character-test-5)|0.013483 - (ERROR)|1.751589 - (OK)|0.627801 - (OK)|0.154780 - (OK)|0.318777 - (ERROR)|
-|[OC-6](#one-character-test-6)|0.013742 - (ERROR)|1.847406 - (OK)|0.695560 - (OK)|0.192288 - (OK)|0.347139 - (ERROR)|
-|[OC-7](#one-character-test-7)|0.000913 - (ERROR)|0.116006 - (OK)|0.539962 - (OK)|0.500456 - (OK)|0.020707 - (ERROR)|
-|[OC-8](#one-character-test-8)|0.007464 - (ERROR)|1.046117 - (OK)|5.080392 - (OK)|5.121678 - (OK)|0.187906 - (ERROR)|
-|[OC-9](#one-character-test-9)|0.079694 - (ERROR)|11.970713 - (OK)|51.219637 - (OK)|52.937552 - (OK)|1.987234 - (ERROR)|
-|[CT-1](#classic-test-1)|0.030091 - (ERROR)|3.793557 - (OK)|0.306310 - (OK)|0.084801 - (OK)|0.151525 - (OK)|
-|[CT-2](#classic-test-2)|0.028759 - (ERROR)|3.640497 - (OK)|0.223415 - (OK)|0.057480 - (OK)|0.142782 - (OK)|
-|[CT-3](#classic-test-3)|0.020387 - (ERROR)|2.303334 - (OK)|0.236209 - (OK)|0.062268 - (OK)|0.115344 - (OK)|
-|[CT-4](#classic-test-4)|0.018005 - (ERROR)|2.494436 - (OK)|0.286106 - (OK)|0.079499 - (OK)|0.108372 - (OK)|
-|[CT-5](#classic-test-5)|0.020934 - (ERROR)|2.382381 - (OK)|0.213576 - (OK)|0.058331 - (OK)|0.100951 - (OK)|
-|[CT-6](#classic-test-6)|0.016325 - (ERROR)|2.264604 - (OK)|0.215469 - (OK)|0.059576 - (OK)|0.100786 - (OK)|
-|[IL-1](#increasing-length-test-1)|0.000118 - (ERROR)|0.010841 - (OK)|0.001914 - (OK)|0.011491 - (OK)|0.001612 - (OK)|
-|[IL-2](#increasing-length-test-2)|0.000734 - (ERROR)|0.103158 - (OK)|0.031599 - (OK)|0.438481 - (OK)|0.018133 - (OK)|
-|[IL-3](#increasing-length-test-3)|0.008480 - (ERROR)|1.090907 - (OK)|0.358661 - (OK)|5.003283 - (OK)|0.147286 - (OK)|
-|[IL-4](#increasing-length-test-4)|0.072546 - (ERROR)|11.624215 - (OK)|3.182114 - (OK)|47.554897 - (OK)|1.473678 - (OK)|
-|[IL-5](#increasing-length-test-5)|0.000110 - (ERROR)|0.009497 - (OK)|0.001799 - (OK)|0.010770 - (OK)|0.001347 - (OK)|
-|[IL-6](#increasing-length-test-6)|0.000687 - (ERROR)|0.090176 - (OK)|0.030190 - (OK)|0.016079 - (OK)|0.008473 - (OK)|
-|[IL-7](#increasing-length-test-7)|0.006928 - (ERROR)|1.397122 - (OK)|0.338674 - (OK)|0.084470 - (OK)|0.100355 - (OK)|
-|[IL-8](#increasing-length-test-8)|0.084686 - (ERROR)|21.592998 - (OK)|3.600764 - (OK)|0.688297 - (OK)|0.889503 - (OK)|
-|[IP-1](#increasing-length-test-1)|0.000161 - (ERROR)|0.013090 - (OK)|0.000608 - (OK)|0.000281 - (OK)|0.002091 - (OK)|
-|[IP-2](#increasing-length-test-2)|0.001349 - (ERROR)|0.128287 - (OK)|0.005516 - (OK)|0.002496 - (OK)|0.023482 - (OK)|
-|[IP-3](#increasing-length-test-3)|0.019336 - (ERROR)|1.280438 - (OK)|0.059911 - (OK)|0.032371 - (OK)|0.228892 - (OK)|
-|[IP-4](#increasing-length-test-4)|0.174374 - (ERROR)|13.104405 - (OK)|0.512097 - (OK)|0.261539 - (OK)|2.110220 - (OK)|
-|[IP-5](#increasing-length-test-5)|0.000144 - (ERROR)|0.009879 - (OK)|0.000507 - (OK)|0.000231 - (OK)|0.001688 - (OK)|
-|[IP-6](#increasing-length-test-6)|0.001450 - (ERROR)|0.095839 - (OK)|0.004977 - (OK)|0.002260 - (OK)|0.013837 - (OK)|
-|[IP-7](#increasing-length-test-7)|0.013924 - (ERROR)|1.230655 - (OK)|0.055734 - (OK)|0.023732 - (OK)|0.140175 - (OK)|
-|[IP-8](#increasing-length-test-8)|0.143396 - (ERROR)|19.689930 - (OK)|0.514968 - (OK)|0.262518 - (OK)|1.391743 - (OK)|
-|[IP-A](#increasing-length-test-a)|0.000150 - (ERROR)|0.013848 - (OK)|0.000496 - (OK)|0.000231 - (OK)|0.001962 - (OK)|
-|[IP-B](#increasing-length-test-b)|0.001313 - (ERROR)|0.161749 - (OK)|0.004851 - (OK)|0.002275 - (OK)|0.020240 - (OK)|
-|[IP-C](#increasing-length-test-c)|0.015182 - (ERROR)|1.992080 - (OK)|0.052282 - (OK)|0.025120 - (OK)|0.224407 - (OK)|
-|[IP-D](#increasing-length-test-d)|0.144028 - (ERROR)|21.834590 - (OK)|0.516167 - (OK)|0.248180 - (OK)|2.122277 - (OK)|
-|[IP-E](#increasing-length-test-e)|0.000157 - (ERROR)|0.005627 - (OK)|0.000498 - (OK)|0.000229 - (OK)|0.001336 - (OK)|
-|[IP-F](#increasing-length-test-f)|0.001299 - (ERROR)|0.065412 - (OK)|0.004954 - (OK)|0.002273 - (OK)|0.014063 - (OK)|
-|[IP-G](#increasing-length-test-g)|0.014275 - (ERROR)|0.787025 - (OK)|0.050297 - (OK)|0.024227 - (OK)|0.143176 - (OK)|
-|[IP-H](#increasing-length-test-h)|0.142135 - (ERROR)|11.551573 - (OK)|0.512157 - (OK)|0.244449 - (OK)|1.393094 - (OK)|
-|[MN-1](#multiple-no-matches-1)|0.050303 - (ERROR)|2.744118 - (OK)|0.048369 - (ERROR)|23.940924 - (OK)|0.057944 - (ERROR)|
-|[MN-2](#multiple-no-matches-2)|0.062877 - (ERROR)|2.064021 - (OK)|0.054762 - (ERROR)|0.962125 - (OK)|0.053960 - (ERROR)|
-|[MN-3](#multiple-no-matches-3)|0.015916 - (ERROR)|1.804754 - (OK)|0.014382 - (ERROR)|0.932113 - (OK)|0.014704 - (ERROR)|
-|[MN-4](#multiple-no-matches-4)|0.014185 - (ERROR)|1.760097 - (OK)|0.014891 - (ERROR)|0.961419 - (OK)|0.014653 - (ERROR)|
-|[MN-5](#multiple-no-matches-5)|0.053800 - (ERROR)|2.410078 - (OK)|0.048384 - (ERROR)|2.239888 - (OK)|0.050089 - (ERROR)|
-|[MN-6](#multiple-no-matches-6)|0.021902 - (ERROR)|1.752795 - (OK)|0.022817 - (ERROR)|1.175667 - (OK)|0.024964 - (ERROR)|
-|[MP-1](#multiple-pattern-matches-test-1)|0.055697 - (ERROR)|2.696571 - (OK)|0.051158 - (ERROR)|1.060975 - (OK)|0.053770 - (ERROR)|
-|[TB-1](#tests-over-the-holly-bible-1)|0.363099 - (ERROR)|107.709054 - (OK)|0.325357 - (ERROR)|2.538222 - (OK)|0.354643 - (ERROR)|
-|[TB-2](#tests-over-the-holly-bible-2)|0.330980 - (ERROR)|106.559515 - (OK)|0.307161 - (ERROR)|115.693296 - (OK)|0.340618 - (ERROR)|
-# Descriptions 
-
-## No Matches Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-Hay 3 posibles candidatos de n-1 elementos, con n=500 el largo del patron.
-                
-## No Matches Test 2 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-No hay ningun posible candidato porque no hay caracteres en comun entre el patron y el string. Patron de largo n=500.
-                
-## No Matches Test 3 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2004 en la cual no hay matches.
-
-Hay 3 posibles candidatos de n-1 elementos, con n=5 el largo del patron (patron corto).
-                
-## No Matches Test 4 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2004 en la cual no hay matches.
-
-No hay ningun posible candidato porque no hay caracteres en comun entre el patron y el string. Patron de largo n=5 (Patron corto).
-                
-## No Matches Test 5 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El patron es periodico asi que hay varios matches parciales.
-El patron es de largo n, con n=500.
-                
-## No Matches Test 6 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
-en el string, con n=100 el largo del patron.
-                
-## One Match Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un match.
-
-No hay mas de un solo posible candidato, solo hay 2 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500.
-                
-## One Match Test 2 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un match.
-
-Hay varios posibles candidatos ya que, solo hay 2 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500 de forma repetida..
-                
-## One Match Test 3 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un match.
-
-No hay mas de un solo posible candidato, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500.
-                
-## One Match Test 4 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un match.
-
-Hay varios posibles candidatos ya que, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500 de forma repetida..
-                
-## Pattern to Pattern 1 
-
- 
-Corre 400 veces el string matcher sobre una cadena de largo 500 en la cual hay solo un match. La cadena es el patron mismo.
-
-No hay mas de un solo posible candidato, solo hay 2 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500..
-                
-## Pattern to Pattern 2 
-
- 
-Corre 400 veces el string matcher sobre una cadena de largo 500 en la cual hay solo un match. La cadena es el patron mismo.
-
-Hay varios posibles candidatos, solo hay 2 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500 repetido n-1 veces.
-                
-## Pattern to Pattern 3 
-
- 
-Corre 200 veces el string matcher sobre una cadena de largo 1000 en la cual hay solo un match. La cadena es el patron mismo.
-
-Hay varios posibles candidatos, solo hay 2 caracteres en la cadena, y se presentan de forma intercalada
-en el patron de largo n=1000.
-                
-## Multiple Matches Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 4 matches un match.
-
-No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500, siendo la cadena una concatenacion de 4 veces el patron.
-                
-## Multiple Matches Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 4 matches un match.
-
-No hay mas de solo 8 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio y al final del
-patron de largo n=500, siendo la cadena una concatenacion de 4 veces el patron.
-                
-## Multiple Matches Test 3 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 4 matches un match.
-
-No hay mas de solo 8 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=250, siendo la cadena una concatenacion de 4 veces el patron mas 4 veces un match parcial.
-                    
-## Multiple Matches Test 4 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 4 matches un match.
-
-No hay mas de solo 8 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=250, siendo la cadena una concatenacion de 4 veces un match parcial mas 4 veces el patron.
-                    
-## One Character Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=500 el largo del patron.
-                
-## One Character Test 2 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=1 el largo del patron (patron corto).
-                
-## One Character Test 3 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=2 el largo del patron (patron corto de largo par).
-                
-## One Character Test 4 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=3 el largo del patron (patron corto de largo impar).
-                
-## One Character Test 5 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=3 el largo del patron (patron corto limite ventana DC3).
-                
-## One Character Test 6 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=4 el largo del patron (patron limite+1 ventana DC3).
-                
-## One Character Test 7 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 10000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=500 el largo del patron (patron corto).
-                
-## One Character Test 8 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 100000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=500 el largo del patron (patron corto de largo par).
-                
-## One Character Test 9 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 1000000 en la cual hay solo un caracter.
-
-Hay largo de la cadena menos n matches, siendo n=500 el largo del patron (patron corto de largo impar).
-                
-## Classic Test 1 
-
- 
-Corre 16666 veces el string matcher sobre "banana" buscando el patron "ana". Ejemplo de DC3
-                
-## Classic Test 2 
-
- 
-Corre 16666 veces el string matcher sobre "banana" buscando el patron "yaba". Ejemplo de DC3
-                
-## Classic Test 3 
-
- 
-Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "yabba". Ejemplo de DC3
-                
-## Classic Test 4 
-
- 
-Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "bba". Ejemplo de DC3
-                
-## Classic Test 5 
-
- 
-Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "dabba". Ejemplo de DC3
-                
-## Classic Test 6 
-
- 
-Corre 8333 veces el string matcher sobre "yabbadabbado" buscando el patron "ana". Ejemplo de DC3
-                
-## Increasing Length Test 1 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test 2 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test 3 
-
- 
-Match en el principio de la cadena de largo 100000
-        
-## Increasing Length Test 4 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Increasing Length Test 5 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test 6 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test 7 
-
- 
-Match en el principio de la cadena de largo 100000
-        
-## Increasing Length Test 8 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Increasing Length Test 1 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test 2 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test 3 
-
- 
-Match en el principio de la cadena de largo 100000
-        
-## Increasing Length Test 4 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Increasing Length Test 5 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test 6 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test 7 
-
- 
-Match en el principio de la cadena de largo 100000
-        
-## Increasing Length Test 8 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Increasing Length Test A 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test B 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test C 
-
- 
-Match en el principio de la cadena de largo 104500
-        
-## Increasing Length Test D 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Increasing Length Test E 
-
- 
-Match en el principio de la cadena de largo 1000
-        
-## Increasing Length Test F 
-
- 
-Match en el principio de la cadena de largo 10000
-        
-## Increasing Length Test G 
-
- 
-Match en el principio de la cadena de largo 100000
-        
-## Increasing Length Test H 
-
- 
-Match en el principio de la cadena de largo 1000000
-        
-## Multiple No-Matches 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-Hay 3 posibles candidatos de n-1 elementos, con n=500 el largo del patron.
-                
-## Multiple No-Matches 2 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-No hay ningun posible candidato porque no hay caracteres en comun entre el patron y el string. Patron de largo n=500.
-                
-## Multiple No-Matches 3 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2004 en la cual no hay matches.
-
-Hay 3 posibles candidatos de n-1 elementos, con n=5 el largo del patron (patron corto).
-                
-## Multiple No-Matches 4 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2004 en la cual no hay matches.
-
-No hay ningun posible candidato porque no hay caracteres en comun entre el patron y el string. Patron de largo n=5 (Patron corto).
-                
-## Multiple No-Matches 5 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-La cadena esta conformada por 4 patrones concatenados sin el ultimo caracter. El patron es periodico asi que hay varios matches parciales.
-El patron es de largo n, con n=500.
-                
-## Multiple No-Matches 6 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual no hay matches.
-
-No hay 500 posibles candidatos, porque aparecen los n-1 primeros caracters del patron repetidos 500 veces cada n caracteres,
-en el string, con n=100 el largo del patron.
-                
-## Multiple Pattern Matches Test 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 2000 en la cual hay 4 matches un match.
-
-No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=500, siendo la cadena una concatenacion de 4 veces el patron.
-                
-## Tests over the holly bible 1 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 4351844 en la cual hay 4 matches un match.
-
-No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=1, siendo la cadena una concatenacion de 4 veces el patron.
-                
-## Tests over the holly bible 2 
-
- 
-Corre 100 veces el string matcher sobre una cadena de largo 4351844 en la cual hay 4 matches un match.
-
-No hay mas de solo 4 posible candidatos, solo hay 3 caracteres en la cadena, y uno solo se presenta al inicio del
-patron de largo n=50, siendo la cadena una concatenacion de 4 veces el patron.
-                
+ | |Baseline|DC3|KR 1.0|KR 1.5|KR 2.0|KR 3.0|KR 5.0|Naive|Z Box|
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|[NM-1](#no-matches-test-1)|0.019695 - (ERROR)|1.759181 - (OK)|0.213833 - (OK)|0.186331 - (OK)|0.308831 - (OK)|0.358508 - (OK)|0.409612 - (OK)|2.511859 - (OK)|0.324520 - (OK)|
+|[NM-2](#no-matches-test-2)|0.020544 - (ERROR)|1.903832 - (OK)|0.208204 - (OK)|0.189456 - (OK)|0.317925 - (OK)|0.391430 - (OK)|0.421213 - (OK)|0.090380 - (OK)|0.223721 - (OK)|
+|[NM-3](#no-matches-test-3)|0.013004 - (ERROR)|1.805805 - (OK)|0.246528 - (OK)|0.204369 - (OK)|0.250524 - (OK)|0.241683 - (OK)|0.251960 - (OK)|0.100859 - (OK)|0.149087 - (OK)|
+|[NM-4](#no-matches-test-4)|0.012811 - (ERROR)|1.791309 - (OK)|0.230846 - (OK)|0.199701 - (OK)|0.254836 - (OK)|0.242105 - (OK)|0.257175 - (OK)|0.102162 - (OK)|0.154888 - (OK)|
+|[NM-5](#no-matches-test-5)|0.016127 - (ERROR)|1.798650 - (OK)|0.217075 - (OK)|0.198872 - (OK)|0.301322 - (OK)|0.341132 - (OK)|0.416162 - (OK)|0.237196 - (OK)|0.167360 - (OK)|
+|[NM-6](#no-matches-test-6)|0.013727 - (ERROR)|1.767220 - (OK)|0.239541 - (OK)|0.216973 - (OK)|0.290257 - (OK)|0.297404 - (OK)|0.294056 - (OK)|0.116994 - (OK)|0.162859 - (OK)|
+|[OM-1](#one-match-test-1)|0.016787 - (ERROR)|1.797969 - (OK)|0.251894 - (OK)|0.192955 - (ERROR)|0.308204 - (OK)|0.347001 - (OK)|0.424584 - (OK)|0.094108 - (OK)|0.184459 - (OK)|
+|[OM-2](#one-match-test-2)|0.016591 - (ERROR)|1.927532 - (OK)|0.227001 - (OK)|0.192764 - (ERROR)|0.328675 - (OK)|0.372071 - (OK)|0.418209 - (OK)|1.274064 - (OK)|0.221679 - (OK)|
+|[OM-3](#one-match-test-3)|0.016353 - (ERROR)|1.911835 - (OK)|0.247357 - (OK)|0.205521 - (ERROR)|0.327634 - (OK)|0.404109 - (OK)|0.481708 - (OK)|0.111680 - (OK)|0.184306 - (OK)|
+|[OM-4](#one-match-test-4)|0.016166 - (ERROR)|2.021050 - (OK)|0.222877 - (OK)|0.201248 - (ERROR)|0.308281 - (OK)|0.348138 - (OK)|0.417857 - (OK)|1.263244 - (OK)|0.213421 - (OK)|
+|[PP-1](#pattern-to-pattern-1)|0.026921 - (ERROR)|1.758846 - (OK)|0.092632 - (OK)|0.098560 - (OK)|0.095268 - (OK)|0.096142 - (OK)|0.097808 - (OK)|0.044937 - (OK)|0.267484 - (OK)|
+|[PP-2](#pattern-to-pattern-2)|0.027345 - (ERROR)|2.149203 - (OK)|0.093308 - (OK)|0.105730 - (OK)|0.100956 - (OK)|0.096699 - (OK)|0.104808 - (OK)|0.054938 - (OK)|0.401851 - (OK)|
+|[PP-3](#pattern-to-pattern-3)|0.026111 - (ERROR)|2.019734 - (OK)|0.103741 - (OK)|0.098795 - (OK)|0.098746 - (OK)|0.104497 - (OK)|0.102189 - (OK)|0.045503 - (OK)|0.382080 - (OK)|
+|[MM-1](#multiple-matches-test-1)|0.016541 - (ERROR)|1.799725 - (OK)|0.329117 - (OK)|0.204554 - (ERROR)|0.326951 - (OK)|0.382200 - (OK)|0.432392 - (OK)|0.115643 - (OK)|0.174363 - (OK)|
+|[MM-2](#multiple-matches-test-1)|0.018377 - (ERROR)|1.930771 - (OK)|0.348226 - (OK)|0.223277 - (ERROR)|0.362411 - (OK)|0.389991 - (OK)|0.449289 - (OK)|0.125667 - (OK)|0.190993 - (OK)|
+|[MM-3](#multiple-matches-test-3)|0.019546 - (ERROR)|1.944267 - (OK)|0.315218 - (OK)|0.202829 - (ERROR)|0.323177 - (OK)|0.358363 - (OK)|0.376188 - (OK)|0.111448 - (OK)|0.154086 - (OK)|
+|[MM-4](#multiple-matches-test-4)|0.015463 - (ERROR)|1.851510 - (OK)|0.278963 - (OK)|0.212416 - (ERROR)|0.330971 - (OK)|0.340691 - (OK)|0.371428 - (OK)|0.120915 - (OK)|0.149195 - (OK)|
+|[OC-1](#one-character-test-1)|0.016796 - (ERROR)|2.224907 - (OK)|8.170320 - (OK)|0.214150 - (ERROR)|8.357204 - (OK)|8.407422 - (OK)|8.144217 - (OK)|7.587761 - (OK)|0.326028 - (ERROR)|
+|[OC-2](#one-character-test-2)|0.013368 - (ERROR)|1.821738 - (OK)|0.309985 - (OK)|0.323857 - (OK)|0.307875 - (OK)|0.305794 - (OK)|0.303690 - (OK)|0.116864 - (OK)|0.230280 - (OK)|
+|[OC-3](#one-character-test-3)|0.012939 - (ERROR)|1.842389 - (OK)|0.373348 - (OK)|0.347904 - (OK)|0.384552 - (OK)|0.401446 - (OK)|0.387895 - (OK)|0.143113 - (OK)|0.308304 - (OK)|
+|[OC-4](#one-character-test-4)|0.013641 - (ERROR)|1.828092 - (OK)|0.409484 - (OK)|0.373901 - (OK)|0.421560 - (OK)|0.400213 - (OK)|0.415239 - (OK)|0.157474 - (OK)|0.307308 - (ERROR)|
+|[OC-5](#one-character-test-5)|0.012944 - (ERROR)|1.869802 - (OK)|0.408248 - (OK)|0.374797 - (OK)|0.430943 - (OK)|0.410464 - (OK)|0.409435 - (OK)|0.154171 - (OK)|0.307816 - (ERROR)|
+|[OC-6](#one-character-test-6)|0.013726 - (ERROR)|1.836087 - (OK)|0.427554 - (OK)|0.387782 - (OK)|0.448121 - (OK)|0.462620 - (OK)|0.456287 - (OK)|0.184036 - (OK)|0.313054 - (ERROR)|
+|[OC-7](#one-character-test-7)|0.000664 - (ERROR)|0.115721 - (OK)|0.515892 - (OK)|0.011139 - (ERROR)|0.507549 - (OK)|0.524653 - (OK)|0.545016 - (OK)|0.518247 - (OK)|0.022252 - (ERROR)|
+|[OC-8](#one-character-test-8)|0.007881 - (ERROR)|1.265127 - (OK)|5.336632 - (OK)|0.125113 - (ERROR)|5.524994 - (OK)|5.536165 - (OK)|5.401996 - (OK)|5.428759 - (OK)|0.178908 - (ERROR)|
+|[OC-9](#one-character-test-9)|0.078301 - (ERROR)|13.176922 - (OK)|54.737928 - (OK)|1.278134 - (ERROR)|56.381184 - (OK)|56.569727 - (OK)|56.125708 - (OK)|54.381768 - (OK)|1.909635 - (ERROR)|
+|[CT-1](#classic-test-1)|0.032457 - (ERROR)|3.887110 - (OK)|0.166919 - (OK)|0.157305 - (OK)|0.179827 - (OK)|0.162830 - (OK)|0.169886 - (OK)|0.086477 - (OK)|0.134684 - (OK)|
+|[CT-2](#classic-test-2)|0.026394 - (ERROR)|3.653404 - (OK)|0.116742 - (OK)|0.120448 - (OK)|0.127957 - (OK)|0.122536 - (OK)|0.127170 - (OK)|0.061512 - (OK)|0.145806 - (OK)|
+|[CT-3](#classic-test-3)|0.020271 - (ERROR)|2.429431 - (OK)|0.128353 - (OK)|0.106622 - (OK)|0.122442 - (OK)|0.139693 - (OK)|0.125815 - (OK)|0.068451 - (OK)|0.114491 - (OK)|
+|[CT-4](#classic-test-4)|0.018346 - (ERROR)|2.510883 - (OK)|0.155934 - (OK)|0.130752 - (OK)|0.167188 - (OK)|0.155484 - (OK)|0.142783 - (OK)|0.069949 - (OK)|0.111795 - (OK)|
+|[CT-5](#classic-test-5)|0.017888 - (ERROR)|2.461611 - (OK)|0.144034 - (OK)|0.103223 - (ERROR)|0.132136 - (OK)|0.124615 - (OK)|0.134338 - (OK)|0.063071 - (OK)|0.112858 - (OK)|
+|[CT-6](#classic-test-6)|0.015787 - (ERROR)|2.376746 - (OK)|0.124771 - (OK)|0.123304 - (OK)|0.125390 - (OK)|0.132555 - (OK)|0.115585 - (OK)|0.064483 - (OK)|0.109335 - (OK)|
+|[IL-1](#increasing-length-test-1)|0.000109 - (ERROR)|0.009763 - (OK)|0.015958 - (OK)|0.000800 - (OK)|0.001144 - (OK)|0.001665 - (OK)|0.001671 - (OK)|0.012877 - (OK)|0.001877 - (OK)|
+|[IL-2](#increasing-length-test-2)|0.001292 - (ERROR)|0.120450 - (OK)|0.027621 - (OK)|0.012798 - (OK)|0.022500 - (OK)|0.020694 - (OK)|0.028243 - (OK)|0.484771 - (OK)|0.016554 - (OK)|
+|[IL-3](#increasing-length-test-3)|0.008530 - (ERROR)|1.180836 - (OK)|0.160080 - (OK)|0.130393 - (OK)|0.204780 - (OK)|0.223821 - (OK)|0.271871 - (OK)|5.242521 - (OK)|0.172535 - (OK)|
+|[IL-4](#increasing-length-test-4)|0.080555 - (ERROR)|13.359821 - (OK)|1.406698 - (OK)|1.259906 - (OK)|2.123616 - (OK)|2.362462 - (OK)|2.817800 - (OK)|50.194798 - (OK)|1.628228 - (OK)|
+|[IL-5](#increasing-length-test-5)|0.000109 - (ERROR)|0.011144 - (OK)|0.000904 - (OK)|0.000809 - (OK)|0.001191 - (OK)|0.001341 - (OK)|0.001775 - (OK)|0.012424 - (OK)|0.001418 - (OK)|
+|[IL-6](#increasing-length-test-6)|0.000782 - (ERROR)|0.097072 - (OK)|0.012013 - (OK)|0.012358 - (OK)|0.025044 - (OK)|0.027388 - (OK)|0.025076 - (OK)|0.016619 - (OK)|0.010525 - (OK)|
+|[IL-7](#increasing-length-test-7)|0.007951 - (ERROR)|1.424057 - (OK)|0.138498 - (OK)|0.123038 - (OK)|0.214991 - (OK)|0.240499 - (OK)|0.280887 - (OK)|0.084682 - (OK)|0.089334 - (OK)|
+|[IL-8](#increasing-length-test-8)|0.081726 - (ERROR)|20.820918 - (OK)|1.391912 - (OK)|1.297878 - (OK)|2.122827 - (OK)|2.317697 - (OK)|2.803612 - (OK)|0.647314 - (OK)|0.845962 - (OK)|
+|[IP-1](#increasing-length-test-1)|0.000143 - (ERROR)|0.012234 - (OK)|0.000574 - (OK)|0.000536 - (OK)|0.000557 - (OK)|0.000561 - (OK)|0.000558 - (OK)|0.000240 - (OK)|0.002018 - (OK)|
+|[IP-2](#increasing-length-test-2)|0.002218 - (ERROR)|0.116133 - (OK)|0.004981 - (OK)|0.005694 - (OK)|0.005948 - (OK)|0.005133 - (OK)|0.004924 - (OK)|0.002486 - (OK)|0.021499 - (OK)|
+|[IP-3](#increasing-length-test-3)|0.013747 - (ERROR)|1.215004 - (OK)|0.048622 - (OK)|0.047829 - (OK)|0.063470 - (OK)|0.052809 - (OK)|0.060321 - (OK)|0.024590 - (OK)|0.225969 - (OK)|
+|[IP-4](#increasing-length-test-4)|0.144463 - (ERROR)|13.670067 - (OK)|0.539920 - (OK)|0.530114 - (OK)|0.576433 - (OK)|0.560500 - (OK)|0.553770 - (OK)|0.279919 - (OK)|2.194509 - (OK)|
+|[IP-5](#increasing-length-test-5)|0.000143 - (ERROR)|0.009946 - (OK)|0.000484 - (OK)|0.000465 - (OK)|0.000485 - (OK)|0.000484 - (OK)|0.000485 - (OK)|0.000226 - (OK)|0.001669 - (OK)|
+|[IP-6](#increasing-length-test-6)|0.001286 - (ERROR)|0.116931 - (OK)|0.005066 - (OK)|0.004686 - (OK)|0.005012 - (OK)|0.005036 - (OK)|0.005389 - (OK)|0.002498 - (OK)|0.015860 - (OK)|
+|[IP-7](#increasing-length-test-7)|0.014143 - (ERROR)|1.558741 - (OK)|0.057955 - (OK)|0.054286 - (OK)|0.056486 - (OK)|0.052460 - (OK)|0.053446 - (OK)|0.024278 - (OK)|0.149817 - (OK)|
+|[IP-8](#increasing-length-test-8)|0.149955 - (ERROR)|22.143047 - (OK)|0.544372 - (OK)|0.535388 - (OK)|0.557445 - (OK)|0.560599 - (OK)|0.549109 - (OK)|0.247130 - (OK)|1.545720 - (OK)|
+|[IP-A](#increasing-length-test-a)|0.000167 - (ERROR)|0.012274 - (OK)|0.000469 - (OK)|0.000454 - (OK)|0.000471 - (OK)|0.000473 - (OK)|0.000517 - (OK)|0.000221 - (OK)|0.001993 - (OK)|
+|[IP-B](#increasing-length-test-b)|0.001234 - (ERROR)|0.163578 - (OK)|0.006152 - (OK)|0.004945 - (OK)|0.008282 - (OK)|0.005859 - (OK)|0.007176 - (OK)|0.003167 - (OK)|0.027272 - (OK)|
+|[IP-C](#increasing-length-test-c)|0.016695 - (ERROR)|1.900072 - (OK)|0.062151 - (OK)|0.052371 - (OK)|0.053625 - (OK)|0.061015 - (OK)|0.057450 - (OK)|0.030148 - (OK)|0.233634 - (OK)|
+|[IP-D](#increasing-length-test-d)|0.168740 - (ERROR)|21.096990 - (OK)|0.514555 - (OK)|0.545443 - (OK)|0.573966 - (OK)|0.547071 - (OK)|0.553171 - (OK)|0.250432 - (OK)|2.346595 - (OK)|
+|[IP-E](#increasing-length-test-e)|0.000172 - (ERROR)|0.006619 - (OK)|0.000502 - (OK)|0.000464 - (OK)|0.000508 - (OK)|0.000722 - (OK)|0.000507 - (OK)|0.000225 - (OK)|0.001332 - (OK)|
+|[IP-F](#increasing-length-test-f)|0.001797 - (ERROR)|0.063411 - (OK)|0.007148 - (OK)|0.005912 - (OK)|0.005340 - (OK)|0.004880 - (OK)|0.007902 - (OK)|0.003103 - (OK)|0.014717 - (OK)|
+|[IP-G](#increasing-length-test-g)|0.016912 - (ERROR)|0.950673 - (OK)|0.054943 - (OK)|0.055170 - (OK)|0.054860 - (OK)|0.057998 - (OK)|0.053605 - (OK)|0.024213 - (OK)|0.138716 - (OK)|
+|[IP-H](#increasing-length-test-h)|0.164356 - (ERROR)|12.459254 - (OK)|0.556657 - (OK)|0.518844 - (OK)|0.565078 - (OK)|0.545083 - (OK)|0.521995 - (OK)|0.250330 - (OK)|1.385382 - (OK)|
+|[MN-1](#multiple-no-matches-1)|0.046206 - (ERROR)|2.532009 - (OK)|2.331501 - (OK)|2.100571 - (OK)|3.434549 - (OK)|4.053528 - (OK)|4.746282 - (OK)|25.529015 - (OK)|0.045926 - (ERROR)|
+|[MN-2](#multiple-no-matches-2)|0.054751 - (ERROR)|1.899251 - (OK)|2.555249 - (OK)|2.267458 - (OK)|3.433133 - (OK)|4.058929 - (OK)|4.715126 - (OK)|0.903416 - (OK)|0.057933 - (ERROR)|
+|[MN-3](#multiple-no-matches-3)|0.016808 - (ERROR)|1.971031 - (OK)|2.893797 - (OK)|2.545528 - (OK)|3.022062 - (OK)|3.004449 - (OK)|3.038341 - (OK)|0.993005 - (OK)|0.013636 - (ERROR)|
+|[MN-4](#multiple-no-matches-4)|0.013391 - (ERROR)|1.872971 - (OK)|2.871854 - (OK)|2.559071 - (OK)|3.017183 - (OK)|2.957713 - (OK)|3.085383 - (OK)|1.018206 - (OK)|0.017926 - (ERROR)|
+|[MN-5](#multiple-no-matches-5)|0.045795 - (ERROR)|2.494707 - (OK)|2.512852 - (OK)|2.259540 - (OK)|3.618271 - (OK)|4.110704 - (OK)|4.744031 - (OK)|2.505024 - (OK)|0.051352 - (ERROR)|
+|[MN-6](#multiple-no-matches-6)|0.024500 - (ERROR)|2.030521 - (OK)|2.845501 - (OK)|2.521723 - (OK)|3.348438 - (OK)|3.471221 - (OK)|3.665707 - (OK)|1.142472 - (OK)|0.020933 - (ERROR)|
+|[MP-1](#multiple-pattern-matches-test-1)|0.046164 - (ERROR)|2.488428 - (OK)|3.113440 - (OK)|2.235764 - (ERROR)|3.706531 - (OK)|4.204272 - (OK)|4.429084 - (OK)|0.956215 - (OK)|0.049479 - (ERROR)|
+|[TTG-1](#tests-over-the-travels-of-gulibert-1)|0.037924 - (ERROR)|8.688237 - (OK)|1.447775 - (OK)|1.299728 - (ERROR)|1.451749 - (OK)|1.475555 - (OK)|1.401397 - (OK)|0.306163 - (OK)|0.038561 - (ERROR)|
+|[TTG-2](#tests-over-the-travels-of-gulibert-2)|0.039006 - (ERROR)|8.114853 - (OK)|39.757372 - (OK)|32.734359 - (ERROR)|36.652296 - (OK)|38.771073 - (OK)|40.117273 - (OK)|13.334248 - (OK)|0.037322 - (ERROR)|
+|[TMD-1](#tests-over-moby-dick-1)|0.082809 - (ERROR)|21.399228 - (OK)|2.670470 - (OK)|2.461469 - (ERROR)|2.692664 - (OK)|2.714782 - (OK)|2.739854 - (OK)|0.649142 - (OK)|0.085791 - (ERROR)|
+|[TMD-2](#tests-over-moby-dick-2)|0.082953 - (ERROR)|22.057262 - (OK)|75.441641 - (OK)|66.549664 - (ERROR)|83.355554 - (OK)|86.485557 - (OK)|86.982439 - (OK)|1726.658901 - (OK)|0.201563 - (ERROR)|
+|[TBG-1](#tests-over-the-holly-bible-(gutenberg)-1)|0.315366 - (ERROR)|92.355527 - (OK)|10.090952 - (OK)|9.225406 - (OK)|11.221141 - (OK)|10.942488 - (OK)|10.979354 - (OK)|2.553792 - (OK)|0.304368 - (ERROR)|
