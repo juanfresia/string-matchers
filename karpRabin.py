@@ -36,10 +36,10 @@ def cadenaAAscii(cadena):
     return asciis
 
 
-def hash(texto, ini, fin, hash_ant, base, mod):
+def kr_rolling_hash(texto, ini, fin, hash_ant, base, mod):
     if (ini - 1 >= len(texto)) or (fin - 1 >= len(texto)):
         return -1
-    if (ini == 0):
+    if ini == 0:
         h = 0
         for x in range(fin):
             h = (base * h + texto[x]) % mod
@@ -67,17 +67,18 @@ def karpRabin(texto, patrones, base, mod):
     matches = [[] for x in range(len(patrones))]
     patrones = [encode_string(patron) for patron in patrones]
     texto = encode_string(texto)
-    hash_patrones = [hash(patron, 0, len(patron), 0, BASE, 1000) for patron in patrones]
+    hash_patrones = [kr_rolling_hash(patron, 0, len(patron), 0, base, 1000) for patron in patrones]
     hash_tent = [0 for x in range(len(patrones))]
 
     colisiones = 0
     min_len = len(min(patrones, key=len))
 
     for x in range(len(texto) - (min_len - 1)):
-        hash_tent = [hash(texto, x, x + len(patrones[i]), hash_tent[i], base, mod) for i in range(len(patrones))]
+        hash_tent = [kr_rolling_hash(texto, x, x + len(patrones[i]), hash_tent[i], base, mod) for i in
+                     range(len(patrones))]
         for y in range(len(hash_tent)):
-            if (hash_tent[y] == hash_patrones[y]):
-                if (cmpSubLista(patrones[y], texto, x)):
+            if hash_tent[y] == hash_patrones[y]:
+                if cmpSubLista(patrones[y], texto, x):
                     matches[y].append(x)
                 else:
                     colisiones += 1
