@@ -1,5 +1,3 @@
-BASE = 3
-
 from string_encoder import encode_string
 
 asciiConv = {}
@@ -55,13 +53,13 @@ def cmpSubLista(patron, lista, inicio):
             return False
     return True
 
-def karpRabinUnitario(texto, patron):
-    return karpRabin(texto, [patron])[0]
+def karpRabinUnitario(texto, patron, base, mod):
+    return karpRabin(texto, [patron], base, mod)[0]
 
-def karpRabinMultiple(texto, patrones):
-    return karpRabin(texto, patrones)
+def karpRabinMultiple(texto, patrones, base, mod):
+    return karpRabin(texto, patrones, base, mod)
 
-def karpRabin(texto, patrones):
+def karpRabin(texto, patrones, base, mod):
     matches = [[] for x in range(len(patrones))]
     patrones = [encode_string(patron) for patron in patrones]
     texto = encode_string(texto)
@@ -72,7 +70,7 @@ def karpRabin(texto, patrones):
     min_len = len(min(patrones, key=len))
 
     for x in range(len(texto) - (min_len - 1)):
-        hash_tent = [hash(texto, x, x + len(patrones[i]), hash_tent[i], BASE, 1000) for i in range(len(patrones))]
+        hash_tent = [hash(texto, x, x + len(patrones[i]), hash_tent[i], base, mod) for i in range(len(patrones))]
         for y in range (len(hash_tent)):
             if (hash_tent[y] == hash_patrones[y]):
                 if (cmpSubLista(patrones[y], texto, x)):
