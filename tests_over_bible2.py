@@ -66,4 +66,4 @@ patron de largo n={}, siendo la cadena una concatenacion de 4 veces el patron.
                 """.format(self._iterations, len(self._string), len(self._patterns))
 
 
-ENABLED_TESTS = [TestTB21, TestTB22]
+ENABLED_TESTS = [TestTBB1, TestTB22]
