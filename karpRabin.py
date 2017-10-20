@@ -59,7 +59,7 @@ def karpRabinUnitario(texto, patron, base, mod):
     matches = []
     patron = encode_string(patron)
     texto = encode_string(texto)
-    hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
+    hash_patron = hash(patron, 0, len(patron), 0, base, mod)
     hash_tent = 0
 
     for x in range(len(texto) - (len(patron) - 1)):
