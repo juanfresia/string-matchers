@@ -35,6 +35,7 @@ def cadenaAAscii(cadena):
         asciis.append(ascii(letra))
     return asciis
 
+
 def hash(texto, ini, fin, hash_ant, base, mod):
     if (ini - 1 >= len(texto)) or (fin - 1 >= len(texto)):
         return -1
@@ -53,11 +54,14 @@ def cmpSubLista(patron, lista, inicio):
             return False
     return True
 
+
 def karpRabinUnitario(texto, patron, base, mod):
     return karpRabin(texto, [patron], base, mod)[0]
 
+
 def karpRabinMultiple(texto, patrones, base, mod):
     return karpRabin(texto, patrones, base, mod)
+
 
 def karpRabin(texto, patrones, base, mod):
     matches = [[] for x in range(len(patrones))]
@@ -71,7 +75,7 @@ def karpRabin(texto, patrones, base, mod):
 
     for x in range(len(texto) - (min_len - 1)):
         hash_tent = [hash(texto, x, x + len(patrones[i]), hash_tent[i], base, mod) for i in range(len(patrones))]
-        for y in range (len(hash_tent)):
+        for y in range(len(hash_tent)):
             if (hash_tent[y] == hash_patrones[y]):
                 if (cmpSubLista(patrones[y], texto, x)):
                     matches[y].append(x)
