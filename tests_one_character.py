@@ -199,7 +199,7 @@ class TestOC7(Test):
 Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay solo un caracter.
 
 Hay largo de la cadena menos n matches, siendo n={} el largo del patron (patron corto).
-                """.format(self._iterations, len(self._string), len(self._pattern))
+                """.format(1, len(self._string), len(self._pattern))
 
 
 class TestOC8(Test):
@@ -226,7 +226,7 @@ class TestOC8(Test):
 Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay solo un caracter.
 
 Hay largo de la cadena menos n matches, siendo n={} el largo del patron (patron corto de largo par).
-                """.format(self._iterations, len(self._string), len(self._pattern))
+                """.format(1, len(self._string), len(self._pattern))
 
 
 class TestOC9(Test):
@@ -253,7 +253,7 @@ class TestOC9(Test):
 Corre {} veces el string matcher sobre una cadena de largo {} en la cual hay solo un caracter.
 
 Hay largo de la cadena menos n matches, siendo n={} el largo del patron (patron corto de largo impar).
-                """.format(self._iterations, len(self._string), len(self._pattern))
+                """.format(1, len(self._string), len(self._pattern))
 
 
 ENABLED_TESTS = [TestOC1, TestOC2, TestOC3, TestOC4, TestOC5, TestOC6, TestOC7, TestOC8, TestOC9]
