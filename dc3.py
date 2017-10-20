@@ -115,16 +115,7 @@ def multiple_string_matching_dc3(text, patterns):
 
 def sample_suffixes_create(text):
     text = text
-    """result = [[], [], []]
-    for i in range(len(text)):
-        item = text[i:i + 3]
 
-        if len(item) < 3:
-            continue
-
-        result[i % 3].append(i)
-    result[1].extend(result[2])
-    return result[0], result[1]"""
     b1 = [i for i in range(1, len(text) - 2, 3)]
     b2 = [i for i in range(2, len(text) - 2, 3)]
 
@@ -138,21 +129,6 @@ def radix_sort(list_to_sort, size=256):
     if len(sorted_list) == 0:
         return sorted_list[:]
 
-    """
-    for i in range(1, len(sorted_list[0][0]) + 1):
-        buckets = [0] * (size + 1)
-
-        for word in sorted_list:
-            if not buckets[word[0][-i]]:
-                buckets[word[0][-i]] = []
-            buckets[word[0][-i]].append(word)
-
-        sorted_list = []
-        for bucket in buckets:
-            if bucket:
-                sorted_list.extend(bucket)
-
-    return sorted_list"""
     buckets = [0] * (size + 1)
 
     for i in range(1, len(sorted_list[0][0]) + 1):
