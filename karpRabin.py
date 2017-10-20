@@ -59,11 +59,11 @@ def karpRabinUnitario(texto, patron, base, mod):
     matches = []
     patron = encode_string(patron)
     texto = encode_string(texto)
-    hash_patron = hash(patron, 0, len(patron), 0, base, mod)
+    hash_patron = kr_rolling_hash(patron, 0, len(patron), 0, base, mod)
     hash_tent = 0
 
     for x in range(len(texto) - (len(patron) - 1)):
-        hash_tent = hash(texto, x, x + len(patron), hash_tent, base, mod)
+        hash_tent = kr_rolling_hash(texto, x, x + len(patron), hash_tent, base, mod)
         if (hash_tent == hash_patron):
             if (cmpSubLista(patron, texto, x)):
                 matches.append(x)
