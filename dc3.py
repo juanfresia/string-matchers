@@ -102,7 +102,7 @@ def multiple_string_matching_dc3(text, patterns):
     text = encode_string(text)
     text.append(0)
 
-    suffix_array = dcm(text)
+    suffix_array = dcm(text, max(text))
 
     result = []
 
@@ -209,7 +209,6 @@ def are_equal_bases(base_a, base_b, secuence):
 
 def dcm(sequence, alphabet_size=256):
     base_sequence = sequence
-
     base_sequence += (0, 0)
 
     b12 = sample_suffixes_create(base_sequence)
