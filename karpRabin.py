@@ -17,10 +17,10 @@ def test_string_matching():
     T3 = "ABABZABABAB"
     P4 = "AB"
 
-    print(karpRabin(T, P1))
-    print(karpRabin(T, P2))
-    print(karpRabin(T2, P3))
-    print(karpRabin(T3, P4))
+    print(karpRabinUnitario(T, P1))
+    print(karpRabinUnitario(T, P2))
+    print(karpRabinUnitario(T2, P3))
+    print(karpRabinUnitario(T3, P4))
 
 
 def ascii(letra):
@@ -54,25 +54,32 @@ def cmpSubLista(patron, lista, inicio):
             return False
     return True
 
-def karpRabin(texto, patron):
-    matches = []
-    patron = encode_string(patron)
+def karpRabinUnitario(texto, patron):
+    return karpRabin(texto, [patron])[0]
+
+def karpRabinMultiple(texto, patrones):
+    return karpRabin(texto, patrones)
+
+def karpRabin(texto, patrones):
+    matches = [[] for x in range(len(patrones))]
+    patrones = [encode_string(patron) for patron in patrones]
     texto = encode_string(texto)
-    hash_patron = hash(patron, 0, len(patron), 0, BASE, 1000)
-    hash_tent = 0
+    hash_patrones = [hash(patron, 0, len(patron), 0, BASE, 1000) for patron in patrones]
+    hash_tent = [0 for x in range(len(patrones))]
 
     colisiones = 0
 
     for x in range(len(texto) - (len(patron) - 1)):
-        hash_tent = hash(texto, x, x + len(patron), hash_tent, BASE, 1000)
-        if (hash_tent == hash_patron):
-            if (cmpSubLista(patron, texto, x)):
-                matches.append(x)
-            else:
-                colisiones += 1
-                # if colisiones > 0:
-                # print("malditas colisiones!!: ", colisiones)
-                # print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
+        hash_tent = [hash(texto, x, x + len(patrones[i]), hash_tent[i], BASE, 1000) for i in range(len(patrones))]
+        for y in range (len(hash_tent)):
+            if (hash_tent[y] == hash_patrones[y]):
+                if (cmpSubLista(patrones[y], texto, x)):
+                    matches[y].append(x)
+                else:
+                    colisiones += 1
+                    # if colisiones > 0:
+                    # print("malditas colisiones!!: ", colisiones)
+                    # print("cantidad de subcadenas: ", len(texto)-(len(patron) - 1))
     return matches
 
 
