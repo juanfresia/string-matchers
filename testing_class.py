@@ -14,7 +14,12 @@ def do_nothing(text, pattern):
 
 
 MATCHERS = {'Naive': string_matching_naive,
-            'Karp Rabin': karpRabinUnitario,
+            'Karp Rabin 3-1K': lambda s, p: karpRabinUnitario(s, p, 3, 1000),
+            'Karp Rabin 2-1K': lambda s, p: karpRabinUnitario(s, p, 2, 1000),
+            'Karp Rabin 5-1K': lambda s, p: karpRabinUnitario(s, p, 5, 1000),
+            'Karp Rabin 3-739': lambda s, p: karpRabinUnitario(s, p, 3, 739),
+            'Karp Rabin 2-739': lambda s, p: karpRabinUnitario(s, p, 2, 739),
+            'Karp Rabin 5-739': lambda s, p: karpRabinUnitario(s, p, 5, 739),
             'Z Box': string_matching_zcajas,
             'Baseline': do_nothing,
             'DC3': string_matching_dc3}

@@ -1,4 +1,5 @@
 from dc3 import multiple_string_matching_dc3
+from karpRabin import karpRabinMultiple
 from naive import multi_string_matching_naive
 from string_encoder import encode_string
 from testing_class import Test
@@ -12,7 +13,12 @@ def do_nothing(text, patterns):
 
 
 MATCHERS = {'Naive': multi_string_matching_naive,
-            'Karp Rabin': do_nothing,
+            'KR 3-1K': lambda s, p: karpRabinMultiple(s, p, 3, 1000),
+            'KR 2-1K': lambda s, p: karpRabinMultiple(s, p, 2, 1000),
+            'KR 5-1K': lambda s, p: karpRabinMultiple(s, p, 5, 1000),
+            'KR 3-73': lambda s, p: karpRabinMultiple(s, p, 3, 739),
+            'KR 2-73': lambda s, p: karpRabinMultiple(s, p, 2, 739),
+            'KR 5-73': lambda s, p: karpRabinMultiple(s, p, 5, 739),
             'Z Box': do_nothing,
             'Baseline': do_nothing,
             'DC3': multiple_string_matching_dc3}
