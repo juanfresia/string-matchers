@@ -1,7 +1,7 @@
 import time
 
 from dc3 import string_matching_dc3
-from karpRabin import karpRabin
+from karpRabin import karpRabinUnitario
 from naive import string_matching_naive
 from string_encoder import encode_string
 from zbox import string_matching_zcajas
@@ -14,7 +14,7 @@ def do_nothing(text, pattern):
 
 
 MATCHERS = {'Naive': string_matching_naive,
-            'Karp Rabin': karpRabin,
+            'Karp Rabin': karpRabinUnitario,
             'Z Box': string_matching_zcajas,
             'Baseline': do_nothing,
             'DC3': string_matching_dc3}
