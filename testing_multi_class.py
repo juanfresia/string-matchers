@@ -14,7 +14,6 @@ def do_nothing(text, patterns):
 
 MATCHERS = {'Naive': multi_string_matching_naive,
             'KR 1.0': lambda s, p: karpRabinMultiple(s, p, 1, 1000),
-            'KR 1.5': lambda s, p: karpRabinMultiple(s, p, 1.5, 1000),
             'KR 2.0': lambda s, p: karpRabinMultiple(s, p, 2, 1000),
             'KR 3.0': lambda s, p: karpRabinMultiple(s, p, 3, 1000),
             'KR 5.0': lambda s, p: karpRabinMultiple(s, p, 5, 1000),

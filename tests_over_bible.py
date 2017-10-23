@@ -13,11 +13,18 @@ class TestTBG1(TestMultimatch):
     def run(self, f):
         return f(self._string, self._patterns)
 
-    def get_expected_result(self):
+    _result = None
+
+    def _get_result(self):
         result = []
         for pattern in self._patterns:
             result.append(string_matching_naive(self._string, pattern))
         return result
+
+    def get_expected_result(self):
+        if not self._result:
+            self._result = self._get_result()
+        return self._result
 
     def get_test_name(self):
         return "TBG-1"
@@ -45,11 +52,18 @@ class TestTBG2(TestMultimatch):
     def run(self, f):
         return f(self._string, self._patterns)
 
-    def get_expected_result(self):
+    _result = None
+
+    def _get_result(self):
         result = []
         for pattern in self._patterns:
             result.append(string_matching_naive(self._string, pattern))
         return result
+
+    def get_expected_result(self):
+        if not self._result:
+            self._result = self._get_result()
+        return self._result
 
     def get_test_name(self):
         return "TB-2"
